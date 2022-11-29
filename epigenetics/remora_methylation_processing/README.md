@@ -1,0 +1,4 @@
+# Processing Remora/Guppy ONT ultra-long  methylation calls
+## PWH 22-10-24
+
+This directory contains the [Snakemake](https://snakemake.readthedocs.io/en/stable/) pipeline used to process Remora/Guppy methyation calls from HG002 ultra-long ONT sequencing. The commands used to convert unaligned BAMs to FASTQs and align those FASTQs while retaining MM and ML modification tags are contained in [align_process_remora_bams.smk](https://github.com/timplab/pwh_projects/tree/master/hg002_methylation/remora_methylation_processing/workflow/rules/align_process_remora_bams.smk). Aggregated CpG methylation percentages for all CpGs were then produced using [modbam2bed](https://github.com/epi2me-labs/modbam2bed) with command found in [modbam2bed.smk](https://github.com/timplab/pwh_projects/tree/master/hg002_methylation/remora_methylation_processing/workflow/rules/modbam2bed.smk).

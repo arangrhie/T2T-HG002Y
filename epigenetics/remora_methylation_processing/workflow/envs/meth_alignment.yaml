@@ -1,0 +1,6 @@
+channels:
+        - bioconda
+        - conda-forge
+dependencies:
+        - samtools==1.15.1
+        - winnowmap==2.03

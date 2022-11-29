@@ -1,0 +1,53 @@
+Output will be written into the directory: /atium/Data/projects/hg002_wgbs/bismark/methylseq/
+Output filename was given as: methylseq_SRR13051102_pe
+Processing paired-end Bismark output file(s) (SAM format):
+/atium/Data/projects/hg002_wgbs/bismark/methylseq/methylseq_SRR13051102_pe.bam
+
+
+If there are several alignments to a single position in the genome the first alignment will be chosen. Since the input files are not in any way sorted this is a near-enough random selection of reads.
+
+Checking file >>/atium/Data/projects/hg002_wgbs/bismark/methylseq/methylseq_SRR13051102_pe.bam<< for signs of file truncation...
+
+
+
+Now testing Bismark result file /atium/Data/projects/hg002_wgbs/bismark/methylseq/methylseq_SRR13051102_pe.bam for positional sorting (which would be bad...)	...passed!
+Output file is: methylseq_SRR13051102_pe.deduplicated.bam
+
+
+Total number of alignments analysed in /atium/Data/projects/hg002_wgbs/bismark/methylseq/methylseq_SRR13051102_pe.bam:	44722276
+Total number duplicated alignments removed:	5065488 (11.33%)
+Duplicated alignments were found at:	4608417 different position(s)
+
+Total count of deduplicated leftover sequences: 39656788 (88.67% of total)
+
+skipping header line:	@HD	VN:1.0	SO:unsorted
+skipping header line:	@SQ	SN:chr1	LN:248387328
+skipping header line:	@SQ	SN:chr2	LN:242696752
+skipping header line:	@SQ	SN:chr3	LN:201105948
+skipping header line:	@SQ	SN:chr4	LN:193574945
+skipping header line:	@SQ	SN:chr5	LN:182045439
+skipping header line:	@SQ	SN:chr6	LN:172126628
+skipping header line:	@SQ	SN:chr7	LN:160567428
+skipping header line:	@SQ	SN:chr8	LN:146259331
+skipping header line:	@SQ	SN:chr9	LN:150617247
+skipping header line:	@SQ	SN:chr10	LN:134758134
+skipping header line:	@SQ	SN:chr11	LN:135127769
+skipping header line:	@SQ	SN:chr12	LN:133324548
+skipping header line:	@SQ	SN:chr13	LN:113566686
+skipping header line:	@SQ	SN:chr14	LN:101161492
+skipping header line:	@SQ	SN:chr15	LN:99753195
+skipping header line:	@SQ	SN:chr16	LN:96330374
+skipping header line:	@SQ	SN:chr17	LN:84276897
+skipping header line:	@SQ	SN:chr18	LN:80542538
+skipping header line:	@SQ	SN:chr19	LN:61707364
+skipping header line:	@SQ	SN:chr20	LN:66210255
+skipping header line:	@SQ	SN:chr21	LN:45090682
+skipping header line:	@SQ	SN:chr22	LN:51324926
+skipping header line:	@SQ	SN:chrM	LN:16569
+skipping header line:	@SQ	SN:chrX	LN:154349815
+skipping header line:	@SQ	SN:chrY	LN:62460029
+skipping header line:	@SQ	SN:M77789.2	LN:2686
+skipping header line:	@SQ	SN:chrL	LN:48502
+skipping header line:	@PG	ID:Bismark	VN:v0.23.1dev	CL:"bismark --bam --bowtie2 --genome /atium/Data/projects/hg002_wgbs/reference/bowtie2_combined --basename methylseq_SRR13051102 -1 /atium/Data/projects/hg002_wgbs/trimmed/methylseq_SRR13051102_1.trimmed.fastq -2 /atium/Data/projects/hg002_wgbs/trimmed/methylseq_SRR13051102_2.trimmed.fastq --temp_dir /scratch/phook --output_dir /atium/Data/projects/hg002_wgbs/bismark/methylseq"
+skipping header line:	@PG	ID:samtools	PN:samtools	PP:Bismark	VN:1.15	CL:/home/phook2/code/pwh_projects/hg002_wgbs/workflow/.snakemake/conda/3db0a532baa65854df5d9f7aed09f8a9/bin/samtools view -bSh -
+skipping header line:	@PG	ID:samtools.1	PN:samtools	PP:samtools	VN:1.15	CL:/home/phook2/code/pwh_projects/hg002_wgbs/workflow/.snakemake/conda/11fde9375277dfd610e453b9285928a5/bin/samtools view -h --threads 1 /atium/Data/projects/hg002_wgbs/bismark/methylseq/methylseq_SRR13051102_pe.bam

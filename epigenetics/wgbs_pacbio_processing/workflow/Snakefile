@@ -1,0 +1,130 @@
+from snakemake.utils import min_version
+
+### set minimum snakemake version ###
+min_version("7.3.3")
+
+### set config file ###
+configfile: "../config/config.yaml"
+
+### set report ###
+report: "../report/workflow.rst"
+
+### setup singularity ###
+# this container defines the underlying OS for each job when using the workflow
+# with --use-conda --use-singularity
+container: "docker://continuumio/miniconda3"
+
+### Set aligners we will use ###
+ALIGNERS = ["bowtie2"]
+
+### List all data to be downloaded ###
+SRR = [
+"SRR13051101",
+"SRR13051102",
+"SRR13051103",
+"SRR13051106",
+"SRR13051105",
+"SRR13051104",
+"SRR13051139",
+"SRR13051140",
+"SRR13051141",
+"SRR13051142"]
+
+### Set MethylSeq samples ###
+METHYLSEQ_SR_SAMPLES = [
+"SRR13051101",
+"SRR13051102",
+"SRR13051103",
+"SRR13051106",
+"SRR13051105",
+"SRR13051104"]
+
+### Set sr EM-seq samples ###
+EMSEQ_SR_SAMPLES = [
+"SRR13051139",
+"SRR13051140",
+"SRR13051141",
+"SRR13051142"]
+
+EMSEQ_SR_LAB1 = [
+"SRR13051141",
+"SRR13051142"]
+
+EMSEQ_SR_LAB2 = [
+"SRR13051139",
+"SRR13051140"]
+
+### load rules ###
+include: "rules/download_data.smk"
+include: "rules/download_control_genomes.smk"  
+include: "rules/download_human_genome.smk"
+include: "rules/concatenate_index_genomes.smk"
+include: "rules/bismark_download.smk"
+include: "rules/bismark_genome_prep.smk"
+include: "rules/short_read_trim.smk"
+include: "rules/methylseq_bismark_align.smk"
+include: "rules/emseq_bismark_align.smk"
+include: "rules/emseq_bismark_deduplicate.smk"
+include: "rules/methylseq_bismark_deduplicate.smk"
+include: "rules/methylseq_mbias.smk"
+include: "rules/emseq_mbias.smk"
+include: "rules/methylseq_extraction.smk"
+include: "rules/emseq_extraction.smk"
+include: "rules/methylseq_bismark2bedgraph.smk"
+include: "rules/emseq_bismark2bedgraph.smk"
+include: "rules/merge_technolgies.smk"
+include: "rules/modbam2bed.smk"
+include: "rules/emseq_coverage2cytosine.smk"
+include: "rules/methylseq_coverage2cytosine.smk"
+
+### wildcard constraints ###
+#wildcard_constraints:
+    #twist_lr_samples= '|'.join([re.escape(x) for x in TWIST_LR_SAMPLES]),
+    #timp_lr_sample= '|'.join([re.escape(x) for x in TIMP_LR_SAMPLE]),
+    #phase_bams= '|'.join([re.escape(x) for x in PHASE_BAMS])
+
+### set target rules ###
+rule all:
+	input:
+		expand(config["data"]["dir"] + "/" + "{srr}_1.fastq.gz",srr=SRR),
+                expand(config["data"]["dir"] + "/" + "{srr}_2.fastq.gz",srr=SRR),
+		#config["reference"]["dir"] + "/" + config["reference"]["basename"] + ".fasta.gz",
+		config["reference"]["dir"] + "/" + config["reference"]["basename"] + ".fasta",
+		config["reference"]["dir"] + "/" + "pUC19.fa",
+		config["reference"]["dir"] + "/" + "lambda.fa",
+		expand(config["reference"]["dir"] + "/{aligner}_combined/methylation_reference.fa", aligner=ALIGNERS),
+		expand(config["reference"]["dir"] + "/{aligner}_combined/methylation_reference.fa.fai", aligner=ALIGNERS),
+		config["software"]["dir"] + "/" + "master.zip",
+		directory(config["software"]["dir"] + "/" + "Bismark-master"),
+		directory(expand(config["reference"]["dir"] + "/{aligner}_combined/Bisulfite_Genome/", aligner=ALIGNERS)),
+		expand(config["short_read"]["trim_output"] + "/methylseq_{methylseq_sr_sample}_1.trimmed.fastq", methylseq_sr_sample=METHYLSEQ_SR_SAMPLES),
+		expand(config["short_read"]["trim_output"] + "/methylseq_{methylseq_sr_sample}_2.trimmed.fastq", methylseq_sr_sample=METHYLSEQ_SR_SAMPLES),
+		expand(config["short_read"]["trim_output"] + "/emseq_{emseq_sr_sample}_1.trimmed.fastq", emseq_sr_sample=EMSEQ_SR_SAMPLES),
+                expand(config["short_read"]["trim_output"] + "/emseq_{emseq_sr_sample}_2.trimmed.fastq", emseq_sr_sample=EMSEQ_SR_SAMPLES),
+		expand(config["short_read"]["bismark_methylseq"] + "/methylseq_{methylseq_sr_sample}_pe.bam",methylseq_sr_sample=METHYLSEQ_SR_SAMPLES),
+                expand(config["short_read"]["bismark_methylseq"] + "/methylseq_{methylseq_sr_sample}_PE_report.txt",methylseq_sr_sample=METHYLSEQ_SR_SAMPLES),
+		expand(config["short_read"]["bismark_emseq"] + "/emseq_{emseq_sr_sample}_pe.bam",emseq_sr_sample=EMSEQ_SR_SAMPLES),
+                expand(config["short_read"]["bismark_emseq"] + "/emseq_{emseq_sr_sample}_PE_report.txt",emseq_sr_sample=EMSEQ_SR_SAMPLES),
+		expand(config["short_read"]["bismark_emseq"] + "/emseq_{emseq_sr_sample}_pe.deduplicated.bam",emseq_sr_sample=EMSEQ_SR_SAMPLES),
+		expand(config["short_read"]["bismark_methylseq"] + "/methylseq_{methylseq_sr_sample}_pe.deduplicated.bam",methylseq_sr_sample=METHYLSEQ_SR_SAMPLES),
+		expand(config["short_read"]["bismark_methylseq"] + "/mbias" + "/methylseq_{methylseq_sr_sample}_pe.deduplicated.M-bias.txt",methylseq_sr_sample=METHYLSEQ_SR_SAMPLES),
+		expand(config["short_read"]["bismark_emseq"] + "/mbias" + "/emseq_{emseq_sr_sample}_pe.deduplicated.M-bias.txt",emseq_sr_sample=EMSEQ_SR_SAMPLES),
+		expand(config["short_read"]["bismark_methylseq"] + "/meth_extraction" + "/CpG_context_methylseq_{methylseq_sr_sample}_pe.deduplicated.txt.gz",methylseq_sr_sample=METHYLSEQ_SR_SAMPLES),
+		expand(config["short_read"]["bismark_methylseq"] + "/meth_extraction" + "/Non_CpG_context_methylseq_{methylseq_sr_sample}_pe.deduplicated.txt.gz",methylseq_sr_sample=METHYLSEQ_SR_SAMPLES),
+		expand(config["short_read"]["bismark_emseq"] + "/meth_extraction" + "/CpG_context_emseq_{emseq_sr_sample}_pe.deduplicated.txt.gz",emseq_sr_sample=EMSEQ_SR_SAMPLES),
+		expand(config["short_read"]["bismark_emseq"] + "/meth_extraction" + "/Non_CpG_context_emseq_{emseq_sr_sample}_pe.deduplicated.txt.gz",emseq_sr_sample=EMSEQ_SR_SAMPLES),
+		config["short_read"]["bismark_methylseq"] + "/meth_extraction" + "/bedgraph" + "/seqc2_methylseq_CpG.gz",
+                config["short_read"]["bismark_methylseq"] + "/meth_extraction" + "/bedgraph" + "/seqc2_methylseq_CpG.gz.bismark.cov.gz",
+		config["short_read"]["bismark_emseq"] + "/meth_extraction" + "/bedgraph" + "/seqc2_emseq_lab1_CpG.gz",
+                config["short_read"]["bismark_emseq"] + "/meth_extraction" + "/bedgraph" + "/seqc2_emseq_lab1_CpG.gz.bismark.cov.gz",
+		config["short_read"]["bismark_emseq"] + "/meth_extraction" + "/bedgraph" + "/seqc2_emseq_lab2_CpG.gz",
+                config["short_read"]["bismark_emseq"] + "/meth_extraction" + "/bedgraph" + "/seqc2_emseq_lab2_CpG.gz.bismark.cov.gz",
+		config["short_read"]["bismark_emseq"] + "/merge" + "/merged_HG002_emseq.bam",
+                config["short_read"]["bismark_emseq"] + "/merge" + "/sorted_merged_HG002_emseq.bam",
+		config["short_read"]["bismark_methylseq"] + "/merge" + "/merged_HG002_wgbs.bam",
+                config["short_read"]["bismark_methylseq"] + "/merge" + "/sorted_merged_HG002_wgbs.bam",
+		config["modbam2bed_pacbio"]["bed_output"] + "/hg002_pacbio_primrose_80.bed",
+		config["modbam2bed_pacbio"]["bed_output"] + "/hg002_pacbio_primrose_80.bismark",
+		config["short_read"]["bismark_emseq"] + "/meth_extraction" + "/bedgraph" + "/seqc2_emseq_lab1.CpG_report.txt.gz",
+		config["short_read"]["bismark_emseq"] + "/meth_extraction" + "/bedgraph" + "/seqc2_emseq_lab2.CpG_report.txt.gz",
+		config["short_read"]["bismark_emseq"] + "/meth_extraction" + "/bedgraph" + "/seqc2_methylseq.CpG_report.txt.gz"

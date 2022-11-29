@@ -1,0 +1,793 @@
+
+ *** Bismark methylation extractor version v0.23.1dev ***
+
+Output will be written into the directory: /atium/Data/projects/hg002_wgbs/bismark/methylseq/meth_extraction/
+Setting option '--no_overlap' since this is (normally) the right thing to do for paired-end data
+
+Summarising Bismark methylation extractor parameters:
+===============================================================
+Bismark paired-end SAM format specified (default)
+Number of cores to be used: 6
+First 11 bp will be disregarded when processing the methylation call string of Read 2
+Strand-specific outputs will be skipped. Separate output files for cytosines in CpG, CHG and CHH context will be generated
+Merge CHG and CHH context to non-CpG context specified
+Output path specified as: /atium/Data/projects/hg002_wgbs/bismark/methylseq/meth_extraction/
+
+Checking file >>/atium/Data/projects/hg002_wgbs/bismark/methylseq/methylseq_SRR13051106_pe.deduplicated.bam<< for signs of file truncation...
+
+
+Now testing Bismark result file >/atium/Data/projects/hg002_wgbs/bismark/methylseq/methylseq_SRR13051106_pe.deduplicated.bam< for positional sorting (which would be bad...)	...passed!
+Writing result file containing methylation information for C in CpG context to /atium/Data/projects/hg002_wgbs/bismark/methylseq/meth_extraction/CpG_context_methylseq_SRR13051106_pe.deduplicated.txt.gz
+Writing result file containing methylation information for C in any other context to /atium/Data/projects/hg002_wgbs/bismark/methylseq/meth_extraction/Non_CpG_context_methylseq_SRR13051106_pe.deduplicated.txt.gz
+
+Now reading in Bismark result file /atium/Data/projects/hg002_wgbs/bismark/methylseq/methylseq_SRR13051106_pe.deduplicated.bam
+
+
+Now reading in Bismark result file /atium/Data/projects/hg002_wgbs/bismark/methylseq/methylseq_SRR13051106_pe.deduplicated.bam
+
+
+Now reading in Bismark result file /atium/Data/projects/hg002_wgbs/bismark/methylseq/methylseq_SRR13051106_pe.deduplicated.bam
+
+
+Now reading in Bismark result file /atium/Data/projects/hg002_wgbs/bismark/methylseq/methylseq_SRR13051106_pe.deduplicated.bam
+
+Now reading in Bismark result file /atium/Data/projects/hg002_wgbs/bismark/methylseq/methylseq_SRR13051106_pe.deduplicated.bam
+
+Now reading in Bismark result file /atium/Data/projects/hg002_wgbs/bismark/methylseq/methylseq_SRR13051106_pe.deduplicated.bam
+
+skipping SAM header line:	@HD	VN:1.0	SO:unsorted
+skipping SAM header line:	@SQ	SN:chr1	LN:248387328
+skipping SAM header line:	@SQ	SN:chr2	LN:242696752
+skipping SAM header line:	@SQ	SN:chr3	LN:201105948
+skipping SAM header line:	@SQ	SN:chr4	LN:193574945
+skipping SAM header line:	@SQ	SN:chr5	LN:182045439
+skipping SAM header line:	@SQ	SN:chr6	LN:172126628
+skipping SAM header line:	@SQ	SN:chr7	LN:160567428
+skipping SAM header line:	@SQ	SN:chr8	LN:146259331
+skipping SAM header line:	@SQ	SN:chr9	LN:150617247
+skipping SAM header line:	@SQ	SN:chr10	LN:134758134
+skipping SAM header line:	@SQ	SN:chr11	LN:135127769
+skipping SAM header line:	@SQ	SN:chr12	LN:133324548
+skipping SAM header line:	@SQ	SN:chr13	LN:113566686
+skipping SAM header line:	@SQ	SN:chr14	LN:101161492
+skipping SAM header line:	@SQ	SN:chr15	LN:99753195
+skipping SAM header line:	@SQ	SN:chr16	LN:96330374
+skipping SAM header line:	@SQ	SN:chr17	LN:84276897
+skipping SAM header line:	@SQ	SN:chr18	LN:80542538
+skipping SAM header line:	@SQ	SN:chr19	LN:61707364
+skipping SAM header line:	@SQ	SN:chr20	LN:66210255
+skipping SAM header line:	@SQ	SN:chr21	LN:45090682
+skipping SAM header line:	@SQ	SN:chr22	LN:51324926
+skipping SAM header line:	@SQ	SN:chrM	LN:16569
+skipping SAM header line:	@SQ	SN:chrX	LN:154349815
+skipping SAM header line:	@SQ	SN:chrY	LN:62460029
+skipping SAM header line:	@SQ	SN:M77789.2	LN:2686
+skipping SAM header line:	@SQ	SN:chrL	LN:48502
+skipping SAM header line:	@PG	ID:Bismark	VN:v0.23.1dev	CL:"bismark --bam --bowtie2 --genome /atium/Data/projects/hg002_wgbs/reference/bowtie2_combined --basename methylseq_SRR13051106 -1 /atium/Data/projects/hg002_wgbs/trimmed/methylseq_SRR13051106_1.trimmed.fastq -2 /atium/Data/projects/hg002_wgbs/trimmed/methylseq_SRR13051106_2.trimmed.fastq --temp_dir /scratch/phook --output_dir /atium/Data/projects/hg002_wgbs/bismark/methylseq"
+skipping SAM header line:	@PG	ID:samtools	PN:samtools	PP:Bismark	VN:1.15	CL:/home/phook2/code/pwh_projects/hg002_wgbs/workflow/.snakemake/conda/3db0a532baa65854df5d9f7aed09f8a9/bin/samtools view -bSh -
+skipping SAM header line:	@PG	ID:samtools.1	PN:samtools	PP:samtools	VN:1.15	CL:/home/phook2/code/pwh_projects/hg002_wgbs/workflow/.snakemake/conda/11fde9375277dfd610e453b9285928a5/bin/samtools view -h --threads 1 /atium/Data/projects/hg002_wgbs/bismark/methylseq/methylseq_SRR13051106_pe.bam
+skipping SAM header line:	@PG	ID:samtools.2	PN:samtools	PP:samtools.1	VN:1.15	CL:/home/phook2/code/pwh_projects/hg002_wgbs/workflow/.snakemake/conda/11fde9375277dfd610e453b9285928a5/bin/samtools view -bS --threads 1 -
+skipping SAM header line:	@PG	ID:samtools.3	PN:samtools	PP:samtools.2	VN:1.15	CL:/home/phook2/code/pwh_projects/hg002_wgbs/workflow/.snakemake/conda/3db0a532baa65854df5d9f7aed09f8a9/bin/samtools view -h /atium/Data/projects/hg002_wgbs/bismark/methylseq/methylseq_SRR13051106_pe.deduplicated.bam
+Processed lines: 500000
+Processed lines: 500000
+Processed lines: 500000
+Processed lines: 500000
+Processed lines: 500000
+Processed lines: 500000
+Processed lines: 1000000
+Processed lines: 1000000
+Processed lines: 1000000
+Processed lines: 1000000
+Processed lines: 1000000
+Processed lines: 1000000
+Processed lines: 1500000
+Processed lines: 1500000
+Processed lines: 1500000
+Processed lines: 1500000
+Processed lines: 1500000
+Processed lines: 1500000
+Processed lines: 2000000
+Processed lines: 2000000
+Processed lines: 2000000
+Processed lines: 2000000
+Processed lines: 2000000
+Processed lines: 2000000
+Processed lines: 2500000
+Processed lines: 2500000
+Processed lines: 2500000
+Processed lines: 2500000
+Processed lines: 2500000
+Processed lines: 2500000
+Processed lines: 3000000
+Processed lines: 3000000
+Processed lines: 3000000
+Processed lines: 3000000
+Processed lines: 3000000
+Processed lines: 3000000
+Processed lines: 3500000
+Processed lines: 3500000
+Processed lines: 3500000
+Processed lines: 3500000
+Processed lines: 3500000
+Processed lines: 3500000
+Processed lines: 4000000
+Processed lines: 4000000
+Processed lines: 4000000
+Processed lines: 4000000
+Processed lines: 4000000
+Processed lines: 4000000
+Processed lines: 4500000
+Processed lines: 4500000
+Processed lines: 4500000
+Processed lines: 4500000
+Processed lines: 4500000
+Processed lines: 4500000
+Processed lines: 5000000
+Processed lines: 5000000
+Processed lines: 5000000
+Processed lines: 5000000
+Processed lines: 5000000
+Processed lines: 5000000
+Processed lines: 5500000
+Processed lines: 5500000
+Processed lines: 5500000
+Processed lines: 5500000
+Processed lines: 5500000
+Processed lines: 5500000
+Processed lines: 6000000
+Processed lines: 6000000
+Processed lines: 6000000
+Processed lines: 6000000
+Processed lines: 6000000
+Processed lines: 6000000
+Processed lines: 6500000
+Processed lines: 6500000
+Processed lines: 6500000
+Processed lines: 6500000
+Processed lines: 6500000
+Processed lines: 6500000
+Processed lines: 7000000
+Processed lines: 7000000
+Processed lines: 7000000
+Processed lines: 7000000
+Processed lines: 7000000
+Processed lines: 7000000
+Processed lines: 7500000
+Processed lines: 7500000
+Processed lines: 7500000
+Processed lines: 7500000
+Processed lines: 7500000
+Processed lines: 7500000
+Processed lines: 8000000
+Processed lines: 8000000
+Processed lines: 8000000
+Processed lines: 8000000
+Processed lines: 8000000
+Processed lines: 8000000
+Processed lines: 8500000
+Processed lines: 8500000
+Processed lines: 8500000
+Processed lines: 8500000
+Processed lines: 8500000
+Processed lines: 8500000
+Processed lines: 9000000
+Processed lines: 9000000
+Processed lines: 9000000
+Processed lines: 9000000
+Processed lines: 9000000
+Processed lines: 9000000
+Processed lines: 9500000
+Processed lines: 9500000
+Processed lines: 9500000
+Processed lines: 9500000
+Processed lines: 9500000
+Processed lines: 9500000
+Processed lines: 10000000
+Processed lines: 10000000
+Processed lines: 10000000
+Processed lines: 10000000
+Processed lines: 10000000
+Processed lines: 10000000
+Processed lines: 10500000
+Processed lines: 10500000
+Processed lines: 10500000
+Processed lines: 10500000
+Processed lines: 10500000
+Processed lines: 10500000
+Processed lines: 11000000
+Processed lines: 11000000
+Processed lines: 11000000
+Processed lines: 11000000
+Processed lines: 11000000
+Processed lines: 11000000
+Processed lines: 11500000
+Processed lines: 11500000
+Processed lines: 11500000
+Processed lines: 11500000
+Processed lines: 11500000
+Processed lines: 11500000
+Processed lines: 12000000
+Processed lines: 12000000
+Processed lines: 12000000
+Processed lines: 12000000
+Processed lines: 12000000
+Processed lines: 12000000
+Processed lines: 12500000
+Processed lines: 12500000
+Processed lines: 12500000
+Processed lines: 12500000
+Processed lines: 12500000
+Processed lines: 12500000
+Processed lines: 13000000
+Processed lines: 13000000
+Processed lines: 13000000
+Processed lines: 13000000
+Processed lines: 13000000
+Processed lines: 13000000
+Processed lines: 13500000
+Processed lines: 13500000
+Processed lines: 13500000
+Processed lines: 13500000
+Processed lines: 13500000
+Processed lines: 13500000
+Processed lines: 14000000
+Processed lines: 14000000
+Processed lines: 14000000
+Processed lines: 14000000
+Processed lines: 14000000
+Processed lines: 14000000
+Processed lines: 14500000
+Processed lines: 14500000
+Processed lines: 14500000
+Processed lines: 14500000
+Processed lines: 14500000
+Processed lines: 14500000
+Processed lines: 15000000
+Processed lines: 15000000
+Processed lines: 15000000
+Processed lines: 15000000
+Processed lines: 15000000
+Processed lines: 15000000
+Processed lines: 15500000
+Processed lines: 15500000
+Processed lines: 15500000
+Processed lines: 15500000
+Processed lines: 15500000
+Processed lines: 15500000
+Processed lines: 16000000
+Processed lines: 16000000
+Processed lines: 16000000
+Processed lines: 16000000
+Processed lines: 16000000
+Processed lines: 16000000
+Processed lines: 16500000
+Processed lines: 16500000
+Processed lines: 16500000
+Processed lines: 16500000
+Processed lines: 16500000
+Processed lines: 16500000
+Processed lines: 17000000
+Processed lines: 17000000
+Processed lines: 17000000
+Processed lines: 17000000
+Processed lines: 17000000
+Processed lines: 17000000
+Processed lines: 17500000
+Processed lines: 17500000
+Processed lines: 17500000
+Processed lines: 17500000
+Processed lines: 17500000
+Processed lines: 17500000
+Processed lines: 18000000
+Processed lines: 18000000
+Processed lines: 18000000
+Processed lines: 18000000
+Processed lines: 18000000
+Processed lines: 18000000
+Processed lines: 18500000
+Processed lines: 18500000
+Processed lines: 18500000
+Processed lines: 18500000
+Processed lines: 18500000
+Processed lines: 18500000
+Processed lines: 19000000
+Processed lines: 19000000
+Processed lines: 19000000
+Processed lines: 19000000
+Processed lines: 19000000
+Processed lines: 19000000
+Processed lines: 19500000
+Processed lines: 19500000
+Processed lines: 19500000
+Processed lines: 19500000
+Processed lines: 19500000
+Processed lines: 19500000
+Processed lines: 20000000
+Processed lines: 20000000
+Processed lines: 20000000
+Processed lines: 20000000
+Processed lines: 20000000
+Processed lines: 20000000
+Processed lines: 20500000
+Processed lines: 20500000
+Processed lines: 20500000
+Processed lines: 20500000
+Processed lines: 20500000
+Processed lines: 20500000
+Processed lines: 21000000
+Processed lines: 21000000
+Processed lines: 21000000
+Processed lines: 21000000
+Processed lines: 21000000
+Processed lines: 21000000
+Processed lines: 21500000
+Processed lines: 21500000
+Processed lines: 21500000
+Processed lines: 21500000
+Processed lines: 21500000
+Processed lines: 21500000
+Processed lines: 22000000
+Processed lines: 22000000
+Processed lines: 22000000
+Processed lines: 22000000
+Processed lines: 22000000
+Processed lines: 22000000
+Processed lines: 22500000
+Processed lines: 22500000
+Processed lines: 22500000
+Processed lines: 22500000
+Processed lines: 22500000
+Processed lines: 22500000
+Processed lines: 23000000
+Processed lines: 23000000
+Processed lines: 23000000
+Processed lines: 23000000
+Processed lines: 23000000
+Processed lines: 23000000
+Processed lines: 23500000
+Processed lines: 23500000
+Processed lines: 23500000
+Processed lines: 23500000
+Processed lines: 23500000
+Processed lines: 23500000
+Processed lines: 24000000
+Processed lines: 24000000
+Processed lines: 24000000
+Processed lines: 24000000
+Processed lines: 24000000
+Processed lines: 24000000
+Processed lines: 24500000
+Processed lines: 24500000
+Processed lines: 24500000
+Processed lines: 24500000
+Processed lines: 24500000
+Processed lines: 24500000
+Processed lines: 25000000
+Processed lines: 25000000
+Processed lines: 25000000
+Processed lines: 25000000
+Processed lines: 25000000
+Processed lines: 25000000
+Processed lines: 25500000
+Processed lines: 25500000
+Processed lines: 25500000
+Processed lines: 25500000
+Processed lines: 25500000
+Processed lines: 25500000
+Processed lines: 26000000
+Processed lines: 26000000
+Processed lines: 26000000
+Processed lines: 26000000
+Processed lines: 26000000
+Processed lines: 26000000
+Processed lines: 26500000
+Processed lines: 26500000
+Processed lines: 26500000
+Processed lines: 26500000
+Processed lines: 26500000
+Processed lines: 26500000
+Processed lines: 27000000
+Processed lines: 27000000
+Processed lines: 27000000
+Processed lines: 27000000
+Processed lines: 27000000
+Processed lines: 27000000
+Processed lines: 27500000
+Processed lines: 27500000
+Processed lines: 27500000
+Processed lines: 27500000
+Processed lines: 27500000
+Processed lines: 27500000
+Processed lines: 28000000
+Processed lines: 28000000
+Processed lines: 28000000
+Processed lines: 28000000
+Processed lines: 28000000
+Processed lines: 28000000
+Processed lines: 28500000
+Processed lines: 28500000
+Processed lines: 28500000
+Processed lines: 28500000
+Processed lines: 28500000
+Processed lines: 28500000
+Processed lines: 29000000
+Processed lines: 29000000
+Processed lines: 29000000
+Processed lines: 29000000
+Processed lines: 29000000
+Processed lines: 29000000
+Processed lines: 29500000
+Processed lines: 29500000
+Processed lines: 29500000
+Processed lines: 29500000
+Processed lines: 29500000
+Processed lines: 29500000
+Processed lines: 30000000
+Processed lines: 30000000
+Processed lines: 30000000
+Processed lines: 30000000
+Processed lines: 30000000
+Processed lines: 30000000
+Processed lines: 30500000
+Processed lines: 30500000
+Processed lines: 30500000
+Processed lines: 30500000
+Processed lines: 30500000
+Processed lines: 30500000
+Processed lines: 31000000
+Processed lines: 31000000
+Processed lines: 31000000
+Processed lines: 31000000
+Processed lines: 31000000
+Processed lines: 31000000
+Processed lines: 31500000
+Processed lines: 31500000
+Processed lines: 31500000
+Processed lines: 31500000
+Processed lines: 31500000
+Processed lines: 31500000
+Processed lines: 32000000
+Processed lines: 32000000
+Processed lines: 32000000
+Processed lines: 32000000
+Processed lines: 32000000
+Processed lines: 32000000
+Processed lines: 32500000
+Processed lines: 32500000
+Processed lines: 32500000
+Processed lines: 32500000
+Processed lines: 32500000
+Processed lines: 32500000
+Processed lines: 33000000
+Processed lines: 33000000
+Processed lines: 33000000
+Processed lines: 33000000
+Processed lines: 33000000
+Processed lines: 33000000
+Processed lines: 33500000
+Processed lines: 33500000
+Processed lines: 33500000
+Processed lines: 33500000
+Processed lines: 33500000
+Processed lines: 33500000
+Processed lines: 34000000
+Processed lines: 34000000
+Processed lines: 34000000
+Processed lines: 34000000
+Processed lines: 34000000
+Processed lines: 34000000
+Processed lines: 34500000
+Processed lines: 34500000
+Processed lines: 34500000
+Processed lines: 34500000
+Processed lines: 34500000
+Processed lines: 34500000
+Processed lines: 35000000
+Processed lines: 35000000
+Processed lines: 35000000
+Processed lines: 35000000
+Processed lines: 35000000
+Processed lines: 35000000
+Processed lines: 35500000
+Processed lines: 35500000
+Processed lines: 35500000
+Processed lines: 35500000
+Processed lines: 35500000
+Processed lines: 35500000
+Processed lines: 36000000
+Processed lines: 36000000
+Processed lines: 36000000
+Processed lines: 36000000
+Processed lines: 36000000
+Processed lines: 36000000
+Processed lines: 36500000
+Processed lines: 36500000
+Processed lines: 36500000
+Processed lines: 36500000
+Processed lines: 36500000
+Processed lines: 36500000
+Processed lines: 37000000
+Processed lines: 37000000
+Processed lines: 37000000
+Processed lines: 37000000
+Processed lines: 37000000
+Processed lines: 37000000
+Processed lines: 37500000
+Processed lines: 37500000
+Processed lines: 37500000
+Processed lines: 37500000
+Processed lines: 37500000
+Processed lines: 37500000
+Processed lines: 38000000
+Processed lines: 38000000
+Processed lines: 38000000
+Processed lines: 38000000
+Processed lines: 38000000
+Processed lines: 38000000
+Processed lines: 38500000
+Processed lines: 38500000
+Processed lines: 38500000
+Processed lines: 38500000
+Processed lines: 38500000
+Processed lines: 38500000
+Processed lines: 39000000
+Processed lines: 39000000
+Processed lines: 39000000
+Processed lines: 39000000
+Processed lines: 39000000
+Processed lines: 39000000
+Processed lines: 39500000
+Processed lines: 39500000
+Processed lines: 39500000
+Processed lines: 39500000
+Processed lines: 39500000
+Processed lines: 39500000
+Processed lines: 40000000
+Processed lines: 40000000
+Processed lines: 40000000
+Processed lines: 40000000
+Processed lines: 40000000
+Processed lines: 40000000
+Processed lines: 40500000
+Processed lines: 40500000
+Processed lines: 40500000
+Processed lines: 40500000
+Processed lines: 40500000
+Processed lines: 40500000
+Processed lines: 41000000
+Processed lines: 41000000
+Processed lines: 41000000
+Processed lines: 41000000
+Processed lines: 41000000
+Processed lines: 41000000
+Processed lines: 41500000
+Processed lines: 41500000
+Processed lines: 41500000
+Processed lines: 41500000
+Processed lines: 41500000
+Processed lines: 41500000
+Processed lines: 42000000
+Processed lines: 42000000
+Processed lines: 42000000
+Processed lines: 42000000
+Processed lines: 42000000
+Processed lines: 42000000
+Processed lines: 42500000
+Processed lines: 42500000
+Processed lines: 42500000
+Processed lines: 42500000
+Processed lines: 42500000
+Processed lines: 42500000
+Processed lines: 43000000
+Processed lines: 43000000
+Processed lines: 43000000
+Processed lines: 43000000
+Processed lines: 43000000
+Processed lines: 43000000
+Processed lines: 43500000
+Processed lines: 43500000
+Processed lines: 43500000
+Processed lines: 43500000
+Processed lines: 43500000
+Processed lines: 43500000
+Processed lines: 44000000
+Processed lines: 44000000
+Processed lines: 44000000
+Processed lines: 44000000
+Processed lines: 44000000
+Processed lines: 44000000
+Processed lines: 44500000
+Processed lines: 44500000
+Processed lines: 44500000
+Processed lines: 44500000
+Processed lines: 44500000
+Processed lines: 44500000
+Processed lines: 45000000
+Processed lines: 45000000
+Processed lines: 45000000
+Processed lines: 45000000
+Processed lines: 45000000
+Processed lines: 45000000
+Processed lines: 45500000
+Processed lines: 45500000
+Processed lines: 45500000
+Processed lines: 45500000
+Processed lines: 45500000
+Processed lines: 45500000
+Processed lines: 46000000
+Processed lines: 46000000
+Processed lines: 46000000
+Processed lines: 46000000
+Processed lines: 46000000
+Processed lines: 46500000
+Processed lines: 46000000
+Processed lines: 46500000
+Processed lines: 46500000
+Processed lines: 46500000
+Processed lines: 46500000
+Processed lines: 47000000
+Processed lines: 46500000
+Processed lines: 47000000
+Processed lines: 47000000
+Processed lines: 47000000
+Processed lines: 47000000
+Processed lines: 47500000
+Processed lines: 47000000
+Processed lines: 47500000
+Processed lines: 47500000
+Processed lines: 47500000
+Processed lines: 47500000
+Processed lines: 48000000
+Processed lines: 47500000
+Processed lines: 48000000
+Processed lines: 48000000
+Processed lines: 48000000
+Processed lines: 48000000
+Processed lines: 48500000
+Processed lines: 48000000
+Processed lines: 48500000
+Processed lines: 48500000
+Processed lines: 48500000
+Processed lines: 48500000
+Processed lines: 49000000
+Processed lines: 48500000
+Processed lines: 49000000
+Processed lines: 49000000
+Processed lines: 49000000
+Processed lines: 49500000
+Processed lines: 49000000
+Processed lines: 49000000
+Processed lines: 49500000
+Processed lines: 49500000
+Processed lines: 49500000
+Processed lines: 50000000
+Processed lines: 49500000
+Processed lines: 49500000
+Processed lines: 50000000
+Processed lines: 50000000
+Processed lines: 50000000
+Processed lines: 50000000
+Processed lines: 50500000
+Processed lines: 50000000
+Processed lines: 50500000
+Processed lines: 50500000
+Processed lines: 50500000
+Processed lines: 51000000
+Processed lines: 50500000
+Processed lines: 50500000
+Processed lines: 51000000
+Processed lines: 51000000
+Processed lines: 51000000
+Processed lines: 51500000
+Processed lines: 51000000
+Processed lines: 51000000
+Processed lines: 51500000
+Processed lines: 51500000
+Processed lines: 51500000
+Processed lines: 52000000
+Processed lines: 51500000
+Processed lines: 51500000
+Processed lines: 52000000
+Processed lines: 52000000
+Processed lines: 52000000
+Processed lines: 52500000
+Processed lines: 52000000
+Processed lines: 52000000
+Processed lines: 52500000
+Processed lines: 52500000
+Processed lines: 52500000
+Processed lines: 53000000
+Processed lines: 52500000
+Processed lines: 52500000
+Processed lines: 53000000
+Processed lines: 53000000
+Processed lines: 53500000
+Processed lines: 53000000
+Processed lines: 53000000
+Processed lines: 53000000
+Processed lines: 53500000
+Processed lines: 53500000
+Processed lines: 53500000
+Processed lines: 54000000
+Processed lines: 53500000
+Processed lines: 53500000
+Processed lines: 54000000
+Processed lines: 54000000
+Processed lines: 54000000
+Processed lines: 54500000
+Processed lines: 54000000
+Processed lines: 54000000
+Processed lines: 54500000
+Processed lines: 54500000
+Processed lines: 54500000
+Processed lines: 55000000
+Processed lines: 54500000
+Processed lines: 54500000
+Processed lines: 55000000
+Processed lines: 55000000
+Processed lines: 55000000
+Processed lines: 55500000
+Processed lines: 55000000
+Processed lines: 55000000
+Processed lines: 55500000
+Processed lines: 55500000
+Processed lines: 55500000
+Processed lines: 56000000
+Processed lines: 55500000
+Processed lines: 55500000
+Now waiting for all child processes to complete
+Processed lines: 56000000
+Processed lines: 56000000
+Processed lines: 56000000
+Processed lines: 56000000
+Processed lines: 56000000
+Finished processing child process. Exiting..
+Finished processing child process. Exiting..
+Finished processing child process. Exiting..
+Finished processing child process. Exiting..
+Finished processing child process. Exiting..
+All child process successfully finished.
+Merging individual splitting reports into overall report: '/atium/Data/projects/hg002_wgbs/bismark/methylseq/meth_extraction/methylseq_SRR13051106_pe.deduplicated_splitting_report.txt'
+Merging from these individual files:
+/atium/Data/projects/hg002_wgbs/bismark/methylseq/meth_extraction/methylseq_SRR13051106_pe.deduplicated_splitting_report.txt.1
+/atium/Data/projects/hg002_wgbs/bismark/methylseq/meth_extraction/methylseq_SRR13051106_pe.deduplicated_splitting_report.txt.2
+/atium/Data/projects/hg002_wgbs/bismark/methylseq/meth_extraction/methylseq_SRR13051106_pe.deduplicated_splitting_report.txt.3
+/atium/Data/projects/hg002_wgbs/bismark/methylseq/meth_extraction/methylseq_SRR13051106_pe.deduplicated_splitting_report.txt.4
+/atium/Data/projects/hg002_wgbs/bismark/methylseq/meth_extraction/methylseq_SRR13051106_pe.deduplicated_splitting_report.txt.5
+/atium/Data/projects/hg002_wgbs/bismark/methylseq/meth_extraction/methylseq_SRR13051106_pe.deduplicated_splitting_report.txt.6
+
+
+Processed 56380278 lines in total
+Total number of methylation call strings processed: 112760556
+
+Final Cytosine Methylation Report
+=================================
+Total number of C's analysed:	2233551827
+
+Total methylated C's in CpG context:	68538957
+Total methylated C's in CHG context:	2475119
+Total methylated C's in CHH context:	8614875
+
+Total C to T conversions in CpG context:	37068685
+Total C to T conversions in CHG context:	472520247
+Total C to T conversions in CHH context:	1644333944
+
+C methylated in CpG context:	64.9%
+C methylated in non-CpG context:	0.5%
+
+
+
+Merging individual M-bias reports into overall M-bias statistics from these 6 individual files:
+/atium/Data/projects/hg002_wgbs/bismark/methylseq/meth_extraction/methylseq_SRR13051106_pe.deduplicated_splitting_report.txt.1.mbias
+/atium/Data/projects/hg002_wgbs/bismark/methylseq/meth_extraction/methylseq_SRR13051106_pe.deduplicated_splitting_report.txt.2.mbias
+/atium/Data/projects/hg002_wgbs/bismark/methylseq/meth_extraction/methylseq_SRR13051106_pe.deduplicated_splitting_report.txt.3.mbias
+/atium/Data/projects/hg002_wgbs/bismark/methylseq/meth_extraction/methylseq_SRR13051106_pe.deduplicated_splitting_report.txt.4.mbias
+/atium/Data/projects/hg002_wgbs/bismark/methylseq/meth_extraction/methylseq_SRR13051106_pe.deduplicated_splitting_report.txt.5.mbias
+/atium/Data/projects/hg002_wgbs/bismark/methylseq/meth_extraction/methylseq_SRR13051106_pe.deduplicated_splitting_report.txt.6.mbias
+
+Deleting unused files ...
+
+/atium/Data/projects/hg002_wgbs/bismark/methylseq/meth_extraction/CpG_context_methylseq_SRR13051106_pe.deduplicated.txt.gz contains data ->	kept
+/atium/Data/projects/hg002_wgbs/bismark/methylseq/meth_extraction/Non_CpG_context_methylseq_SRR13051106_pe.deduplicated.txt.gz contains data ->	kept
+
+

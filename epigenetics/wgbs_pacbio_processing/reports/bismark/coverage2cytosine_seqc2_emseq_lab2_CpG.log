@@ -1,0 +1,89 @@
+Output will be written into the directory: /atium/Data/projects/hg002_wgbs/bismark/emseq/meth_extraction/bedgraph/
+Summary of parameters for genome-wide cytosine report:
+==============================================================================
+Coverage infile:				/atium/Data/projects/hg002_wgbs/bismark/emseq/meth_extraction/bedgraph/seqc2_emseq_lab2_CpG.gz.bismark.cov.gz
+Output directory:				>/atium/Data/projects/hg002_wgbs/bismark/emseq/meth_extraction/bedgraph/<
+Parent directory:				>/home/phook2/code/pwh_projects/hg002_wgbs/workflow/<
+Genome directory:				>/atium/Data/projects/hg002_wgbs/reference/bowtie2_combined/<
+Coverage threshold				0 (all positions will be reported, default)
+CX context:					no (CpG context only, default)
+Genome coordinates used:			1-based (default)
+GZIP compression:				yes
+Split by chromosome:				no
+
+
+Now reading in and storing sequence information of the genome specified in: /atium/Data/projects/hg002_wgbs/reference/bowtie2_combined/
+
+chr chr1 (248387328 bp)
+chr chr2 (242696752 bp)
+chr chr3 (201105948 bp)
+chr chr4 (193574945 bp)
+chr chr5 (182045439 bp)
+chr chr6 (172126628 bp)
+chr chr7 (160567428 bp)
+chr chr8 (146259331 bp)
+chr chr9 (150617247 bp)
+chr chr10 (134758134 bp)
+chr chr11 (135127769 bp)
+chr chr12 (133324548 bp)
+chr chr13 (113566686 bp)
+chr chr14 (101161492 bp)
+chr chr15 (99753195 bp)
+chr chr16 (96330374 bp)
+chr chr17 (84276897 bp)
+chr chr18 (80542538 bp)
+chr chr19 (61707364 bp)
+chr chr20 (66210255 bp)
+chr chr21 (45090682 bp)
+chr chr22 (51324926 bp)
+chr chrM (16569 bp)
+chr chrX (154349815 bp)
+chr chrY (62460029 bp)
+chr M77789.2 (2686 bp)
+chr chrL (48502 bp)
+
+Stored sequence information of 27 chromosomes/scaffolds in total
+
+==============================================================================
+Methylation information will now be written into a genome-wide cytosine report
+==============================================================================
+
+Adding context-specific methylation summaries
+
+>>> Writing genome-wide cytosine report to: seqc2_emseq_lab2.CpG_report.txt.gz <<<
+
+>>> Writing all cytosine context summary file to: seqc2_emseq_lab2.cytosine_context_summary.txt <<<
+
+Storing all covered cytosine positions for chromosome: M77789.2
+Writing cytosine report for chromosome M77789.2 (stored 345 different covered positions)
+Writing cytosine report for chromosome chr1 (stored 5341520 different covered positions)
+Writing cytosine report for chromosome chr10 (stored 2757340 different covered positions)
+Writing cytosine report for chromosome chr11 (stored 2628750 different covered positions)
+Writing cytosine report for chromosome chr12 (stored 2591764 different covered positions)
+Writing cytosine report for chromosome chr13 (stored 1721684 different covered positions)
+Writing cytosine report for chromosome chr14 (stored 1936938 different covered positions)
+Writing cytosine report for chromosome chr15 (stored 2001583 different covered positions)
+Writing cytosine report for chromosome chr16 (stored 2537734 different covered positions)
+Writing cytosine report for chromosome chr17 (stored 2390848 different covered positions)
+Writing cytosine report for chromosome chr18 (stored 1426973 different covered positions)
+Writing cytosine report for chromosome chr19 (stored 2194695 different covered positions)
+Writing cytosine report for chromosome chr2 (stored 4353101 different covered positions)
+Writing cytosine report for chromosome chr20 (stored 1538558 different covered positions)
+Writing cytosine report for chromosome chr21 (stored 862963 different covered positions)
+Writing cytosine report for chromosome chr22 (stored 1403804 different covered positions)
+Writing cytosine report for chromosome chr3 (stored 3299206 different covered positions)
+Writing cytosine report for chromosome chr4 (stored 2951793 different covered positions)
+Writing cytosine report for chromosome chr5 (stored 3050838 different covered positions)
+Writing cytosine report for chromosome chr6 (stored 2992010 different covered positions)
+Writing cytosine report for chromosome chr7 (stored 3159396 different covered positions)
+Writing cytosine report for chromosome chr8 (stored 2611563 different covered positions)
+Writing cytosine report for chromosome chr9 (stored 2912253 different covered positions)
+Writing cytosine report for chromosome chrL (stored 6361 different covered positions)
+Writing cytosine report for chromosome chrM (stored 899 different covered positions)
+Writing cytosine report for chromosome chrX (stored 2374285 different covered positions)
+Writing cytosine report for last chromosome chrY (stored 682156 different covered positions)
+Finished writing out cytosine report for covered chromosomes (processed 27 chromosomes/scaffolds in total)
+
+Now processing chromosomes that were not covered by any methylation calls in the coverage file...
+All chromosomes in the genome were covered by at least some reads. coverage2cytosine processing complete.
+

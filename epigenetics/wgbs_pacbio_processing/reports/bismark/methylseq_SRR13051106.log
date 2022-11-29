@@ -1,0 +1,771 @@
+Bowtie 2 seems to be working fine (tested command 'bowtie2 --version' [2.4.5])
+Output format is BAM (default)
+Alignments will be written out in BAM format. Samtools found here: '/home/phook2/code/pwh_projects/hg002_wgbs/workflow/.snakemake/conda/3db0a532baa65854df5d9f7aed09f8a9/bin/samtools'
+Reference genome folder provided is /atium/Data/projects/hg002_wgbs/reference/bowtie2_combined/	(absolute path is '/atium/Data/projects/hg002_wgbs/reference/bowtie2_combined/)'
+FastQ format assumed (by default)
+
+Input files to be analysed (in current folder '/home/phook2/code/pwh_projects/hg002_wgbs/workflow'):
+/atium/Data/projects/hg002_wgbs/trimmed/methylseq_SRR13051106_1.trimmed.fastq
+/atium/Data/projects/hg002_wgbs/trimmed/methylseq_SRR13051106_2.trimmed.fastq
+Library is assumed to be strand-specific (directional), alignments to strands complementary to the original top or bottom strands will be ignored (i.e. not performed!)
+Output will be written into the directory: /atium/Data/projects/hg002_wgbs/bismark/methylseq/
+
+Using temp directory: /scratch/phook
+Temporary files will be written into the directory: /scratch/phook/
+Setting parallelization to single-threaded (default)
+
+Summary of all aligner options:	-q --score-min L,0,-0.2 --ignore-quals --no-mixed --no-discordant --dovetail --maxins 500
+Current working directory is: /home/phook2/code/pwh_projects/hg002_wgbs/workflow
+
+Now reading in and storing sequence information of the genome specified in: /atium/Data/projects/hg002_wgbs/reference/bowtie2_combined/
+
+chr chr1 (248387328 bp)
+chr chr2 (242696752 bp)
+chr chr3 (201105948 bp)
+chr chr4 (193574945 bp)
+chr chr5 (182045439 bp)
+chr chr6 (172126628 bp)
+chr chr7 (160567428 bp)
+chr chr8 (146259331 bp)
+chr chr9 (150617247 bp)
+chr chr10 (134758134 bp)
+chr chr11 (135127769 bp)
+chr chr12 (133324548 bp)
+chr chr13 (113566686 bp)
+chr chr14 (101161492 bp)
+chr chr15 (99753195 bp)
+chr chr16 (96330374 bp)
+chr chr17 (84276897 bp)
+chr chr18 (80542538 bp)
+chr chr19 (61707364 bp)
+chr chr20 (66210255 bp)
+chr chr21 (45090682 bp)
+chr chr22 (51324926 bp)
+chr chrM (16569 bp)
+chr chrX (154349815 bp)
+chr chrY (62460029 bp)
+chr M77789.2 (2686 bp)
+chr chrL (48502 bp)
+
+Single-core mode: setting pid to 1
+
+Paired-end alignments will be performed
+=======================================
+
+The provided filenames for paired-end alignments are /atium/Data/projects/hg002_wgbs/trimmed/methylseq_SRR13051106_1.trimmed.fastq and /atium/Data/projects/hg002_wgbs/trimmed/methylseq_SRR13051106_2.trimmed.fastq
+Input files are in FastQ format
+Writing a C -> T converted version of the input file methylseq_SRR13051106_1.trimmed.fastq to /scratch/phook/methylseq_SRR13051106_1.trimmed.fastq_C_to_T.fastq
+
+Created C -> T converted version of the FastQ file methylseq_SRR13051106_1.trimmed.fastq (83186285 sequences in total)
+
+Writing a G -> A converted version of the input file methylseq_SRR13051106_2.trimmed.fastq to /scratch/phook/methylseq_SRR13051106_2.trimmed.fastq_G_to_A.fastq
+
+Created G -> A converted version of the FastQ file methylseq_SRR13051106_2.trimmed.fastq (83186285 sequences in total)
+
+Input files are methylseq_SRR13051106_1.trimmed.fastq_C_to_T.fastq and methylseq_SRR13051106_2.trimmed.fastq_G_to_A.fastq (FastQ)
+Now running 2 instances of Bowtie 2 against the bisulfite genome of /atium/Data/projects/hg002_wgbs/reference/bowtie2_combined/ with the specified options: -q --score-min L,0,-0.2 --ignore-quals --no-mixed --no-discordant --dovetail --maxins 500
+
+Now starting a Bowtie 2 paired-end alignment for CTread1GAread2CTgenome (reading in sequences from /scratch/phook/methylseq_SRR13051106_1.trimmed.fastq_C_to_T.fastq and /scratch/phook/methylseq_SRR13051106_2.trimmed.fastq_G_to_A.fastq, with the options: -q --score-min L,0,-0.2 --ignore-quals --no-mixed --no-discordant --dovetail --maxins 500 --norc))
+Found first alignment:
+SRR13051106.1_1/1/1	77	*	0	0	*	*	0	0	TTTTGGTTGGAATTAAATTGAATAGATTGGTTTAGTTTTTTAGTTTATATTTTTTTTTTGTGTTGGAGGTTTTTAGTTTTTAAATATTTGATTTTAAGTTGTTTAGGTTTGGGATTTGGATTGGTTTTTTT	FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF,FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF,FFF	YT:Z:UP
+SRR13051106.1_1/2/2	141	*	0	0	*	*	0	0	AATCCAAATCCCAAACCTAAACAACTTAAAATCAAATATTTAAAAACTAAAAACCTCCAACACAAAAAAAAAATATAAACTAAAAAACTAAACCAATCTATTCAATTTAATTCCAACCAAAATATACTATA	FFFFFFFFFFFFFF:FFFFFFFFFFFFFFFFFFFF:FFFFFFF:FFFFFFF:FFFFFFFFFFFFFFF:FFFF:FFFFFFFFFFFFFFFF:FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF:	YT:Z:UP
+Now starting a Bowtie 2 paired-end alignment for CTread1GAread2GAgenome (reading in sequences from /scratch/phook/methylseq_SRR13051106_1.trimmed.fastq_C_to_T.fastq and /scratch/phook/methylseq_SRR13051106_2.trimmed.fastq_G_to_A.fastq, with the options: -q --score-min L,0,-0.2 --ignore-quals --no-mixed --no-discordant --dovetail --maxins 500 --nofw))
+Found first alignment:
+SRR13051106.1_1/1/1	83	chr1_GA_converted	162193619	42	131M	=	162193628	140	AAAAAAACCAATCCAAATCCCAAACCTAAACAACTTAAAATCAAATATTTAAAAACTAAAAACCTCCAACACAAAAAAAAAATATAAACTAAAAAACTAAACCAATCTATTCAATTTAATTCCAACCAAAA	FFF,FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF,FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF	AS:i:0	XN:i:0	XM:i:0	XO:i:0	XG:i:0	NM:i:0	MD:Z:131	YS:i:0	YT:Z:CP
+SRR13051106.1_1/2/2	163	chr1_GA_converted	162193628	42	131M	=	162193619	-140	AATCCAAATCCCAAACCTAAACAACTTAAAATCAAATATTTAAAAACTAAAAACCTCCAACACAAAAAAAAAATATAAACTAAAAAACTAAACCAATCTATTCAATTTAATTCCAACCAAAATATACTATA	FFFFFFFFFFFFFF:FFFFFFFFFFFFFFFFFFFF:FFFFFFF:FFFFFFF:FFFFFFFFFFFFFFF:FFFF:FFFFFFFFFFFFFFFF:FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF:	AS:i:0	XN:i:0	XM:i:0	XO:i:0	XG:i:0	NM:i:0	MD:Z:131	YS:i:0	YT:Z:CP
+
+>>> Writing bisulfite mapping results to methylseq_SRR13051106_pe.bam <<<
+
+
+Reading in the sequence files /atium/Data/projects/hg002_wgbs/trimmed/methylseq_SRR13051106_1.trimmed.fastq and /atium/Data/projects/hg002_wgbs/trimmed/methylseq_SRR13051106_2.trimmed.fastq
+Chromosomal sequence could not be extracted for	SRR13051106.378081_378081/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.384716_384716/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.610811_610811/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.673049_673049/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.674138_674138/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.998755_998755/1	chrL	1
+Processed 1000000 sequence pairs so far
+Chromosomal sequence could not be extracted for	SRR13051106.1361388_1361388/1	chrL	48374
+Chromosomal sequence could not be extracted for	SRR13051106.1373438_1373438/1	chrL	48373
+Chromosomal sequence could not be extracted for	SRR13051106.1408298_1408298/1	chrL	1
+Chromosomal sequence could not be extracted for	SRR13051106.1439455_1439455/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.1486978_1486978/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.1704856_1704856/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.1812923_1812923/1	chrL	48371
+Processed 2000000 sequence pairs so far
+Chromosomal sequence could not be extracted for	SRR13051106.2106616_2106616/1	chrL	48374
+Chromosomal sequence could not be extracted for	SRR13051106.2380528_2380528/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.2388198_2388198/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.2718156_2718156/1	chrL	1
+Chromosomal sequence could not be extracted for	SRR13051106.2877579_2877579/1	chrL	48371
+Processed 3000000 sequence pairs so far
+Chromosomal sequence could not be extracted for	SRR13051106.3055596_3055596/1	chrL	48373
+Chromosomal sequence could not be extracted for	SRR13051106.3116507_3116507/1	chrL	48373
+Chromosomal sequence could not be extracted for	SRR13051106.3420014_3420014/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.3774310_3774310/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.3826342_3826342/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.3953150_3953150/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.3966296_3966296/1	chrL	48371
+Processed 4000000 sequence pairs so far
+Chromosomal sequence could not be extracted for	SRR13051106.4098815_4098815/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.4147813_4147813/1	chrL	48373
+Chromosomal sequence could not be extracted for	SRR13051106.4359501_4359501/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.4558796_4558796/1	chrL	48371
+Processed 5000000 sequence pairs so far
+Chromosomal sequence could not be extracted for	SRR13051106.5286186_5286186/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.5665034_5665034/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.5935380_5935380/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.5994509_5994509/1	chrL	48371
+Processed 6000000 sequence pairs so far
+Chromosomal sequence could not be extracted for	SRR13051106.6409251_6409251/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.6483986_6483986/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.6545495_6545495/1	chrL	48373
+Chromosomal sequence could not be extracted for	SRR13051106.6545496_6545496/1	chrL	48373
+Chromosomal sequence could not be extracted for	SRR13051106.6712413_6712413/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.6819564_6819564/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.6913731_6913731/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.6974511_6974511/1	chrL	48371
+Processed 7000000 sequence pairs so far
+Chromosomal sequence could not be extracted for	SRR13051106.7089212_7089212/1	chrL	48374
+Chromosomal sequence could not be extracted for	SRR13051106.7089858_7089858/1	chrL	48374
+Chromosomal sequence could not be extracted for	SRR13051106.7557607_7557607/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.7909350_7909350/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.7916700_7916700/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.7919915_7919915/1	chrL	48373
+Processed 8000000 sequence pairs so far
+Chromosomal sequence could not be extracted for	SRR13051106.8157879_8157879/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.8159344_8159344/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.8159976_8159976/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.8216958_8216958/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.8651924_8651924/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.8860743_8860743/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.8884689_8884689/1	chrL	48374
+Chromosomal sequence could not be extracted for	SRR13051106.8915533_8915533/1	chrL	48373
+Processed 9000000 sequence pairs so far
+Chromosomal sequence could not be extracted for	SRR13051106.9121655_9121655/1	chrM	16440
+Chromosomal sequence could not be extracted for	SRR13051106.9201591_9201591/1	chrL	48374
+Chromosomal sequence could not be extracted for	SRR13051106.9278331_9278331/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.9535321_9535321/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.9879218_9879218/1	chrM	2
+Chromosomal sequence could not be extracted for	SRR13051106.9994958_9994958/1	chrL	48373
+Processed 10000000 sequence pairs so far
+Chromosomal sequence could not be extracted for	SRR13051106.10081103_10081103/1	chrL	48374
+Chromosomal sequence could not be extracted for	SRR13051106.10142882_10142882/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.10160681_10160681/1	chrL	48373
+Chromosomal sequence could not be extracted for	SRR13051106.10241580_10241580/1	chrL	48376
+Chromosomal sequence could not be extracted for	SRR13051106.10306138_10306138/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.10325638_10325638/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.10415868_10415868/1	chrL	48374
+Chromosomal sequence could not be extracted for	SRR13051106.10518033_10518033/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.10519354_10519354/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.10599907_10599907/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.10694612_10694612/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.10832441_10832441/1	chrL	48374
+Processed 11000000 sequence pairs so far
+Chromosomal sequence could not be extracted for	SRR13051106.11002294_11002294/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.11085956_11085956/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.11091215_11091215/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.11093031_11093031/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.11416399_11416399/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.11488341_11488341/1	chrL	48374
+Chromosomal sequence could not be extracted for	SRR13051106.11552356_11552356/1	chrL	48376
+Chromosomal sequence could not be extracted for	SRR13051106.11594126_11594126/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.11809512_11809512/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.11810008_11810008/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.11901620_11901620/1	chrL	48371
+Processed 12000000 sequence pairs so far
+Chromosomal sequence could not be extracted for	SRR13051106.12039605_12039605/1	chrL	48373
+Chromosomal sequence could not be extracted for	SRR13051106.12317013_12317013/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.12526452_12526452/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.12555853_12555853/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.12556635_12556635/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.12603653_12603653/1	chrM	2
+Chromosomal sequence could not be extracted for	SRR13051106.12617161_12617161/1	chrM	2
+Chromosomal sequence could not be extracted for	SRR13051106.12633017_12633017/1	chrL	48376
+Chromosomal sequence could not be extracted for	SRR13051106.12767718_12767718/1	chrL	48374
+Processed 13000000 sequence pairs so far
+Chromosomal sequence could not be extracted for	SRR13051106.13774914_13774914/1	chrL	48371
+Processed 14000000 sequence pairs so far
+Chromosomal sequence could not be extracted for	SRR13051106.14532578_14532578/1	chrL	48373
+Chromosomal sequence could not be extracted for	SRR13051106.14788198_14788198/1	chrL	48372
+Processed 15000000 sequence pairs so far
+Chromosomal sequence could not be extracted for	SRR13051106.15086069_15086069/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.15133877_15133877/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.15242132_15242132/1	chrL	48373
+Chromosomal sequence could not be extracted for	SRR13051106.15301817_15301817/1	chrL	48373
+Chromosomal sequence could not be extracted for	SRR13051106.15757429_15757429/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.15815273_15815273/1	chrL	48373
+Chromosomal sequence could not be extracted for	SRR13051106.15992237_15992237/1	chrL	48371
+Processed 16000000 sequence pairs so far
+Chromosomal sequence could not be extracted for	SRR13051106.16057023_16057023/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.16274162_16274162/1	chrM	16445
+Chromosomal sequence could not be extracted for	SRR13051106.16299706_16299706/1	chrL	48373
+Chromosomal sequence could not be extracted for	SRR13051106.16351383_16351383/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.16384344_16384344/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.16458316_16458316/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.16536217_16536217/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.16790770_16790770/1	chrL	48374
+Chromosomal sequence could not be extracted for	SRR13051106.16791147_16791147/1	chrL	48374
+Chromosomal sequence could not be extracted for	SRR13051106.16791149_16791149/1	chrL	48374
+Chromosomal sequence could not be extracted for	SRR13051106.16929224_16929224/1	chrL	48373
+Processed 17000000 sequence pairs so far
+Chromosomal sequence could not be extracted for	SRR13051106.17205368_17205368/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.17221757_17221757/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.17378617_17378617/1	chrM	2
+Chromosomal sequence could not be extracted for	SRR13051106.17624935_17624935/1	chrL	48374
+Chromosomal sequence could not be extracted for	SRR13051106.17671694_17671694/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.17740106_17740106/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.17770956_17770956/1	chrL	48373
+Chromosomal sequence could not be extracted for	SRR13051106.17781257_17781257/1	chrL	48372
+Processed 18000000 sequence pairs so far
+Chromosomal sequence could not be extracted for	SRR13051106.18081987_18081987/1	chrL	48374
+Chromosomal sequence could not be extracted for	SRR13051106.18085398_18085398/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.18238131_18238131/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.18421528_18421528/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.18519349_18519349/1	chrM	16438
+Processed 19000000 sequence pairs so far
+Chromosomal sequence could not be extracted for	SRR13051106.19022272_19022272/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.19094271_19094271/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.19095391_19095391/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.19193812_19193812/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.19355405_19355405/1	chrL	48374
+Chromosomal sequence could not be extracted for	SRR13051106.19488631_19488631/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.19643099_19643099/1	chrL	48373
+Chromosomal sequence could not be extracted for	SRR13051106.19644500_19644500/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.19644587_19644587/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.19665346_19665346/1	chrL	48376
+Chromosomal sequence could not be extracted for	SRR13051106.19965753_19965753/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.19982381_19982381/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.20001755_20001755/1	chrL	48371
+Processed 20000000 sequence pairs so far
+Chromosomal sequence could not be extracted for	SRR13051106.20165930_20165930/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.20231407_20231407/1	chrL	48374
+Chromosomal sequence could not be extracted for	SRR13051106.20303099_20303099/1	chrL	48373
+Chromosomal sequence could not be extracted for	SRR13051106.20386766_20386766/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.20439448_20439448/1	chrL	48373
+Chromosomal sequence could not be extracted for	SRR13051106.20767183_20767183/1	chrL	48374
+Chromosomal sequence could not be extracted for	SRR13051106.20792918_20792918/1	chrL	48372
+Processed 21000000 sequence pairs so far
+Chromosomal sequence could not be extracted for	SRR13051106.21110068_21110068/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.21446190_21446190/1	chrM	16440
+Chromosomal sequence could not be extracted for	SRR13051106.21488080_21488080/1	chrL	48376
+Chromosomal sequence could not be extracted for	SRR13051106.21502289_21502289/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.21502574_21502574/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.21518721_21518721/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.21610666_21610666/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.21742038_21742038/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.21854748_21854748/1	chrL	48373
+Chromosomal sequence could not be extracted for	SRR13051106.21934933_21934933/1	chrL	48373
+Chromosomal sequence could not be extracted for	SRR13051106.21988763_21988763/1	chrL	48372
+Processed 22000000 sequence pairs so far
+Chromosomal sequence could not be extracted for	SRR13051106.22005846_22005846/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.22213987_22213987/1	chrL	48373
+Chromosomal sequence could not be extracted for	SRR13051106.22240760_22240760/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.22340050_22340050/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.22527010_22527010/1	chrL	48373
+Chromosomal sequence could not be extracted for	SRR13051106.22614407_22614407/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.22615299_22615299/1	chrL	48373
+Chromosomal sequence could not be extracted for	SRR13051106.22844437_22844437/1	chrL	48372
+Processed 23000000 sequence pairs so far
+Chromosomal sequence could not be extracted for	SRR13051106.23162268_23162268/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.23287185_23287185/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.23393435_23393435/1	chrM	1
+Chromosomal sequence could not be extracted for	SRR13051106.23408357_23408357/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.23464561_23464561/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.23959352_23959352/1	chrL	48371
+Processed 24000000 sequence pairs so far
+Chromosomal sequence could not be extracted for	SRR13051106.24382153_24382153/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.24428910_24428910/1	chrL	48374
+Chromosomal sequence could not be extracted for	SRR13051106.24676469_24676469/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.24849999_24849999/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.24882474_24882474/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.24888415_24888415/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.24889472_24889472/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.24893929_24893929/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.24919218_24919218/1	chrL	48374
+Processed 25000000 sequence pairs so far
+Chromosomal sequence could not be extracted for	SRR13051106.25052314_25052314/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.25157482_25157482/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.25158671_25158671/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.25250763_25250763/1	chrL	48373
+Chromosomal sequence could not be extracted for	SRR13051106.25319772_25319772/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.25345504_25345504/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.25376872_25376872/1	chrL	48373
+Chromosomal sequence could not be extracted for	SRR13051106.25412867_25412867/1	chrL	48373
+Chromosomal sequence could not be extracted for	SRR13051106.25547162_25547162/1	chrL	48376
+Chromosomal sequence could not be extracted for	SRR13051106.25557013_25557013/1	chrL	48376
+Chromosomal sequence could not be extracted for	SRR13051106.25650937_25650937/1	chrL	48374
+Chromosomal sequence could not be extracted for	SRR13051106.25801709_25801709/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.25801834_25801834/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.25807403_25807403/1	chrL	48374
+Processed 26000000 sequence pairs so far
+Chromosomal sequence could not be extracted for	SRR13051106.26371457_26371457/1	chrM	16441
+Chromosomal sequence could not be extracted for	SRR13051106.26381860_26381860/1	chrL	48374
+Chromosomal sequence could not be extracted for	SRR13051106.26793884_26793884/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.26804922_26804922/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.26807073_26807073/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.26810510_26810510/1	chrL	48370
+Chromosomal sequence could not be extracted for	SRR13051106.26912508_26912508/1	chrL	48374
+Processed 27000000 sequence pairs so far
+Chromosomal sequence could not be extracted for	SRR13051106.27043668_27043668/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.27191775_27191775/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.27311758_27311758/1	chrL	1
+Chromosomal sequence could not be extracted for	SRR13051106.27313091_27313091/1	chrL	48376
+Chromosomal sequence could not be extracted for	SRR13051106.27317065_27317065/1	chrL	1
+Chromosomal sequence could not be extracted for	SRR13051106.27394122_27394122/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.27891552_27891552/1	chrL	48373
+Processed 28000000 sequence pairs so far
+Chromosomal sequence could not be extracted for	SRR13051106.28571594_28571594/1	chrL	48374
+Chromosomal sequence could not be extracted for	SRR13051106.28772504_28772504/1	chrL	48373
+Chromosomal sequence could not be extracted for	SRR13051106.28793848_28793848/1	chrL	48373
+Chromosomal sequence could not be extracted for	SRR13051106.28813355_28813355/1	chrL	48371
+Processed 29000000 sequence pairs so far
+Chromosomal sequence could not be extracted for	SRR13051106.29326150_29326150/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.29335675_29335675/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.29453616_29453616/1	chrL	48373
+Chromosomal sequence could not be extracted for	SRR13051106.29504417_29504417/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.29735981_29735981/1	chrL	48372
+Processed 30000000 sequence pairs so far
+Chromosomal sequence could not be extracted for	SRR13051106.30034950_30034950/1	chrL	48373
+Chromosomal sequence could not be extracted for	SRR13051106.30037069_30037069/1	chrL	48373
+Chromosomal sequence could not be extracted for	SRR13051106.30526319_30526319/1	chrL	48374
+Chromosomal sequence could not be extracted for	SRR13051106.30665838_30665838/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.30829172_30829172/1	chrL	48372
+Processed 31000000 sequence pairs so far
+Chromosomal sequence could not be extracted for	SRR13051106.31159476_31159476/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.31303771_31303771/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.31402002_31402002/1	chrL	48373
+Chromosomal sequence could not be extracted for	SRR13051106.31497636_31497636/1	chrL	48376
+Chromosomal sequence could not be extracted for	SRR13051106.31540496_31540496/1	chrL	48373
+Chromosomal sequence could not be extracted for	SRR13051106.31658589_31658589/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.31683554_31683554/1	chrL	48371
+Processed 32000000 sequence pairs so far
+Chromosomal sequence could not be extracted for	SRR13051106.32056455_32056455/1	chrL	48373
+Chromosomal sequence could not be extracted for	SRR13051106.32240708_32240708/1	chrL	48376
+Chromosomal sequence could not be extracted for	SRR13051106.32385737_32385737/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.32468468_32468468/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.32561434_32561434/1	chrL	48371
+Processed 33000000 sequence pairs so far
+Chromosomal sequence could not be extracted for	SRR13051106.33014247_33014247/1	chrL	48376
+Chromosomal sequence could not be extracted for	SRR13051106.33295104_33295104/1	chrM	16440
+Chromosomal sequence could not be extracted for	SRR13051106.33295728_33295728/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.33296786_33296786/1	chrM	16440
+Chromosomal sequence could not be extracted for	SRR13051106.33336161_33336161/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.33412169_33412169/1	chrM	1
+Processed 34000000 sequence pairs so far
+Chromosomal sequence could not be extracted for	SRR13051106.34481918_34481918/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.34612119_34612119/1	chrL	48373
+Chromosomal sequence could not be extracted for	SRR13051106.34671316_34671316/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.34847899_34847899/1	chrL	48374
+Chromosomal sequence could not be extracted for	SRR13051106.34901081_34901081/1	chrM	2
+Chromosomal sequence could not be extracted for	SRR13051106.34974493_34974493/1	chrL	48372
+Processed 35000000 sequence pairs so far
+Chromosomal sequence could not be extracted for	SRR13051106.35065898_35065898/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.35144067_35144067/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.35296674_35296674/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.35314307_35314307/1	chrL	48373
+Chromosomal sequence could not be extracted for	SRR13051106.35622712_35622712/1	chrL	48373
+Chromosomal sequence could not be extracted for	SRR13051106.35642711_35642711/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.35728848_35728848/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.35746987_35746987/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.35754509_35754509/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.35804989_35804989/1	chrL	48371
+Processed 36000000 sequence pairs so far
+Chromosomal sequence could not be extracted for	SRR13051106.36128753_36128753/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.36195277_36195277/1	chrL	48374
+Chromosomal sequence could not be extracted for	SRR13051106.36316029_36316029/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.36343012_36343012/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.36646661_36646661/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.36732255_36732255/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.36795021_36795021/1	chrL	48374
+Chromosomal sequence could not be extracted for	SRR13051106.36820701_36820701/1	chrL	48373
+Chromosomal sequence could not be extracted for	SRR13051106.36915689_36915689/1	chrL	48376
+Processed 37000000 sequence pairs so far
+Chromosomal sequence could not be extracted for	SRR13051106.37073328_37073328/1	chrL	48374
+Chromosomal sequence could not be extracted for	SRR13051106.37186593_37186593/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.37507891_37507891/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.37566273_37566273/1	chrM	1
+Chromosomal sequence could not be extracted for	SRR13051106.37883742_37883742/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.37886818_37886818/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.37899000_37899000/1	chrL	48373
+Chromosomal sequence could not be extracted for	SRR13051106.37954248_37954248/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.38000967_38000967/1	chrL	48371
+Processed 38000000 sequence pairs so far
+Chromosomal sequence could not be extracted for	SRR13051106.38206620_38206620/1	chrL	48376
+Chromosomal sequence could not be extracted for	SRR13051106.38677370_38677370/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.38704881_38704881/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.38704915_38704915/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.38757249_38757249/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.38841806_38841806/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.38975493_38975493/1	chrL	48371
+Processed 39000000 sequence pairs so far
+Chromosomal sequence could not be extracted for	SRR13051106.39070974_39070974/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.39193505_39193505/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.39482701_39482701/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.39536150_39536150/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.39609352_39609352/1	chrM	16445
+Chromosomal sequence could not be extracted for	SRR13051106.39795576_39795576/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.39920214_39920214/1	chrL	48374
+Processed 40000000 sequence pairs so far
+Chromosomal sequence could not be extracted for	SRR13051106.40038146_40038146/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.40174648_40174648/1	chrL	48374
+Chromosomal sequence could not be extracted for	SRR13051106.40191549_40191549/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.40285861_40285861/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.40315556_40315556/1	chrL	48376
+Chromosomal sequence could not be extracted for	SRR13051106.40895058_40895058/1	chrL	48376
+Chromosomal sequence could not be extracted for	SRR13051106.40898955_40898955/1	chrL	48371
+Processed 41000000 sequence pairs so far
+Chromosomal sequence could not be extracted for	SRR13051106.41011020_41011020/1	chrL	48374
+Chromosomal sequence could not be extracted for	SRR13051106.41119462_41119462/1	chrL	48374
+Chromosomal sequence could not be extracted for	SRR13051106.41487500_41487500/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.41767873_41767873/1	chrL	48374
+Chromosomal sequence could not be extracted for	SRR13051106.41930768_41930768/1	chrL	48372
+Processed 42000000 sequence pairs so far
+Chromosomal sequence could not be extracted for	SRR13051106.42393242_42393242/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.42395860_42395860/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.42593754_42593754/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.42711561_42711561/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.42794017_42794017/1	chrL	48376
+Chromosomal sequence could not be extracted for	SRR13051106.42895062_42895062/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.42895322_42895322/1	chrL	48372
+Processed 43000000 sequence pairs so far
+Chromosomal sequence could not be extracted for	SRR13051106.43231993_43231993/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.43620504_43620504/1	chrL	48373
+Chromosomal sequence could not be extracted for	SRR13051106.43699992_43699992/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.43826027_43826027/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.43928386_43928386/1	chrL	48371
+Processed 44000000 sequence pairs so far
+Chromosomal sequence could not be extracted for	SRR13051106.44340480_44340480/1	chrM	16445
+Chromosomal sequence could not be extracted for	SRR13051106.44421735_44421735/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.44560135_44560135/1	chrL	48374
+Chromosomal sequence could not be extracted for	SRR13051106.44565601_44565601/1	chrL	48376
+Chromosomal sequence could not be extracted for	SRR13051106.44663933_44663933/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.44870322_44870322/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.44951698_44951698/1	chrM	1
+Processed 45000000 sequence pairs so far
+Chromosomal sequence could not be extracted for	SRR13051106.45124704_45124704/1	chrL	48373
+Chromosomal sequence could not be extracted for	SRR13051106.45150740_45150740/1	chrL	48373
+Chromosomal sequence could not be extracted for	SRR13051106.45151586_45151586/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.45160621_45160621/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.45243930_45243930/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.45336150_45336150/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.45614404_45614404/1	chrL	48373
+Chromosomal sequence could not be extracted for	SRR13051106.45734066_45734066/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.45853919_45853919/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.45884261_45884261/1	chrL	48373
+Processed 46000000 sequence pairs so far
+Chromosomal sequence could not be extracted for	SRR13051106.46151609_46151609/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.46170583_46170583/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.46230285_46230285/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.46276642_46276642/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.46397662_46397662/1	chrM	16440
+Chromosomal sequence could not be extracted for	SRR13051106.46516002_46516002/1	chrL	48374
+Chromosomal sequence could not be extracted for	SRR13051106.46975032_46975032/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.46990183_46990183/1	chrL	48372
+Processed 47000000 sequence pairs so far
+Chromosomal sequence could not be extracted for	SRR13051106.47279959_47279959/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.47508331_47508331/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.47799360_47799360/1	chrL	48371
+Processed 48000000 sequence pairs so far
+Chromosomal sequence could not be extracted for	SRR13051106.48005110_48005110/1	chrL	1
+Chromosomal sequence could not be extracted for	SRR13051106.48023004_48023004/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.48453801_48453801/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.48454709_48454709/1	chrL	48372
+Processed 49000000 sequence pairs so far
+Chromosomal sequence could not be extracted for	SRR13051106.49046000_49046000/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.49401707_49401707/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.49407348_49407348/1	chrL	48374
+Chromosomal sequence could not be extracted for	SRR13051106.49411263_49411263/1	chrL	48374
+Chromosomal sequence could not be extracted for	SRR13051106.49450492_49450492/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.49546185_49546185/1	chrL	48371
+Processed 50000000 sequence pairs so far
+Chromosomal sequence could not be extracted for	SRR13051106.50119672_50119672/1	chrL	48376
+Chromosomal sequence could not be extracted for	SRR13051106.50395287_50395287/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.50501056_50501056/1	chrL	48372
+Processed 51000000 sequence pairs so far
+Chromosomal sequence could not be extracted for	SRR13051106.51083827_51083827/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.51521854_51521854/1	chrL	48374
+Chromosomal sequence could not be extracted for	SRR13051106.51632804_51632804/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.51838108_51838108/1	chrM	1
+Processed 52000000 sequence pairs so far
+Chromosomal sequence could not be extracted for	SRR13051106.52061976_52061976/1	chrM	16441
+Chromosomal sequence could not be extracted for	SRR13051106.52248442_52248442/1	chrL	48374
+Chromosomal sequence could not be extracted for	SRR13051106.52408334_52408334/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.52618260_52618260/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.52800808_52800808/1	chrL	48373
+Processed 53000000 sequence pairs so far
+Chromosomal sequence could not be extracted for	SRR13051106.53720804_53720804/1	chrL	48374
+Chromosomal sequence could not be extracted for	SRR13051106.53720892_53720892/1	chrL	48374
+Chromosomal sequence could not be extracted for	SRR13051106.53949615_53949615/1	chrL	48374
+Chromosomal sequence could not be extracted for	SRR13051106.53950271_53950271/1	chrL	48371
+Processed 54000000 sequence pairs so far
+Chromosomal sequence could not be extracted for	SRR13051106.54155123_54155123/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.54515702_54515702/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.54720665_54720665/1	chrL	48372
+Processed 55000000 sequence pairs so far
+Chromosomal sequence could not be extracted for	SRR13051106.55040652_55040652/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.55110819_55110819/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.55126744_55126744/1	chrL	48373
+Chromosomal sequence could not be extracted for	SRR13051106.55167734_55167734/1	chrL	48374
+Chromosomal sequence could not be extracted for	SRR13051106.55168823_55168823/1	chrL	48373
+Chromosomal sequence could not be extracted for	SRR13051106.55666355_55666355/1	chrL	48372
+Processed 56000000 sequence pairs so far
+Chromosomal sequence could not be extracted for	SRR13051106.56376517_56376517/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.56398468_56398468/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.56408226_56408226/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.56417060_56417060/1	chrL	48373
+Chromosomal sequence could not be extracted for	SRR13051106.56538113_56538113/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.56637844_56637844/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.56750081_56750081/1	chrL	48374
+Chromosomal sequence could not be extracted for	SRR13051106.56764431_56764431/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.56916967_56916967/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.57000930_57000930/1	chrL	48371
+Processed 57000000 sequence pairs so far
+Chromosomal sequence could not be extracted for	SRR13051106.57234866_57234866/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.57679983_57679983/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.57751855_57751855/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.57790166_57790166/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.57790593_57790593/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.57924787_57924787/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.57955874_57955874/1	chrL	48371
+Processed 58000000 sequence pairs so far
+Chromosomal sequence could not be extracted for	SRR13051106.58307049_58307049/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.58542559_58542559/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.58681209_58681209/1	chrL	48373
+Chromosomal sequence could not be extracted for	SRR13051106.58810348_58810348/1	chrL	48376
+Chromosomal sequence could not be extracted for	SRR13051106.58835767_58835767/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.58865957_58865957/1	chrL	48373
+Chromosomal sequence could not be extracted for	SRR13051106.58972011_58972011/1	chrL	48371
+Processed 59000000 sequence pairs so far
+Chromosomal sequence could not be extracted for	SRR13051106.59100767_59100767/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.59787552_59787552/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.59824130_59824130/1	chrL	48371
+Processed 60000000 sequence pairs so far
+Chromosomal sequence could not be extracted for	SRR13051106.60182212_60182212/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.60237496_60237496/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.60529560_60529560/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.60764450_60764450/1	chrL	48373
+Chromosomal sequence could not be extracted for	SRR13051106.60766569_60766569/1	chrL	48373
+Chromosomal sequence could not be extracted for	SRR13051106.60938567_60938567/1	chrL	48372
+Processed 61000000 sequence pairs so far
+Chromosomal sequence could not be extracted for	SRR13051106.61038042_61038042/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.61182910_61182910/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.61279683_61279683/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.61292015_61292015/1	chrL	48373
+Chromosomal sequence could not be extracted for	SRR13051106.61442955_61442955/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.61472940_61472940/1	chrL	48373
+Processed 62000000 sequence pairs so far
+Chromosomal sequence could not be extracted for	SRR13051106.62032564_62032564/1	chrL	1
+Chromosomal sequence could not be extracted for	SRR13051106.62032983_62032983/1	chrL	1
+Chromosomal sequence could not be extracted for	SRR13051106.62456918_62456918/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.62678511_62678511/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.62740002_62740002/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.62818998_62818998/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.62820133_62820133/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.62832314_62832314/1	chrL	48371
+Processed 63000000 sequence pairs so far
+Chromosomal sequence could not be extracted for	SRR13051106.63105604_63105604/1	chrL	48373
+Chromosomal sequence could not be extracted for	SRR13051106.63160298_63160298/1	chrL	48371
+Processed 64000000 sequence pairs so far
+Chromosomal sequence could not be extracted for	SRR13051106.64314036_64314036/1	chrL	48374
+Chromosomal sequence could not be extracted for	SRR13051106.64348567_64348567/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.64544572_64544572/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.64579756_64579756/1	chrL	48372
+Processed 65000000 sequence pairs so far
+Chromosomal sequence could not be extracted for	SRR13051106.65050356_65050356/1	chrL	48374
+Chromosomal sequence could not be extracted for	SRR13051106.65283999_65283999/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.65346025_65346025/1	chrL	48374
+Chromosomal sequence could not be extracted for	SRR13051106.65495895_65495895/1	chrL	48373
+Chromosomal sequence could not be extracted for	SRR13051106.65495932_65495932/1	chrL	48373
+Chromosomal sequence could not be extracted for	SRR13051106.65620938_65620938/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.65643838_65643838/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.65928476_65928476/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.65928522_65928522/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.65983297_65983297/1	chrL	48372
+Processed 66000000 sequence pairs so far
+Chromosomal sequence could not be extracted for	SRR13051106.66043803_66043803/1	chrL	48374
+Chromosomal sequence could not be extracted for	SRR13051106.66123829_66123829/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.66385182_66385182/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.66409361_66409361/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.66721999_66721999/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.66963401_66963401/1	chrL	48372
+Processed 67000000 sequence pairs so far
+Chromosomal sequence could not be extracted for	SRR13051106.67251099_67251099/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.67321348_67321348/1	chrL	48373
+Chromosomal sequence could not be extracted for	SRR13051106.67505783_67505783/1	chrL	48373
+Processed 68000000 sequence pairs so far
+Chromosomal sequence could not be extracted for	SRR13051106.68048941_68048941/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.68753594_68753594/1	chrM	16437
+Processed 69000000 sequence pairs so far
+Chromosomal sequence could not be extracted for	SRR13051106.69276061_69276061/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.69402664_69402664/1	chrM	1
+Chromosomal sequence could not be extracted for	SRR13051106.69525070_69525070/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.69604915_69604915/1	chrL	48372
+Processed 70000000 sequence pairs so far
+Chromosomal sequence could not be extracted for	SRR13051106.70140898_70140898/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.70308896_70308896/1	chrM	2
+Chromosomal sequence could not be extracted for	SRR13051106.70308897_70308897/1	chrM	2
+Chromosomal sequence could not be extracted for	SRR13051106.70401797_70401797/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.70441701_70441701/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.70510962_70510962/1	chrL	48374
+Chromosomal sequence could not be extracted for	SRR13051106.70653941_70653941/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.70671359_70671359/1	chrL	48374
+Chromosomal sequence could not be extracted for	SRR13051106.70806886_70806886/1	chrL	48374
+Chromosomal sequence could not be extracted for	SRR13051106.70930433_70930433/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.70932185_70932185/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.70987236_70987236/1	chrL	48371
+Processed 71000000 sequence pairs so far
+Chromosomal sequence could not be extracted for	SRR13051106.71151962_71151962/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.71220487_71220487/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.71223066_71223066/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.71406095_71406095/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.71407466_71407466/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.71637801_71637801/1	chrL	48373
+Chromosomal sequence could not be extracted for	SRR13051106.71699866_71699866/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.71710512_71710512/1	chrL	48372
+Processed 72000000 sequence pairs so far
+Chromosomal sequence could not be extracted for	SRR13051106.72276555_72276555/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.72568195_72568195/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.72607767_72607767/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.72624470_72624470/1	chrM	1
+Chromosomal sequence could not be extracted for	SRR13051106.72687257_72687257/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.72707861_72707861/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.72803886_72803886/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.72857899_72857899/1	chrM	1
+Chromosomal sequence could not be extracted for	SRR13051106.72877221_72877221/1	chrL	48372
+Processed 73000000 sequence pairs so far
+Chromosomal sequence could not be extracted for	SRR13051106.73162068_73162068/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.73283855_73283855/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.73292714_73292714/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.73354709_73354709/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.73354983_73354983/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.73391831_73391831/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.73547992_73547992/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.73874931_73874931/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.73910111_73910111/1	chrL	48371
+Processed 74000000 sequence pairs so far
+Chromosomal sequence could not be extracted for	SRR13051106.74320270_74320270/1	chrL	48376
+Chromosomal sequence could not be extracted for	SRR13051106.74360056_74360056/1	chrL	48374
+Chromosomal sequence could not be extracted for	SRR13051106.74369004_74369004/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.74386206_74386206/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.74394638_74394638/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.74449559_74449559/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.74606736_74606736/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.74643269_74643269/1	chrL	48373
+Chromosomal sequence could not be extracted for	SRR13051106.74643561_74643561/1	chrL	48373
+Chromosomal sequence could not be extracted for	SRR13051106.74645034_74645034/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.74771688_74771688/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.74878741_74878741/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.74912215_74912215/1	chrL	48372
+Processed 75000000 sequence pairs so far
+Chromosomal sequence could not be extracted for	SRR13051106.75249153_75249153/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.75525217_75525217/1	chrL	48376
+Chromosomal sequence could not be extracted for	SRR13051106.75833938_75833938/1	chrL	48371
+Processed 76000000 sequence pairs so far
+Chromosomal sequence could not be extracted for	SRR13051106.76020398_76020398/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.76523562_76523562/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.76980761_76980761/1	chrL	48371
+Processed 77000000 sequence pairs so far
+Chromosomal sequence could not be extracted for	SRR13051106.77042748_77042748/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.77044652_77044652/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.77284014_77284014/1	chrL	48374
+Chromosomal sequence could not be extracted for	SRR13051106.77655933_77655933/1	chrL	48373
+Chromosomal sequence could not be extracted for	SRR13051106.77690268_77690268/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.77808938_77808938/1	chrL	48376
+Processed 78000000 sequence pairs so far
+Chromosomal sequence could not be extracted for	SRR13051106.78084104_78084104/1	chrL	1
+Chromosomal sequence could not be extracted for	SRR13051106.78248961_78248961/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.78250051_78250051/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.78266085_78266085/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.78300101_78300101/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.78705149_78705149/1	chrL	48372
+Processed 79000000 sequence pairs so far
+Chromosomal sequence could not be extracted for	SRR13051106.79180522_79180522/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.79541809_79541809/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.79689154_79689154/1	chrL	48372
+Chromosomal sequence could not be extracted for	SRR13051106.79796735_79796735/1	chrL	48374
+Chromosomal sequence could not be extracted for	SRR13051106.80003369_80003369/1	chrL	48371
+Processed 80000000 sequence pairs so far
+Chromosomal sequence could not be extracted for	SRR13051106.80118436_80118436/1	chrM	1
+Chromosomal sequence could not be extracted for	SRR13051106.80219724_80219724/1	chrL	48374
+Chromosomal sequence could not be extracted for	SRR13051106.80473505_80473505/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.80555560_80555560/1	chrM	1
+Chromosomal sequence could not be extracted for	SRR13051106.80604528_80604528/1	chrL	48371
+Processed 81000000 sequence pairs so far
+Chromosomal sequence could not be extracted for	SRR13051106.81118025_81118025/1	chrL	48376
+Chromosomal sequence could not be extracted for	SRR13051106.81225331_81225331/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.81238316_81238316/1	chrL	48374
+Chromosomal sequence could not be extracted for	SRR13051106.81463084_81463084/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.81542871_81542871/1	chrL	48373
+Chromosomal sequence could not be extracted for	SRR13051106.81723091_81723091/1	chrL	48373
+Chromosomal sequence could not be extracted for	SRR13051106.81826965_81826965/1	chrL	48376
+Processed 82000000 sequence pairs so far
+Chromosomal sequence could not be extracted for	SRR13051106.82276989_82276989/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.82424365_82424365/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.82585683_82585683/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.82603510_82603510/1	chrL	48374
+Chromosomal sequence could not be extracted for	SRR13051106.82706528_82706528/1	chrL	48371
+Chromosomal sequence could not be extracted for	SRR13051106.82910479_82910479/1	chrL	48371
+Processed 83000000 sequence pairs so far
+Chromosomal sequence could not be extracted for	SRR13051106.83068794_83068794/1	chrL	48372
+83186285 reads; of these:
+  83186285 (100.00%) were paired; of these:
+    46637360 (56.06%) aligned concordantly 0 times
+    31640270 (38.04%) aligned concordantly exactly 1 time
+    4908655 (5.90%) aligned concordantly >1 times
+43.94% overall alignment rate
+83186285 reads; of these:
+  83186285 (100.00%) were paired; of these:
+    46616205 (56.04%) aligned concordantly 0 times
+    31652212 (38.05%) aligned concordantly exactly 1 time
+    4917868 (5.91%) aligned concordantly >1 times
+43.96% overall alignment rate
+Processed 83186285 sequences in total
+
+
+Successfully deleted the temporary files /scratch/phook/methylseq_SRR13051106_1.trimmed.fastq_C_to_T.fastq and /scratch/phook/methylseq_SRR13051106_2.trimmed.fastq_G_to_A.fastq
+
+Final Alignment report
+======================
+Sequence pairs analysed in total:	83186285
+Number of paired-end alignments with a unique best hit:	63762393
+Mapping efficiency:	76.7%
+
+Sequence pairs with no alignments under any condition:	14716477
+Sequence pairs did not map uniquely:	4707415
+Sequence pairs which were discarded because genomic sequence could not be extracted:	547
+
+Number of sequence pairs with unique best (first) alignment came from the bowtie output:
+CT/GA/CT:	31874531	((converted) top strand)
+GA/CT/CT:	0	(complementary to (converted) top strand)
+GA/CT/GA:	0	(complementary to (converted) bottom strand)
+CT/GA/GA:	31887315	((converted) bottom strand)
+
+Number of alignments to (merely theoretical) complementary strands being rejected in total:	0
+
+Final Cytosine Methylation Report
+=================================
+Total number of C's analysed:	3282998880
+
+Total methylated C's in CpG context:	100473870
+Total methylated C's in CHG context:	4293339
+Total methylated C's in CHH context:	15198281
+Total methylated C's in Unknown context:	138812
+
+Total unmethylated C's in CpG context:	54888519
+Total unmethylated C's in CHG context:	692573765
+Total unmethylated C's in CHH context:	2415571106
+Total unmethylated C's in Unknown context:	857290
+
+C methylated in CpG context:	64.7%
+C methylated in CHG context:	0.6%
+C methylated in CHH context:	0.6%
+C methylated in unknown context (CN or CHN):	13.9%
+
+
+Bismark completed in 0d 22h 57m 5s
+
+====================
+Bismark run complete
+====================
+

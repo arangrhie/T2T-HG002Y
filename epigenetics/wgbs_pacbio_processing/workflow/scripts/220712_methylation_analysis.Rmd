@@ -1,0 +1,196 @@
+---
+title: "hg002_wgbs"
+author: "Paul Hook"
+date: "7/12/2022"
+output: html_document
+---
+
+Creating the reference CpG loci that I will analyze
+```{r, cpg_loci}
+# loading libraries
+library(BSgenome.Hsapiens.UCSC.hg38) # using this for all the auxillary libraries it loads
+library(bsseq)
+library(tidyverse)
+library(cowplot)
+library(patchwork)
+library(RColorBrewer)
+library(GGally)
+library(ggcorrplot)
+library(corrplot)
+library(gUtils)
+
+# reading in the FASTA as a DNAstringset. This is the 2.7 genome
+genome <- readDNAStringSet(filepath = "/atium/Data/projects/hg002_wgbs/reference/bowtie2_combined/methylation_reference.fa")
+
+# only keeping core set of chromosomes plus lambda and pUC19. Excluding ChrY since this is an XX cell line
+seq.list <- seqlevels(genome)[!grepl(x=seqlevels(genome),pattern = "chrM",ignore.case = TRUE,)]
+
+# determining cpg loci
+cpg.loci <- findLoci(pattern = "CG",
+  subject = genome,
+  include = seq.list,
+  strand = "*",resize = TRUE)
+
+# filter out GCG loci (CGC on the - strand)
+gcg.loci <- findLoci(pattern = "GCG",
+  subject = genome,
+  include = seq.list,
+  strand = "+",resize = TRUE)
+
+gcg.loci.shift <- IRanges::shift(gcg.loci,shift = 1, use.names = TRUE)
+
+cgc.loci <- bsseq::findLoci(pattern = "CGC",
+  subject = genome,
+  include = seq.list,
+  strand = "-",resize = TRUE)
+
+test <- grbind(gcg.loci.shift,cgc.loci)
+
+cpg.filtered.loci <- subsetByOverlaps(cpg.loci, test,invert = TRUE)
+
+# correcting pUC19 seq name to match bismark output
+seqlevels(cpg.filtered.loci)
+new.seq.list <- c(seq.list[1:24],"M77789.2",seq.list[26])
+new.cpg.loci <- renameSeqlevels(cpg.filtered.loci,new.seq.list)
+seqlevels(new.cpg.loci)
+```
+
+Reading in the methylation data.
+```{r}
+# Find all the .cov.gz output files from Bismark
+input.dir <- "/atium/Data/projects/hg002_wgbs/bismark/"
+files <- dir(path=input.dir,pattern="*.cov.gz|*.bismark|*split.cov",recursive = TRUE)
+files.filtered <- files[c(-3,-4)]
+files.filtered
+final.files <- paste0(input.dir,files.filtered)
+
+guppy.meth <- "/pym/Data/paul/hg002_y/guppy_meth_calls/beds/chm13v2.7XY_HG002_UL_80_guppy.bismark"
+nanopolish.meth <- "/pym/Data/paul/hg002_y/meth_calls/calls/nanonome/processed/hg002_cpg_filtered_meth.freq"
+
+all.files <- c(final.files,guppy.meth,nanopolish.meth)
+
+samples <- c("sr_emseq_lab1","sr_emseq_lab2","pacbio_primrose_80","methylseq","nanopore_guppy","nanopore_nanopolish")
+sample.df <- data.frame(samples,all.files)
+
+rownames(sample.df) <- sample.df$samples
+
+# Load all the GM12878 methylation data that is stored as bismark CpG context files
+bis.context <- read.bismark(sample.df$all.files,
+                    colData = sample.df,
+                    loci = new.cpg.loci,
+                    strandCollapse = TRUE, ### come back to this
+                    rmZeroCov = FALSE)
+
+# Subsetting out pUC19, lambda, and human chromosomes
+bis.lambda <- chrSelectBSseq(bis.context, seqnames = "chrL", order = TRUE)
+bis.pUC19 <- chrSelectBSseq(bis.context, seqnames = "M77789.2",order = TRUE)
+bis.human <- chrSelectBSseq(bis.context, seqnames = c(seq.list[1:24]), order = TRUE)
+```
+
+```{r}
+# Calculating lambda stats
+bs_conversion_rate_df <-
+  tibble(ID = colnames(bis.lambda),
+             `Unmethylated CpG conversion rate (%)` =
+               round(100*(1 - (colSums(getCoverage(BSseq = bis.lambda,
+                                                 type = "M")) /
+                           colSums(getCoverage(BSseq = bis.lambda,
+                                               type = "Cov")))),2),
+              `Human CpG methylation rate (%)` =
+                round(100*(colSums(getCoverage(BSseq = bis.human,
+                                                    type = "M")) /
+                                  colSums(getCoverage(BSseq = bis.human,
+                                                      type = "Cov"))),2))
+```
+
+```{r}
+# Filter data so we only look at CpGs with >=5 reads in all samples
+filt <- bis.human[(rowSums(getCoverage(bis.human) >= 5 ) >= 6),]
+filt.again <- filt[(rowSums(getCoverage(filt) <= 200) >= 6),]
+
+# Grab methylation and filter out NAs while we are at it 
+set.seed(24)
+meth.human.combined <- na.omit(as.data.frame(getMeth(filt.again,type="raw",what = "perBase")))
+
+# Set color palette for 2D heatmap
+rf <- colorRampPalette(rev(brewer.pal(11,'Spectral')))
+r <- rf(32)
+
+c.all <- cor(meth.human.combined)
+pdf("~/code/pwh_projects/hg002_y/r_analysis/220912_hg002_corrplot.pdf",width = 7, height = 7,family = "Helvetica")
+corrplot(c.all,
+         is.corr = FALSE,
+         method = "shade",
+         addCoef.col = TRUE,
+         col.lim = c(0.75,1),
+         col = colorRampPalette(rev(brewer.pal(11,'Spectral')))(32),
+         diag = TRUE,
+         type = "full",tl.cex = 1,tl.srt = 90,number.digits = 3,number.font = 1,tl.col = "black",tl.offset = 0.5,
+         order = "hclust", hclust.method = "ward.D2")
+dev.off()
+
+c.1 <- cor(meth.human.combined$nanopore_guppy, meth.human.combined$methylseq)
+title.1 <- paste0("Guppy vs. WGBS"," ","(r = ",round(c.1,digits = 3),")")
+plot.1 <- ggplot(meth.human.combined, aes(x=nanopore_guppy,y=methylseq)) +
+  geom_bin_2d(bins=25) + scale_fill_gradientn(colors=r, trans="log10") +
+  ylab("WGBS Meth. Frequency") +
+  xlab("Guppy Meth. Frequency") +
+  ggtitle(title.1) + 
+  theme_classic(base_size = 18) +
+  theme(plot.title = element_text(hjust = 0.5))
+plot.1
+ggsave(plot=plot.1,filename = "~/code/pwh_projects/hg002_y/r_analysis/220912_guppy_wgbs.pdf",height = 6, width = 7,units = "in")
+
+c.1 <- cor(meth.human.combined$pacbio_primrose_80, meth.human.combined$methylseq)
+title.1 <- paste0("PacBio Primrose vs. WGBS"," ","(r = ",round(c.1,digits = 3),")")
+plot.1 <- ggplot(meth.human.combined, aes(x=pacbio_primrose_80,y=methylseq)) +
+  geom_bin_2d(bins=25) + scale_fill_gradientn(colors=r, trans="log10") +
+  ylab("WGBS Meth. Frequency") +
+  xlab("PacBio Primrose Meth. Frequency") +
+  ggtitle(title.1) + 
+  theme_classic(base_size = 18) +
+  theme(plot.title = element_text(hjust = 0.5))
+plot.1
+ggsave(plot=plot.1,filename = "~/code/pwh_projects/hg002_y/r_analysis/220912_primrose_wgbs.pdf",height = 6, width = 7,units = "in")
+
+c.1 <- cor(meth.human.combined$nanopore_nanopolish, meth.human.combined$methylseq)
+title.1 <- paste0("Nanopolish vs. WGBS"," ","(r = ",round(c.1,digits = 3),")")
+plot.1 <- ggplot(meth.human.combined, aes(x=nanopore_nanopolish,y=methylseq)) +
+  geom_bin_2d(bins=25) + scale_fill_gradientn(colors=r, trans="log10") +
+  ylab("WGBS Meth. Frequency") +
+  xlab("Nanopolish Meth. Frequency") +
+  ggtitle(title.1) + 
+  theme_classic(base_size = 18) +
+  theme(plot.title = element_text(hjust = 0.5))
+plot.1
+ggsave(plot=plot.1,filename = "~/code/pwh_projects/hg002_y/r_analysis/220912_nanopolish_wgbs.pdf",height = 6, width = 7,units = "in")
+
+```
+
+Combined
+```{r}
+M <- as.data.frame(getCoverage(bis.human, type="M")) %>%
+  dplyr::mutate(sr.emseq = sr_emseq_lab1 + sr_emseq_lab2) %>%
+  dplyr::select(sr.emseq,methylseq) %>%
+  as.matrix()
+
+Cov <- as.data.frame(getCoverage(bis.human, type="Cov")) %>%
+  dplyr::mutate(sr.emseq = sr_emseq_lab1 + sr_emseq_lab2) %>%
+  dplyr::select(sr.emseq,methylseq) %>%
+  as.matrix()
+
+gr <- granges(bis.human)
+
+head(M)
+head(Cov)
+head(gr)
+
+dim(M)
+dim(Cov)
+dim(gr)
+
+combined.bis.human <- BSseq(gr = gr,
+            M = M, Cov = Cov, 
+            sampleNames = colnames(M))
+
+```
