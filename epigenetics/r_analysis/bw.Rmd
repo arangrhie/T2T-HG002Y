@@ -1,0 +1,287 @@
+---
+title: "hg002_bw"
+author: "Paul Hook"
+date: "6/7/2022"
+output: html_document
+---
+
+# Loading libraries
+```{r}
+# Load libraries
+library(rtracklayer)
+library(Repitools)
+library(GenomicRanges)
+library(bsseq)
+library(tidyverse)
+```
+
+# Loading CHM13 v2.0 genome
+```{r}
+# CHM13 v2.0
+seqinfo.20 <- read_tsv("/pym/Data/paul/hg002_y/meth_calls/references/chm13v2.0.genomeFile", col_names = c("seqname", "seqlength")) %>%
+  mutate(isCircular=FALSE, seqlength=as.numeric(seqlength))
+
+## seqlevels have to be in the same order so I have to rearrange chrM
+matched.20 <- seqinfo.20$seqname %in% "chrM"
+seqinfo.20.2 <- rbind(seqinfo.20[!matched.20,], seqinfo.20[matched.20,])
+```
+
+## CHM13v2.0 BWs and beds. Please note that the only filtering is for "NA" meaning no coverage.
+### CpG
+```{r}
+# Guppy ONT calls
+guppy.20="/pym/Data/paul/hg002_y/guppy_meth_calls/beds/chm13v2.0_HG002_UL_80_guppy.bismark"
+guppy.bisobj.20 <- read.bismark(guppy.20)
+guppy.coord.20 <- granges(guppy.bisobj.20)
+guppy.meth.20 <- data.frame(chr= seqnames(guppy.coord.20),
+                      start=start(guppy.coord.20),
+                      getMeth(guppy.bisobj.20, type="raw", what="perBase")) %>%
+  mutate(score=(.[,3])) %>%
+  dplyr::select(chr,start,score) %>%
+  mutate(end=start+1) %>%
+  mutate(sites=1) %>%
+  na.omit() %>%
+  GRanges()
+
+seqinfo(guppy.meth.20) <- Seqinfo(seqnames=seqinfo.20.2$seqname,
+                         seqlengths=seqinfo.20.2$seqlength,
+                         isCircular=seqinfo.20.2$isCircular)
+
+# Make bed
+guppy.20.bed <- as.data.frame(guppy.meth.20) %>%
+  dplyr::select("chr"=seqnames,start,end,"methylation_percentage"=score) %>%
+  dplyr::select(chr,start,end,methylation_percentage)
+
+export.bw(guppy.meth.20, paste0("/home/phook2/code/pwh_projects/hg002_y/bw/chm13v2.0_hg002_cpg_guppy_nanopore.bw"))
+write_tsv(guppy.20.bed,file="~/code/pwh_projects/hg002_y/bw/chm13v2.0_hg002_cpg_guppy_nanopore_freq.bed",col_names=FALSE)
+
+# Nanopolish nanonome calls
+nanopolish.20="/pym/Data/paul/hg002_y/meth_calls/calls/nanonome_2.0/processed/cpg_hg002_chm13v2.0_meth.freq"
+nanopolish.bisobj.20 <- read.bismark(nanopolish.20)
+nanopolish.coord.20 <- granges(nanopolish.bisobj.20)
+nanopolish.meth.20 <- data.frame(chr= seqnames(nanopolish.coord.20),
+                      start=start(nanopolish.coord.20),
+                      getMeth(nanopolish.bisobj.20, type="raw", what="perBase")) %>%
+  mutate(score=(.[,3])) %>%
+  dplyr::select(chr,start,score) %>%
+  mutate(end=start+1) %>%
+  mutate(sites=1) %>%
+  na.omit() %>%
+  GRanges()
+
+seqinfo(nanopolish.meth.20) <- Seqinfo(seqnames=seqinfo.20.2$seqname,
+                         seqlengths=seqinfo.20.2$seqlength,
+                         isCircular=seqinfo.20.2$isCircular)
+
+# Make bed
+nanopolish.20.bed <- as.data.frame(nanopolish.meth.20) %>%
+  dplyr::select("chr"=seqnames,start,end,"methylation_percentage"=score) %>%
+  dplyr::select(chr,start,end,methylation_percentage)
+
+export.bw(nanopolish.meth.20, paste0("/home/phook2/code/pwh_projects/hg002_y/bw/chm13v2.0_hg002_cpg_nanopolish_nanopore.bw"))
+write_tsv(nanopolish.20.bed,file="~/code/pwh_projects/hg002_y/bw/chm13v2.0_hg002_cpg_nanopolish_nanopore_freq.bed",col_names=FALSE)
+
+# PacBio not aligned to CHM13v2.0 currently
+```
+
+### GpC
+```{r}
+#bw and bed
+gpc.20="/pym/Data/paul/hg002_y/meth_calls/calls/nanonome_2.0/processed/gpc_hg002_chm13v2.0_meth.freq"
+gpc.bis.20 <- read.bismark(gpc.20)
+gpc.loci.20 <- granges(gpc.bis.20)
+gpc.meth.20 <- data.frame(chr= seqnames(gpc.loci.20),
+                      start=start(gpc.loci.20),
+                      getMeth(gpc.bis.20, type="raw", what="perBase")) %>%
+  mutate(score=(.[,3])) %>%
+  dplyr::select(chr,start,score) %>%
+  mutate(end=start+1) %>%
+  mutate(sites=1) %>%
+  na.omit() %>%
+  GRanges()
+
+seqinfo(gpc.meth.20) <- Seqinfo(seqnames=seqinfo.20.2$seqname,
+                         seqlengths=seqinfo.20.2$seqlength,
+                         isCircular=seqinfo.20.2$isCircular)
+
+# Make bed
+gpc.20.bed <- as.data.frame(gpc.meth.20) %>%
+  dplyr::select("chr"=seqnames,start,end,"methylation_percentage"=score) %>%
+  dplyr::select(chr,start,end,methylation_percentage)
+
+export.bw(gpc.meth.20, paste0("/home/phook2/code/pwh_projects/hg002_y/bw/chm13v2.0_hg002_gpc_nanopolish_nanopore.bw"))
+write_tsv(gpc.20.bed,file="~/code/pwh_projects/hg002_y/bw/chm13v2.0_hg002_gpc_nanopolish_nanopore_freq.bed",col_names=FALSE)
+
+### zscore bw and bed
+z.gpc.meth.20 <- data.frame(chr= seqnames(gpc.loci.20),
+                      start=start(gpc.loci.20),
+                      getMeth(gpc.bis.20, type="raw", what="perBase")) %>%
+  mutate(meth=(.[,3])) %>%
+  mutate(score=(meth - mean(meth))/sd(meth)) %>%
+  dplyr::select(chr,start,score) %>%
+  mutate(end=start+1) %>%
+  mutate(sites=1) %>%
+  na.omit() %>%
+  GRanges()
+
+seqinfo(z.gpc.meth.20) <- Seqinfo(seqnames=seqinfo.20.2$seqname,
+                         seqlengths=seqinfo.20.2$seqlength,
+                         isCircular=seqinfo.20.2$isCircular)
+
+# Make bed
+z.gpc.20.bed <- as.data.frame(z.gpc.meth.20) %>%
+  dplyr::select("chr"=seqnames,start,end,"methylation_percentage"=score) %>%
+  dplyr::select(chr,start,end,methylation_percentage)
+
+export.bw(z.gpc.meth.20, paste0("/home/phook2/code/pwh_projects/hg002_y/bw/chm13v2.0_hg002_zscore_gpc_nanopolish_nanopore.bw"))
+write_tsv(z.gpc.20.bed,file="~/code/pwh_projects/hg002_y/bw/chm13v2.0_hg002_zscore_gpc_nanopolish_nanopore_freq.bed",col_names=FALSE)
+
+```
+
+# Loading CHM13 v2.7
+```{r}
+# CHM13 v2.7
+seqinfo.27 <- read_tsv("/pym/Data/paul/hg002_y/meth_calls/references/chm13v1.1_hg002XYv2.7.genomeFile",
+                       col_names = c("seqname", "seqlength")) %>%
+  mutate(isCircular=FALSE,
+         seqlength=as.numeric(seqlength))
+
+## seqlevels have to be in the same order so I have to rearrange chrM
+matched.27 <- seqinfo.27$seqname %in% "chrM"
+seqinfo.27.2 <- rbind(seqinfo.27[!matched.27,], seqinfo.27[matched.27,])
+```
+
+## CHM13v2.7 BWs and beds. Please note that the only filtering of the CpGs is for "NA" meaning no coverage.
+### CpGs
+```{r}
+# Guppy calls
+guppy.27="/pym/Data/paul/hg002_y/guppy_meth_calls/beds/chm13v2.7XY_HG002_UL_80_guppy.bismark"
+guppy.bisobj.27 <- read.bismark(guppy.27)
+guppy.coord.27 <- granges(guppy.bisobj.27)
+guppy.meth.27 <- data.frame(chr= seqnames(guppy.coord.27),
+                      start=start(guppy.coord.27),
+                      getMeth(guppy.bisobj.27, type="raw", what="perBase")) %>%
+  mutate(score=(.[,3])) %>%
+  dplyr::select(chr,start,score) %>%
+  mutate(end=start+1) %>%
+  mutate(sites=1) %>%
+  na.omit() %>%
+  GRanges()
+
+seqinfo(guppy.meth.27) <- Seqinfo(seqnames=seqinfo.27.2$seqname,
+                         seqlengths=seqinfo.27.2$seqlength,
+                         isCircular=seqinfo.27.2$isCircular)
+
+# Make bed
+guppy.27.bed <- as.data.frame(guppy.meth.27) %>%
+  dplyr::select("chr"=seqnames,start,end,"methylation_percentage"=score) %>%
+  dplyr::select(chr,start,end,methylation_percentage)
+
+export.bw(guppy.meth.27, paste0("/home/phook2/code/pwh_projects/hg002_y/bw/chm13v2.7XY_hg002_cpg_guppy_nanopore.bw"))
+write_tsv(guppy.27.bed,file="~/code/pwh_projects/hg002_y/bw/chm13v2.7XY_hg002_cpg_guppy_nanopore_freq.bed",col_names=FALSE)
+
+# Nanopolish nanonome calls
+nanopolish.27="/pym/Data/paul/hg002_y/meth_calls/calls/nanonome_2.7/processed/hg002_cpg_filtered_meth.freq"
+nanopolish.bisobj.27 <- read.bismark(nanopolish.27)
+nanopolish.coord.27 <- granges(nanopolish.bisobj.27)
+nanopolish.meth.27 <- data.frame(chr= seqnames(nanopolish.coord.27),
+                      start=start(nanopolish.coord.27),
+                      getMeth(nanopolish.bisobj.27, type="raw", what="perBase")) %>%
+  mutate(score=(.[,3])) %>%
+  dplyr::select(chr,start,score) %>%
+  mutate(end=start+1) %>%
+  mutate(sites=1) %>%
+  na.omit() %>%
+  GRanges()
+
+seqinfo(nanopolish.meth.27) <- Seqinfo(seqnames=seqinfo.27.2$seqname,
+                         seqlengths=seqinfo.27.2$seqlength,
+                         isCircular=seqinfo.27.2$isCircular)
+
+# Make bed
+nanopolish.27.bed <- as.data.frame(nanopolish.meth.27) %>%
+  dplyr::select("chr"=seqnames,start,end,"methylation_percentage"=score) %>%
+  dplyr::select(chr,start,end,methylation_percentage)
+
+export.bw(nanopolish.meth.27, paste0("/home/phook2/code/pwh_projects/hg002_y/bw/chm13v2.7XY_hg002_cpg_nanopolish_nanopore.bw"))
+write_tsv(nanopolish.27.bed,file="~/code/pwh_projects/hg002_y/bw/chm13v2.7XY_hg002_cpg_nanopolish_nanopore_freq.bed",col_names=FALSE)
+
+# PacBio Methylation calls
+pacbio.27="/atium/Data/projects/hg002_wgbs/bismark/long_read/hg002_pacbio_primrose_80.bismark"
+pacbio.bisobj.27 <- read.bismark(pacbio.27)
+pacbio.coord.27 <- granges(pacbio.bisobj.27)
+pacbio.meth.27 <- data.frame(chr= seqnames(pacbio.coord.27),
+                      start=start(pacbio.coord.27),
+                      getMeth(pacbio.bisobj.27, type="raw", what="perBase")) %>%
+  mutate(score=(.[,3])) %>%
+  dplyr::select(chr,start,score) %>%
+  mutate(end=start+1) %>%
+  mutate(sites=1) %>%
+  na.omit() %>%
+  GRanges()
+
+seqinfo(pacbio.meth.27) <- Seqinfo(seqnames=seqinfo.27.2$seqname,
+                         seqlengths=seqinfo.27.2$seqlength,
+                         isCircular=seqinfo.27.2$isCircular)
+
+# Make bed
+pacbio.27.bed <- as.data.frame(pacbio.meth.27) %>%
+  dplyr::select("chr"=seqnames,start,end,"methylation_percentage"=score) %>%
+  dplyr::select(chr,start,end,methylation_percentage)
+
+export.bw(pacbio.meth.27, paste0("/home/phook2/code/pwh_projects/hg002_y/bw/chm13v2.7XY_hg002_cpg_pacbio.bw"))
+write_tsv(pacbio.27.bed,file="~/code/pwh_projects/hg002_y/bw/chm13v2.7XY_hg002_cpg_pacbio_freq.bed",col_names=FALSE)
+```
+
+### GpCs
+```{r, gpc}
+#bw and bed
+gpc.27="/pym/Data/paul/hg002_y/meth_calls/calls/nanonome_2.7/processed/hg002_gpc_filtered_meth.freq"
+gpc.bis.27 <- read.bismark(gpc.27)
+gpc.loci.27 <- granges(gpc.bis.27)
+gpc.meth.27 <- data.frame(chr= seqnames(gpc.loci.27),
+                      start=start(gpc.loci.27),
+                      getMeth(gpc.bis.27, type="raw", what="perBase")) %>%
+  mutate(score=(.[,3])) %>%
+  dplyr::select(chr,start,score) %>%
+  mutate(end=start+1) %>%
+  mutate(sites=1) %>%
+  na.omit() %>%
+  GRanges()
+
+seqinfo(gpc.meth.27) <- Seqinfo(seqnames=seqinfo.27.2$seqname,
+                         seqlengths=seqinfo.27.2$seqlength,
+                         isCircular=seqinfo.27.2$isCircular)
+
+# Make bed
+gpc.27.bed <- as.data.frame(gpc.meth.27) %>%
+  dplyr::select("chr"=seqnames,start,end,"methylation_percentage"=score) %>%
+  dplyr::select(chr,start,end,methylation_percentage)
+
+export.bw(gpc.meth.27, paste0("/home/phook2/code/pwh_projects/hg002_y/bw/chm13v2.7XY_hg002_gpc_nanopolish_nanopore.bw"))
+write_tsv(gpc.27.bed,file="~/code/pwh_projects/hg002_y/bw/chm13v2.7XY_hg002_gpc_nanopolish_nanopore_freq.bed",col_names=FALSE)
+
+### zscore bw and bed
+z.gpc.meth.27 <- data.frame(chr= seqnames(gpc.loci.27),
+                      start=start(gpc.loci.27),
+                      getMeth(gpc.bis.27, type="raw", what="perBase")) %>%
+  mutate(meth=(.[,3])) %>%
+  mutate(score=(meth - mean(meth))/sd(meth)) %>%
+  dplyr::select(chr,start,score) %>%
+  mutate(end=start+1) %>%
+  mutate(sites=1) %>%
+  na.omit() %>%
+  GRanges()
+
+seqinfo(z.gpc.meth.27) <- Seqinfo(seqnames=seqinfo.27.2$seqname,
+                         seqlengths=seqinfo.27.2$seqlength,
+                         isCircular=seqinfo.27.2$isCircular)
+
+# Make bed
+z.gpc.27.bed <- as.data.frame(z.gpc.meth.27) %>%
+  dplyr::select("chr"=seqnames,start,end,"methylation_percentage"=score) %>%
+  dplyr::select(chr,start,end,methylation_percentage)
+
+export.bw(z.gpc.meth.27, paste0("/home/phook2/code/pwh_projects/hg002_y/bw/chm13v2.7XY_hg002_zscore_gpc_nanopolish_nanopore.bw"))
+write_tsv(z.gpc.27.bed,file="~/code/pwh_projects/hg002_y/bw/chm13v2.7XY_hg002_zscore_gpc_nanopolish_nanopore_freq.bed",col_names=FALSE)
+```

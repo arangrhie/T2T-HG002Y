@@ -1,0 +1,15 @@
+data:
+        # Download directory
+        unaligned_bam_list: /pym/Data/paul/hg002_y/guppy_meth_calls/hg002_remora_pass_nanopore_UL_CpG_calls.txt
+        fastq_out: /pym/Data/paul/hg002_y/guppy_meth_calls/fastqs
+        out_v20: /pym/Data/paul/hg002_y/guppy_meth_calls/aligned_bams/chm13v2.0_HG002
+        out_v27: /pym/Data/paul/hg002_y/guppy_meth_calls/aligned_bams/chm13v2.7XY_HG002
+        beds: /pym/Data/paul/hg002_y/guppy_meth_calls/beds
+
+reference:
+        # Reference directory
+        ref_v20: /pym/Data/paul/hg002_y/meth_calls/references/chm13v2.0.fa.gz
+        ref_v20_fa: /pym/Data/paul/hg002_y/meth_calls/references/chm13v2.0.fa
+        kmer_v20: /pym/Data/paul/hg002_y/meth_calls/references/CHM13_v2.0_repetitive_k15.txt
+        kmer_v27: /pym/Data/paul/hg002_y/meth_calls/references/CHM13_v2.7_repetitive_k15.txt
+        ref_v27: /pym/Data/paul/hg002_y/meth_calls/references/chm13v1.1_hg002XYv2.7.fasta

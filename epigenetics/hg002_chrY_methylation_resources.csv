@@ -1,0 +1,9 @@
+name,type,data_source,citation pmid,notes
+CHM13 v2.0,reference genome,https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/analysis_set/chm13v2.0.fa.gz,This study,"CHM13 autosomes, CHM13 chrX, HG002 chrY"
+CHM13 v2.7,reference genome,https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/HG002/assemblies/chm13v1.1_hg002XYv2.7.fasta,This study,"CHM13 autosomes, HG002 chrX, HG002 chrY"
+HG002 nanoNOMe sequencing,nanopore sequencing data,https://www.ncbi.nlm.nih.gov/bioproject/?term=PRJNA725525,35357915,.
+HG002 ultra-long sequencing,nanopore sequencing data,https://s3-us-west-2.amazonaws.com/human-pangenomics/index.html?prefix=NHGRI_UCSC_panel/HG002/nanopore/ultra-long/,This study ,.
+HG002 PacBio HiFi sequencing ,pacbio sequencing data,.,This study ,.
+HG002 whole genome bisulfite sequencing,illumina sequencing,"SRR13051101, SRR13051102, SRR13051103, SRR13051104, SRR13051105, SRR13051106",34872606,All replicates combined 
+HG002 enzymatic Methyl-seq,illumina sequencing,"SRR13051139, SRR13051140, SRR13051141, SRR13051142",34872606,Lab replicates combined
+HG002 methylation summary files,methylation files,Will be placed on Zenodo,This study,Available in the T2T Globus. Directory: /~/team-epigenetics/hg002_chm13_bw_beds/

@@ -1,0 +1,154 @@
+---
+title: "mbias_plots"
+author: "Paul Hook"
+date: "5/4/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+setwd("~/code/pwh_projects/")
+library(tidyverse)
+```
+
+```{r}
+# EM-seq
+## Make list of files to read in
+files_to_read <- list.files(path = "/atium/Data/projects/emseq_smk/bismark/emseq/mbias",pattern = "M-bias",full.names = T)
+
+## Read in the files, name them after the SRA ID, and put experiment name in a column
+for (i in 1:length(files_to_read)) {
+  #print(file)
+  name <- unlist(strsplit(files_to_read[i], "_"))[3]
+  #print(x)
+  x <- read_tsv(file = files_to_read[i],
+            skip = 2,
+            col_types = "nnnnn")
+  x$experiment <- name
+  assign(name,x)
+  rm(x)
+}
+
+## Pull out SRA names - these will correspond to data frames above
+sra_names <- strsplit(files_to_read, "_") %>% purrr::map(`[`,3) %>% unlist()
+
+## R1 CpG
+emseq.r1 <- c()
+for (i in 1:length(sra_names)) {
+  x <- get(sra_names[i]) %>% 
+    dplyr::slice(1:151) %>% 
+    dplyr::select(position,meth_perc=`% methylation`,experiment)
+  emseq.r1 <- rbind(emseq.r1,x)
+  rm(x)
+}
+
+
+ggplot(emseq.r1,aes(x=position,y=meth_perc,color=experiment)) + 
+  geom_line() + ylim(c(0,100)) + 
+  theme_classic() + geom_vline(xintercept = 3)
+
+# R2 CpG
+emseq.r2 <- c()
+for (i in 1:length(sra_names)) {
+  x <- get(sra_names[i]) %>% 
+    dplyr::slice(463:613) %>% 
+    dplyr::select(position,meth_perc=`% methylation`,experiment)
+  emseq.r2 <- rbind(emseq.r2,x)
+  rm(x)
+}
+
+
+ggplot(emseq.r2,aes(x=position,y=meth_perc,color=experiment)) + 
+  geom_line(size=1) + ylim(c(0,100)) + 
+  theme_classic() + geom_vline(xintercept = 6)
+
+```
+
+```{r}
+# Methylseq
+## Make list of files to read in
+files_to_read <- list.files(path = "/atium/Data/projects/emseq_smk/bismark/methylseq/mbias",pattern = "M-bias",full.names = T)
+
+## Read in the files, name them after the SRA ID, and put experiment name in a column
+for (i in 1:length(files_to_read)) {
+  #print(file)
+  name <- unlist(strsplit(files_to_read[i], "_"))[3]
+  #print(x)
+  x <- read_tsv(file = files_to_read[i],
+            skip = 2,
+            col_types = "nnnnn")
+  x$experiment <- name
+  assign(name,x)
+  rm(x)
+}
+
+## Pull out SRA names - these will correspond to data frames above
+sra_names <- strsplit(files_to_read, "_") %>% purrr::map(`[`,3) %>% unlist()
+
+## R1 CpG
+methylseq.r1 <- c()
+for (i in 1:length(sra_names)) {
+  x <- get(sra_names[i]) %>% 
+    dplyr::slice(1:131) %>% 
+    dplyr::select(position,meth_perc=`% methylation`,experiment)
+  methylseq.r1 <- rbind(methylseq.r1,x)
+  rm(x)
+}
+
+
+ggplot(methylseq.r1,aes(x=position,y=meth_perc,color=experiment)) + 
+  geom_line() + ylim(c(0,100)) + 
+  theme_classic() + geom_vline(xintercept = 3)
+
+# R2 CpG
+methylseq.r2 <- c()
+for (i in 1:length(sra_names)) {
+  x <- get(sra_names[i]) %>% 
+    dplyr::slice(403:533) %>% 
+    dplyr::select(position,meth_perc=`% methylation`,experiment)
+  methylseq.r2 <- rbind(methylseq.r2,x)
+  rm(x)
+}
+
+
+ggplot(methylseq.r2,aes(x=position,y=meth_perc,color=experiment)) + 
+  geom_line(size=1) + ylim(c(0,100)) + 
+  theme_classic() + geom_vline(xintercept = 6) + ggtitle("Methylseq R2")
+
+```
+
+```{r}
+# Nanopore
+## Make list of files to read in
+files_to_read <- list.files(path = "/atium/Data/projects/emseq_smk/bismark/nanopore/mbias",pattern = "M-bias",full.names = T)
+
+## Read in the files, name them after the SRA ID, and put experiment name in a column
+for (i in 1:length(files_to_read)) {
+  #print(file)
+  name <- unlist(strsplit(files_to_read[i], "[/]|[.]"))[9]
+  #print(x)
+  x <- read_tsv(file = files_to_read[i],
+            skip = 2,
+            col_types = "nnnnn")
+  x$experiment <- name
+  assign(name,x)
+  rm(x)
+}
+
+## Pull out SRA names - these will correspond to data frames above
+sra_names <- strsplit(files_to_read, "[/]|[.]") %>% purrr::map(`[`,9) %>% unlist()
+
+## R1 CpG
+nanopore.r1 <- c()
+for (i in 1:length(sra_names)) {
+  x <- get(sra_names[i]) %>% 
+    dplyr::slice(1:250) %>% 
+    dplyr::select(position,meth_perc=`% methylation`,experiment)
+  nanopore.r1 <- rbind(nanopore.r1,x)
+  rm(x)
+}
+
+ggplot(nanopore.r1,aes(x=position,y=meth_perc,color=experiment)) + 
+  geom_line() + ylim(c(0,100)) + 
+  theme_classic() + geom_vline(xintercept = 11)
+
+```

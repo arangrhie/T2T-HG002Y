@@ -1,0 +1,41 @@
+Read1 before filtering:
+total reads: 57642732
+total bases: 8704052532
+Q20 bases: 8381742623(96.297%)
+Q30 bases: 7858869019(90.2898%)
+
+Read2 before filtering:
+total reads: 57642732
+total bases: 8704052532
+Q20 bases: 8176171159(93.9352%)
+Q30 bases: 7419530694(85.2423%)
+
+Read1 after filtering:
+total reads: 57636598
+total bases: 7492148186
+Q20 bases: 7232809970(96.5385%)
+Q30 bases: 6794775950(90.692%)
+
+Read2 after filtering:
+total reads: 57636598
+total bases: 7491599305
+Q20 bases: 7052337840(94.1366%)
+Q30 bases: 6410975018(85.5755%)
+
+Filtering result:
+reads passed filter: 115273196
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 12268
+reads with adapter trimmed: 10716862
+bases trimmed due to adapters: 112919844
+
+Duplication rate: 5.0125%
+
+Insert size peak (evaluated by paired-end reads): 185
+
+JSON report: fastp.json
+HTML report: fastp.html
+
+fastp --in1 /mithril/Data/NGS/projects/hg002_wgbs/data/SRR13051103_1.fastq.gz --in2 /mithril/Data/NGS/projects/hg002_wgbs/data/SRR13051103_2.fastq.gz --out1 /atium/Data/projects/hg002_wgbs/trimmed/methylseq_SRR13051103_1.trimmed.fastq --out2 /atium/Data/projects/hg002_wgbs/trimmed/methylseq_SRR13051103_2.trimmed.fastq --trim_front1 10 --trim_tail1 10 --trim_front2 10 -l 2 -Q -z 4 --trim_poly_g --overrepresentation_analysis --thread 16 
+fastp v0.23.2, time used: 1759 seconds

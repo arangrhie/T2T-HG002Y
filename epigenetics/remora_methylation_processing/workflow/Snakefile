@@ -1,0 +1,56 @@
+import pandas as pd
+import os
+from snakemake.utils import validate
+from snakemake.utils import min_version
+
+### set minimum snakemake version ###
+min_version("7.3.3")
+
+### set config file ###
+configfile: "../config/config.yaml"
+
+### set report ###
+report: "../report/workflow.rst"
+
+### setup singularity ###
+# this container defines the underlying OS for each job when using the workflow
+# with --use-conda --use-singularity
+container: "docker://continuumio/miniconda3"
+
+# Import list of samples and extract basenames
+unaligned_bams_df = pd.read_csv(config["data"]["unaligned_bam_list"],names=["unaligned_bams"])
+UNALIGNED_BAMS_TB = unaligned_bams_df["unaligned_bams"].tolist() #this will be the input variables
+print(str(len(UNALIGNED_BAMS_TB)) + "unaligned BAMs will be processed!")
+BAM_BASENAME = [x.split('/')[-1] for x in UNALIGNED_BAMS_TB]
+print(BAM_BASENAME)
+
+#create pd
+d = {"sample" :BAM_BASENAME, "infile" :UNALIGNED_BAMS_TB}
+df = pd.DataFrame(d)
+print(df)
+print(df["sample"])
+
+### load rules ###
+include: "rules/align_process_remora_bams.smk"
+include: "rules/modbam2bed.smk"
+
+### wildcard constraints ###
+#wildcard_constraints:
+    #twist_lr_samples= '|'.join([re.escape(x) for x in TWIST_LR_SAMPLES]),
+    #timp_lr_sample= '|'.join([re.escape(x) for x in TIMP_LR_SAMPLE]),
+    #phase_bams= '|'.join([re.escape(x) for x in PHASE_BAMS])
+
+### set target rules ###
+rule all:
+	input:
+		expand(config["data"]["fastq_out"] + "/" + "{sample}.fastq",sample=df["sample"]),
+		config["data"]["out_v20"] + "/aligned_chm13v2.0_HG002_UL.sam",
+		config["data"]["out_v27"] + "/aligned_chm13v2.7XY_HG002_UL.sam",
+		config["data"]["out_v20"] + "/sorted_filtered_aligned_chm13v2.0_HG002_UL.bam",
+		config["data"]["out_v27"] + "/sorted_filtered_aligned_chm13v2.7XY_HG002_UL.bam",
+		config["data"]["beds"] + "/chm13v2.0_HG002_UL_80_guppy.bed",
+		config["data"]["beds"] + "/chm13v2.7XY_HG002_UL_80_guppy.bed",
+		config["data"]["beds"] + "/chm13v2.0_HG002_UL_80_guppy.bismark",
+		config["data"]["beds"] + "/chm13v2.7XY_HG002_UL_80_guppy.bismark",
+		config["data"]["out_v20"] + "/sorted_filtered_aligned_chm13v2.0_HG002_UL.bam.bai",
+		config["data"]["out_v27"] + "/sorted_filtered_aligned_chm13v2.7XY_HG002_UL.bam.bai"

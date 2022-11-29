@@ -1,0 +1,4 @@
+channels:
+        - bioconda
+dependencies:
+        - ffq==0.2.1

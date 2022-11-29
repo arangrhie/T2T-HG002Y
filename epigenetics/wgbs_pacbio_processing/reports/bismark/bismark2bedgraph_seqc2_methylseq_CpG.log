@@ -1,0 +1,170 @@
+Using these input files: /atium/Data/projects/hg002_wgbs/bismark/methylseq/meth_extraction/CpG_context_methylseq_SRR13051101_pe.deduplicated.txt.gz /atium/Data/projects/hg002_wgbs/bismark/methylseq/meth_extraction/CpG_context_methylseq_SRR13051102_pe.deduplicated.txt.gz /atium/Data/projects/hg002_wgbs/bismark/methylseq/meth_extraction/CpG_context_methylseq_SRR13051103_pe.deduplicated.txt.gz /atium/Data/projects/hg002_wgbs/bismark/methylseq/meth_extraction/CpG_context_methylseq_SRR13051106_pe.deduplicated.txt.gz /atium/Data/projects/hg002_wgbs/bismark/methylseq/meth_extraction/CpG_context_methylseq_SRR13051105_pe.deduplicated.txt.gz /atium/Data/projects/hg002_wgbs/bismark/methylseq/meth_extraction/CpG_context_methylseq_SRR13051104_pe.deduplicated.txt.gz
+
+Summary of parameters for bismark2bedGraph conversion:
+======================================================
+bedGraph output:		seqc2_methylseq_CpG.gz
+output directory:		>/atium/Data/projects/hg002_wgbs/bismark/methylseq/meth_extraction/bedgraph/<
+remove whitespaces:		yes
+CX context:			no (CpG context only, default)
+No-header selected:		no
+Sorting method:			Unix sort-based (smaller memory footprint, but slower)
+Sort buffer size:		20G
+Coverage threshold:		1
+=============================================================================
+Methylation information will now be written into a bedGraph and coverage file
+=============================================================================
+
+Using the following files as Input:
+/atium/Data/projects/hg002_wgbs/bismark/methylseq/meth_extraction/CpG_context_methylseq_SRR13051101_pe.deduplicated.txt.gz	/atium/Data/projects/hg002_wgbs/bismark/methylseq/meth_extraction/CpG_context_methylseq_SRR13051102_pe.deduplicated.txt.gz	/atium/Data/projects/hg002_wgbs/bismark/methylseq/meth_extraction/CpG_context_methylseq_SRR13051103_pe.deduplicated.txt.gz	/atium/Data/projects/hg002_wgbs/bismark/methylseq/meth_extraction/CpG_context_methylseq_SRR13051106_pe.deduplicated.txt.gz	/atium/Data/projects/hg002_wgbs/bismark/methylseq/meth_extraction/CpG_context_methylseq_SRR13051105_pe.deduplicated.txt.gz	/atium/Data/projects/hg002_wgbs/bismark/methylseq/meth_extraction/CpG_context_methylseq_SRR13051104_pe.deduplicated.txt.gz
+
+Writing bedGraph to file: seqc2_methylseq_CpG.gz
+Also writing out a coverage file including counts methylated and unmethylated residues to file: seqc2_methylseq_CpG.gz.bismark.cov.gz
+
+Changed directory to /atium/Data/projects/hg002_wgbs/bismark/methylseq/meth_extraction/bedgraph/
+Now replacing whitespaces in the sequence ID field of the Bismark methylation extractor output /atium/Data/projects/hg002_wgbs/bismark/methylseq/meth_extraction/CpG_context_methylseq_SRR13051101_pe.deduplicated.txt.gz prior to bedGraph conversion
+
+Attempting to write to file /atium/Data/projects/hg002_wgbs/bismark/methylseq/meth_extraction/bedgraph/CpG_context_methylseq_SRR13051101_pe.deduplicated.txt.gz.spaces_removed.txt
+
+Now writing methylation information for file >>CpG_context_methylseq_SRR13051101_pe.deduplicated.txt.gz.spaces_removed.txt<< to individual files for each chromosome
+Finished writing out individual chromosome files for CpG_context_methylseq_SRR13051101_pe.deduplicated.txt.gz.spaces_removed.txt
+Now replacing whitespaces in the sequence ID field of the Bismark methylation extractor output /atium/Data/projects/hg002_wgbs/bismark/methylseq/meth_extraction/CpG_context_methylseq_SRR13051102_pe.deduplicated.txt.gz prior to bedGraph conversion
+
+Attempting to write to file /atium/Data/projects/hg002_wgbs/bismark/methylseq/meth_extraction/bedgraph/CpG_context_methylseq_SRR13051102_pe.deduplicated.txt.gz.spaces_removed.txt
+
+Now writing methylation information for file >>CpG_context_methylseq_SRR13051102_pe.deduplicated.txt.gz.spaces_removed.txt<< to individual files for each chromosome
+Finished writing out individual chromosome files for CpG_context_methylseq_SRR13051102_pe.deduplicated.txt.gz.spaces_removed.txt
+Now replacing whitespaces in the sequence ID field of the Bismark methylation extractor output /atium/Data/projects/hg002_wgbs/bismark/methylseq/meth_extraction/CpG_context_methylseq_SRR13051103_pe.deduplicated.txt.gz prior to bedGraph conversion
+
+Attempting to write to file /atium/Data/projects/hg002_wgbs/bismark/methylseq/meth_extraction/bedgraph/CpG_context_methylseq_SRR13051103_pe.deduplicated.txt.gz.spaces_removed.txt
+
+Now writing methylation information for file >>CpG_context_methylseq_SRR13051103_pe.deduplicated.txt.gz.spaces_removed.txt<< to individual files for each chromosome
+Finished writing out individual chromosome files for CpG_context_methylseq_SRR13051103_pe.deduplicated.txt.gz.spaces_removed.txt
+Now replacing whitespaces in the sequence ID field of the Bismark methylation extractor output /atium/Data/projects/hg002_wgbs/bismark/methylseq/meth_extraction/CpG_context_methylseq_SRR13051106_pe.deduplicated.txt.gz prior to bedGraph conversion
+
+Attempting to write to file /atium/Data/projects/hg002_wgbs/bismark/methylseq/meth_extraction/bedgraph/CpG_context_methylseq_SRR13051106_pe.deduplicated.txt.gz.spaces_removed.txt
+
+Now writing methylation information for file >>CpG_context_methylseq_SRR13051106_pe.deduplicated.txt.gz.spaces_removed.txt<< to individual files for each chromosome
+Finished writing out individual chromosome files for CpG_context_methylseq_SRR13051106_pe.deduplicated.txt.gz.spaces_removed.txt
+Now replacing whitespaces in the sequence ID field of the Bismark methylation extractor output /atium/Data/projects/hg002_wgbs/bismark/methylseq/meth_extraction/CpG_context_methylseq_SRR13051105_pe.deduplicated.txt.gz prior to bedGraph conversion
+
+Attempting to write to file /atium/Data/projects/hg002_wgbs/bismark/methylseq/meth_extraction/bedgraph/CpG_context_methylseq_SRR13051105_pe.deduplicated.txt.gz.spaces_removed.txt
+
+Now writing methylation information for file >>CpG_context_methylseq_SRR13051105_pe.deduplicated.txt.gz.spaces_removed.txt<< to individual files for each chromosome
+Finished writing out individual chromosome files for CpG_context_methylseq_SRR13051105_pe.deduplicated.txt.gz.spaces_removed.txt
+Now replacing whitespaces in the sequence ID field of the Bismark methylation extractor output /atium/Data/projects/hg002_wgbs/bismark/methylseq/meth_extraction/CpG_context_methylseq_SRR13051104_pe.deduplicated.txt.gz prior to bedGraph conversion
+
+Attempting to write to file /atium/Data/projects/hg002_wgbs/bismark/methylseq/meth_extraction/bedgraph/CpG_context_methylseq_SRR13051104_pe.deduplicated.txt.gz.spaces_removed.txt
+
+Now writing methylation information for file >>CpG_context_methylseq_SRR13051104_pe.deduplicated.txt.gz.spaces_removed.txt<< to individual files for each chromosome
+Finished writing out individual chromosome files for CpG_context_methylseq_SRR13051104_pe.deduplicated.txt.gz.spaces_removed.txt
+
+Collecting temporary chromosome file information... Processing the following input file(s):
+CpG_context_methylseq_SRR13051101_pe.deduplicated.txt.gz.spaces_removed.txt.chrchr14.methXtractor.temp
+CpG_context_methylseq_SRR13051101_pe.deduplicated.txt.gz.spaces_removed.txt.chrchr2.methXtractor.temp
+CpG_context_methylseq_SRR13051101_pe.deduplicated.txt.gz.spaces_removed.txt.chrchr1.methXtractor.temp
+CpG_context_methylseq_SRR13051101_pe.deduplicated.txt.gz.spaces_removed.txt.chrchr20.methXtractor.temp
+CpG_context_methylseq_SRR13051101_pe.deduplicated.txt.gz.spaces_removed.txt.chrchr3.methXtractor.temp
+CpG_context_methylseq_SRR13051101_pe.deduplicated.txt.gz.spaces_removed.txt.chrchr22.methXtractor.temp
+CpG_context_methylseq_SRR13051101_pe.deduplicated.txt.gz.spaces_removed.txt.chrchrL.methXtractor.temp
+CpG_context_methylseq_SRR13051101_pe.deduplicated.txt.gz.spaces_removed.txt.chrchr6.methXtractor.temp
+CpG_context_methylseq_SRR13051101_pe.deduplicated.txt.gz.spaces_removed.txt.chrchr12.methXtractor.temp
+CpG_context_methylseq_SRR13051101_pe.deduplicated.txt.gz.spaces_removed.txt.chrchr7.methXtractor.temp
+CpG_context_methylseq_SRR13051101_pe.deduplicated.txt.gz.spaces_removed.txt.chrchr9.methXtractor.temp
+CpG_context_methylseq_SRR13051101_pe.deduplicated.txt.gz.spaces_removed.txt.chrchr4.methXtractor.temp
+CpG_context_methylseq_SRR13051101_pe.deduplicated.txt.gz.spaces_removed.txt.chrchr19.methXtractor.temp
+CpG_context_methylseq_SRR13051101_pe.deduplicated.txt.gz.spaces_removed.txt.chrchr21.methXtractor.temp
+CpG_context_methylseq_SRR13051101_pe.deduplicated.txt.gz.spaces_removed.txt.chrchr5.methXtractor.temp
+CpG_context_methylseq_SRR13051101_pe.deduplicated.txt.gz.spaces_removed.txt.chrchr11.methXtractor.temp
+CpG_context_methylseq_SRR13051101_pe.deduplicated.txt.gz.spaces_removed.txt.chrchr8.methXtractor.temp
+CpG_context_methylseq_SRR13051101_pe.deduplicated.txt.gz.spaces_removed.txt.chrchrX.methXtractor.temp
+CpG_context_methylseq_SRR13051101_pe.deduplicated.txt.gz.spaces_removed.txt.chrchr17.methXtractor.temp
+CpG_context_methylseq_SRR13051101_pe.deduplicated.txt.gz.spaces_removed.txt.chrchr15.methXtractor.temp
+CpG_context_methylseq_SRR13051101_pe.deduplicated.txt.gz.spaces_removed.txt.chrchr13.methXtractor.temp
+CpG_context_methylseq_SRR13051101_pe.deduplicated.txt.gz.spaces_removed.txt.chrchr10.methXtractor.temp
+CpG_context_methylseq_SRR13051101_pe.deduplicated.txt.gz.spaces_removed.txt.chrchr18.methXtractor.temp
+CpG_context_methylseq_SRR13051101_pe.deduplicated.txt.gz.spaces_removed.txt.chrchr16.methXtractor.temp
+CpG_context_methylseq_SRR13051101_pe.deduplicated.txt.gz.spaces_removed.txt.chrchrM.methXtractor.temp
+CpG_context_methylseq_SRR13051101_pe.deduplicated.txt.gz.spaces_removed.txt.chrchrY.methXtractor.temp
+CpG_context_methylseq_SRR13051102_pe.deduplicated.txt.gz.spaces_removed.txt.chrM77789.2.methXtractor.temp
+
+Sorting input file CpG_context_methylseq_SRR13051101_pe.deduplicated.txt.gz.spaces_removed.txt.chrchr1.methXtractor.temp by positions (using -S of 20G)
+Successfully deleted the temporary input file CpG_context_methylseq_SRR13051101_pe.deduplicated.txt.gz.spaces_removed.txt.chrchr1.methXtractor.temp
+
+Sorting input file CpG_context_methylseq_SRR13051101_pe.deduplicated.txt.gz.spaces_removed.txt.chrchr10.methXtractor.temp by positions (using -S of 20G)
+Successfully deleted the temporary input file CpG_context_methylseq_SRR13051101_pe.deduplicated.txt.gz.spaces_removed.txt.chrchr10.methXtractor.temp
+
+Sorting input file CpG_context_methylseq_SRR13051101_pe.deduplicated.txt.gz.spaces_removed.txt.chrchr11.methXtractor.temp by positions (using -S of 20G)
+Successfully deleted the temporary input file CpG_context_methylseq_SRR13051101_pe.deduplicated.txt.gz.spaces_removed.txt.chrchr11.methXtractor.temp
+
+Sorting input file CpG_context_methylseq_SRR13051101_pe.deduplicated.txt.gz.spaces_removed.txt.chrchr12.methXtractor.temp by positions (using -S of 20G)
+Successfully deleted the temporary input file CpG_context_methylseq_SRR13051101_pe.deduplicated.txt.gz.spaces_removed.txt.chrchr12.methXtractor.temp
+
+Sorting input file CpG_context_methylseq_SRR13051101_pe.deduplicated.txt.gz.spaces_removed.txt.chrchr13.methXtractor.temp by positions (using -S of 20G)
+Successfully deleted the temporary input file CpG_context_methylseq_SRR13051101_pe.deduplicated.txt.gz.spaces_removed.txt.chrchr13.methXtractor.temp
+
+Sorting input file CpG_context_methylseq_SRR13051101_pe.deduplicated.txt.gz.spaces_removed.txt.chrchr14.methXtractor.temp by positions (using -S of 20G)
+Successfully deleted the temporary input file CpG_context_methylseq_SRR13051101_pe.deduplicated.txt.gz.spaces_removed.txt.chrchr14.methXtractor.temp
+
+Sorting input file CpG_context_methylseq_SRR13051101_pe.deduplicated.txt.gz.spaces_removed.txt.chrchr15.methXtractor.temp by positions (using -S of 20G)
+Successfully deleted the temporary input file CpG_context_methylseq_SRR13051101_pe.deduplicated.txt.gz.spaces_removed.txt.chrchr15.methXtractor.temp
+
+Sorting input file CpG_context_methylseq_SRR13051101_pe.deduplicated.txt.gz.spaces_removed.txt.chrchr16.methXtractor.temp by positions (using -S of 20G)
+Successfully deleted the temporary input file CpG_context_methylseq_SRR13051101_pe.deduplicated.txt.gz.spaces_removed.txt.chrchr16.methXtractor.temp
+
+Sorting input file CpG_context_methylseq_SRR13051101_pe.deduplicated.txt.gz.spaces_removed.txt.chrchr17.methXtractor.temp by positions (using -S of 20G)
+Successfully deleted the temporary input file CpG_context_methylseq_SRR13051101_pe.deduplicated.txt.gz.spaces_removed.txt.chrchr17.methXtractor.temp
+
+Sorting input file CpG_context_methylseq_SRR13051101_pe.deduplicated.txt.gz.spaces_removed.txt.chrchr18.methXtractor.temp by positions (using -S of 20G)
+Successfully deleted the temporary input file CpG_context_methylseq_SRR13051101_pe.deduplicated.txt.gz.spaces_removed.txt.chrchr18.methXtractor.temp
+
+Sorting input file CpG_context_methylseq_SRR13051101_pe.deduplicated.txt.gz.spaces_removed.txt.chrchr19.methXtractor.temp by positions (using -S of 20G)
+Successfully deleted the temporary input file CpG_context_methylseq_SRR13051101_pe.deduplicated.txt.gz.spaces_removed.txt.chrchr19.methXtractor.temp
+
+Sorting input file CpG_context_methylseq_SRR13051101_pe.deduplicated.txt.gz.spaces_removed.txt.chrchr2.methXtractor.temp by positions (using -S of 20G)
+Successfully deleted the temporary input file CpG_context_methylseq_SRR13051101_pe.deduplicated.txt.gz.spaces_removed.txt.chrchr2.methXtractor.temp
+
+Sorting input file CpG_context_methylseq_SRR13051101_pe.deduplicated.txt.gz.spaces_removed.txt.chrchr20.methXtractor.temp by positions (using -S of 20G)
+Successfully deleted the temporary input file CpG_context_methylseq_SRR13051101_pe.deduplicated.txt.gz.spaces_removed.txt.chrchr20.methXtractor.temp
+
+Sorting input file CpG_context_methylseq_SRR13051101_pe.deduplicated.txt.gz.spaces_removed.txt.chrchr21.methXtractor.temp by positions (using -S of 20G)
+Successfully deleted the temporary input file CpG_context_methylseq_SRR13051101_pe.deduplicated.txt.gz.spaces_removed.txt.chrchr21.methXtractor.temp
+
+Sorting input file CpG_context_methylseq_SRR13051101_pe.deduplicated.txt.gz.spaces_removed.txt.chrchr22.methXtractor.temp by positions (using -S of 20G)
+Successfully deleted the temporary input file CpG_context_methylseq_SRR13051101_pe.deduplicated.txt.gz.spaces_removed.txt.chrchr22.methXtractor.temp
+
+Sorting input file CpG_context_methylseq_SRR13051101_pe.deduplicated.txt.gz.spaces_removed.txt.chrchr3.methXtractor.temp by positions (using -S of 20G)
+Successfully deleted the temporary input file CpG_context_methylseq_SRR13051101_pe.deduplicated.txt.gz.spaces_removed.txt.chrchr3.methXtractor.temp
+
+Sorting input file CpG_context_methylseq_SRR13051101_pe.deduplicated.txt.gz.spaces_removed.txt.chrchr4.methXtractor.temp by positions (using -S of 20G)
+Successfully deleted the temporary input file CpG_context_methylseq_SRR13051101_pe.deduplicated.txt.gz.spaces_removed.txt.chrchr4.methXtractor.temp
+
+Sorting input file CpG_context_methylseq_SRR13051101_pe.deduplicated.txt.gz.spaces_removed.txt.chrchr5.methXtractor.temp by positions (using -S of 20G)
+Successfully deleted the temporary input file CpG_context_methylseq_SRR13051101_pe.deduplicated.txt.gz.spaces_removed.txt.chrchr5.methXtractor.temp
+
+Sorting input file CpG_context_methylseq_SRR13051101_pe.deduplicated.txt.gz.spaces_removed.txt.chrchr6.methXtractor.temp by positions (using -S of 20G)
+Successfully deleted the temporary input file CpG_context_methylseq_SRR13051101_pe.deduplicated.txt.gz.spaces_removed.txt.chrchr6.methXtractor.temp
+
+Sorting input file CpG_context_methylseq_SRR13051101_pe.deduplicated.txt.gz.spaces_removed.txt.chrchr7.methXtractor.temp by positions (using -S of 20G)
+Successfully deleted the temporary input file CpG_context_methylseq_SRR13051101_pe.deduplicated.txt.gz.spaces_removed.txt.chrchr7.methXtractor.temp
+
+Sorting input file CpG_context_methylseq_SRR13051101_pe.deduplicated.txt.gz.spaces_removed.txt.chrchr8.methXtractor.temp by positions (using -S of 20G)
+Successfully deleted the temporary input file CpG_context_methylseq_SRR13051101_pe.deduplicated.txt.gz.spaces_removed.txt.chrchr8.methXtractor.temp
+
+Sorting input file CpG_context_methylseq_SRR13051101_pe.deduplicated.txt.gz.spaces_removed.txt.chrchr9.methXtractor.temp by positions (using -S of 20G)
+Successfully deleted the temporary input file CpG_context_methylseq_SRR13051101_pe.deduplicated.txt.gz.spaces_removed.txt.chrchr9.methXtractor.temp
+
+Sorting input file CpG_context_methylseq_SRR13051101_pe.deduplicated.txt.gz.spaces_removed.txt.chrchrL.methXtractor.temp by positions (using -S of 20G)
+Successfully deleted the temporary input file CpG_context_methylseq_SRR13051101_pe.deduplicated.txt.gz.spaces_removed.txt.chrchrL.methXtractor.temp
+
+Sorting input file CpG_context_methylseq_SRR13051101_pe.deduplicated.txt.gz.spaces_removed.txt.chrchrM.methXtractor.temp by positions (using -S of 20G)
+Successfully deleted the temporary input file CpG_context_methylseq_SRR13051101_pe.deduplicated.txt.gz.spaces_removed.txt.chrchrM.methXtractor.temp
+
+Sorting input file CpG_context_methylseq_SRR13051101_pe.deduplicated.txt.gz.spaces_removed.txt.chrchrX.methXtractor.temp by positions (using -S of 20G)
+Successfully deleted the temporary input file CpG_context_methylseq_SRR13051101_pe.deduplicated.txt.gz.spaces_removed.txt.chrchrX.methXtractor.temp
+
+Sorting input file CpG_context_methylseq_SRR13051101_pe.deduplicated.txt.gz.spaces_removed.txt.chrchrY.methXtractor.temp by positions (using -S of 20G)
+Successfully deleted the temporary input file CpG_context_methylseq_SRR13051101_pe.deduplicated.txt.gz.spaces_removed.txt.chrchrY.methXtractor.temp
+
+Sorting input file CpG_context_methylseq_SRR13051102_pe.deduplicated.txt.gz.spaces_removed.txt.chrM77789.2.methXtractor.temp by positions (using -S of 20G)
+Successfully deleted the temporary input file CpG_context_methylseq_SRR13051102_pe.deduplicated.txt.gz.spaces_removed.txt.chrM77789.2.methXtractor.temp
+

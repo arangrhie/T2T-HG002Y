@@ -1,0 +1,1000 @@
+ 1617  ls -lrt
+ 1618  df -h
+ 1619  ls -lrt
+ 1620  cd ..
+ 1621  ls
+ 1622  cd ..
+ 1623  ls
+ 1624  cd gpc_calls/
+ 1625  ls
+ 1626  cd ..
+ 1627  ls
+ 1628  rm -r gpc_calls/
+ 1629  ls -lrt
+ 1630  cd pacbio_meth_calls/
+ 1631  ls
+ 1632  ls -lrt
+ 1633  rm chrY_*
+ 1634  ls -lrt
+ 1635  cd ..
+ 1636  ls
+ 1637  cd meth_calls/calls/nanonome/
+ 1638  ls
+ 1639  cd processed/
+ 1640  ls
+ 1641  ls -lrt
+ 1642  ls
+ 1643  cd ..
+ 1644  ls
+ 1645  cd ..
+ 1646  mkdir nanonome_2.0
+ 1647  ls
+ 1648  ls -lrt
+ 1649  cd ~/code/pwh_projects/hg002_y/browser/
+ 1650  ls
+ 1651  ls -lrt
+ 1652  less nanonome_cpggpc_call_meth.sh 
+ 1653  cp cpggpc_nanonome_CHM13v2.7_nanopolish_call_meth.sh cpggpc_nanonome_CHM13v2.0_nanopolish_call_meth.sh
+ 1654  vi cpggpc_nanonome_CHM13v2.0_nanopolish_call_meth.sh 
+ 1655  less align_hg002.sh 
+ 1656  vi cpggpc_nanonome_CHM13v2.0_nanopolish_call_meth.sh 
+ 1657  ls -lrt
+ 1658  vi nanonome_cpggpc_call_meth.sh 
+ 1659  tmux 
+ 1660  tmux
+ 1661  htop
+ 1662  cd logs/
+ 1663  ls -lrt
+ 1664  less all_cpggpc_nanonome_CHM13_v2.0_201119_HG002_nanonome_SREXL.log 
+ 1665  tmux ls
+ 1666  tmux a -t103
+ 1667  tmux a -t104
+ 1668  tmux a -t105
+ 1669  ls -lrt
+ 1670  less all_cpggpc_nanonome_CHM13_v2.0_201119_HG002_nanonome_SREXL.log 
+ 1671  cd /pym/Data/paul/hg002_y/meth_calls/calls/
+ 1672  ls -lrt
+ 1673  cd nanonome_2.0/
+ 1674  ls
+ 1675  ls -lrt
+ 1676  cd ..
+ 1677  ls
+ 1678  cd nanonome
+ 1679  ls
+ 1680  cd processed/
+ 1681  ls
+ 1682  ls -lrt
+ 1683  cp hg002_cpg_filtered_meth.freq ~/nanopore_CHM13v2.7_hg002_cpg_nanonome.freq
+ 1684  ls -lrt
+ 1685  gunzip -c gpc_filtered_meth.bed.gz | head
+ 1686  gunzip -c gpc_filtered_meth.bed.gz | tail
+ 1687  cd ~/code/pwh_projects/hg002_y/beds/
+ 1688  ls
+ 1689  ls -lrt
+ 1690  grep "CG" Y_1B_1.SpeI_digest_nhmmerout.nohead.sized.adjusted.consPID.bed 
+ 1691  less Y_1B_1.SpeI_digest_nhmmerout.nohead.sized.adjusted.consPID.bed 
+ 1692  cd /pym/Data/paul/hg002_y/meth_calls/calls/nanonome_2.0/
+ 1693  ls
+ 1694  cd ..
+ 1695  ls
+ 1696  cd nanonome
+ 1697  ls
+ 1698  cd processed/
+ 1699  ls
+ 1700  ls -lrt
+ 1701  ls -lrt
+ 1702  ./cpg_nanonome_CHM13v2.7_nanopolish_processing.sh 
+ 1703  cd /pym/Data/paul/hg002_y/meth_calls/calls/nanonome/processed/
+ 1704  ls
+ 1705  ls -lrt
+ 1706  sort cpggpc_nanonome_CHM13v2.7_HG002_nanonome_meth.tmp -k1,1 -k2,2n | bgzip > cpggpc_cpggpc_nanonome_CHM13v2.7_HG002_nanonome_meth.bed.gz
+ 1707  ls -lrt
+ 1708  gunzip -c cpggpc_cpggpc_nanonome_CHM13v2.7_HG002_nanonome_meth.bed.gz | head
+ 1709  ls -lrt
+ 1710  tabix -p bed cpggpc_cpggpc_nanonome_CHM13v2.7_HG002_nanonome_meth.bed.gz
+ 1711  python3 ~/software/nanopore-methylation-utilities/parseMethylbed.py frequency --mod cpggpc -i cpggpc_cpggpc_nanonome_CHM13v2.7_HG002_nanonome_meth.bed.gz > cpggpc_meth.freq
+ 1712  python3 ~/software/nanopore-methylation-utilities/parseMethylbed.py frequency -m cpggpc -i cpggpc_cpggpc_nanonome_CHM13v2.7_HG002_nanonome_meth.bed.gz > cpggpc_meth.freq
+ 1713  python3 ~/software/nanopore-methylation-utilities/parseMethylbed.py frequency --help
+ 1714  python3 ~/software/nanopore-methylation-utilities/parseMethylbed.py frequency -m 'cpggpc' -i cpggpc_cpggpc_nanonome_CHM13v2.7_HG002_nanonome_meth.bed.gz > cpggpc_meth.freq
+ 1715  python3 ~/software/nanopore-methylation-utilities/parseMethylbed.py frequency -m cpg -i cpggpc_cpggpc_nanonome_CHM13v2.7_HG002_nanonome_meth.bed.gz > cpggpc_meth.freq
+ 1716  conda avail 
+ 1717  conda activate hg002_y
+ 1718  python3 ~/software/nanopore-methylation-utilities/parseMethylbed.py frequency -m cpggpc -i cpggpc_cpggpc_nanonome_CHM13v2.7_HG002_nanonome_meth.bed.gz > cpggpc_meth.freq
+ 1719  vi ~/software/nanopore-methylation-utilities/parseMethylbed.py
+ 1720  python3 ~/software/nanopore-methylation-utilities/parseMethylbed.py frequency -m cpg -i cpggpc_cpggpc_nanonome_CHM13v2.7_HG002_nanonome_meth.bed.gz > cpggpc_meth.freq
+ 1721  python3 ~/software/nanopore-methylation-utilities/parseMethylbed.py frequency -m "cpggpc" -i cpggpc_cpggpc_nanonome_CHM13v2.7_HG002_nanonome_meth.bed.gz > cpggpc_meth.freq
+ 1722  python3 ~/software/nanopore-methylation-utilities/parseMethylbed.py frequency -m "cpg" -i cpggpc_cpggpc_nanonome_CHM13v2.7_HG002_nanonome_meth.bed.gz > cpggpc_meth.freq
+ 1723  python3 ~/software/nanopore-methylation-utilities/parseMethylbed.py frequency -i cpggpc_cpggpc_nanonome_CHM13v2.7_HG002_nanonome_meth.bed.gz > cpggpc_meth.freq
+ 1724  python3 ~/software/nanopore-methylation-utilities/parseMethylbed.py -m cpggpc frequency -i cpggpc_cpggpc_nanonome_CHM13v2.7_HG002_nanonome_meth.bed.gz > cpggpc_meth.freq
+ 1725  ls -lrt
+ 1726  cd ~/code/pwh_projects/hg002_y/browser/
+ 1727  ls
+ 1728  ls -lrt
+ 1729  ~/software/nanopore-methylation-utilities/
+ 1730  ls
+ 1731  cd ~/software/nanopore-methylation-utilities/
+ 1732  ls
+ 1733  ls -lrt
+ 1734  less mtsv2bedGraph_upperlower.py 
+ 1735  vi molnar_mtsv2bedGraph.py
+ 1736  rm molnar_mtsv2bedGraph.py 
+ 1737  vi molnar_mtsv2bedGraph.py
+ 1738  wget https://github.com/mike-molnar/nanopore-workflow/blob/main/scripts/mtsv2bedGraph.py
+ 1739  ls
+ 1740  ls -lrt
+ 1741  mv mtsv2bedGraph.py.1 molnar_mtsv2bedGraph.py
+ 1742  ls
+ 1743  ls -lrt
+ 1744  chmod 777 molnar_mtsv2bedGraph.py 
+ 1745  ls
+ 1746  ls -lrt
+ 1747  cd /pym/Data/paul/hg002_y/meth_calls/calls/nanonome/processed/
+ 1748  ls
+ 1749  ls -lrt
+ 1750  cd ~/code/pwh_projects/hg002_y/binned_meth/
+ 1751  ls -lrt
+ 1752  cd ../browser/
+ 1753  ls
+ 1754  ls -lrt
+ 1755  vi cpg_nanonome_CHM13v2.7_nanopolish_processing.sh 
+ 1756  cd /pym/Data/paul/hg002_y/meth_calls/calls/
+ 1757  ls
+ 1758  cd nanonome/
+ 1759  ls
+ 1760  cd processed/
+ 1761  ls
+ 1762  ls -lrt
+ 1763  python3 ~/software/nanopore-methylation-utilities/molnar_mtsv2bedGraph.py --help
+ 1764  vi ~/software/nanopore-methylation-utilities/molnar_mtsv2bedGraph.py
+ 1765  cd ~/software/nanopore-methylation-utilities/
+ 1766  rm molnar_mtsv2bedGraph.py 
+ 1767  wget https://raw.githubusercontent.com/mike-molnar/nanopore-workflow/main/scripts/mtsv2bedGraph.py
+ 1768  ls -lrt
+ 1769  less mtsv2bedGraph.py.1 
+ 1770  mv mtsv2bedGraph.py.1 molnar_mtsv2bedGraph.py
+ 1771  ls
+ 1772  ls -lrt
+ 1773  chmod 755 molnar_mtsv2bedGraph.py 
+ 1774  ls
+ 1775  cd /pym/Data/paul/hg002_y/meth_calls/calls/nanonome/processed/
+ 1776  ls
+ 1777  python3 ~/software/nanopore-methylation-utilities/molnar_mtsv2bedGraph.py --help
+ 1778  python3 ~/software/nanopore-methylation-utilities/molnar_mtsv2bedGraph.py -m cpg -c 1.5 -i header_20kb_cpggpc_nanonome_CHM13v2.7_HG002_nanonome_methylation.tsv -g /pym/Data/paul/hg002_y/meth_calls/references/chm13v1.1_hg002XYv2.7.fasta > molnar_cpg_meth.tmp
+ 1779  python3 ~/software/nanopore-methylation-utilities/molnar_mtsv2bedGraph.py -m cpg -c 1.5 -i header_20kb_cpggpc_nanonome_CHM13v2.7_HG002_nanonome_methylation.tsv > molnar_cpg_meth.tmp
+ 1780  ls
+ 1781  ls -lrt
+ 1782  head header_20kb_cpggpc_nanonome_CHM13v2.7_HG002_nanonome_methylation.tsv 
+ 1783  head -100 header_20kb_cpggpc_nanonome_CHM13v2.7_HG002_nanonome_methylation.tsv > test.tsv
+ 1784  python3 ~/software/nanopore-methylation-utilities/molnar_mtsv2bedGraph.py -m cpg -c 1.5 -i test.tsv > molnar_cpg_meth.tmp
+ 1785  head -100 header_20kb_cpggpc_nanonome_CHM13v2.7_HG002_nanonome_methylation.tsv | awk -v FS='\t' -v OFS='\t '{print $1-12}'> test.tsv
+ 1786  head -100 header_20kb_cpggpc_nanonome_CHM13v2.7_HG002_nanonome_methylation.tsv | awk -v FS='\t' -v OFS='\t '{print $1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12}' > test.tsv
+ 1787  head -100 header_20kb_cpggpc_nanonome_CHM13v2.7_HG002_nanonome_methylation.tsv | awk -v FS='\t' -v OFS='\t' '{print $1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12}' > test.tsv
+ 1788  head test.tsv 
+ 1789  python3 ~/software/nanopore-methylation-utilities/molnar_mtsv2bedGraph.py -m cpg -c 1.5 -i test.tsv > molnar_cpg_meth.tmp
+ 1790  python3 ~/software/nanopore-methylation-utilities/mtsv2bedGraph.py -m cpg -c 1.5 -i test.tsv > molnar_cpg_meth.tmp
+ 1791  python3 ~/software/nanopore-methylation-utilities/mtsv2bedGraph.py -m cpg -c 1.5 -i test.tsv -g /pym/Data/paul/hg002_y/meth_calls/references/chm13v1.1_hg002XYv2.7.fasta > molnar_cpg_meth.tmp
+ 1792  python3 ~/software/nanopore-methylation-utilities/mtsv2bedGraph.py -q cpg -c 1.5 -i test.tsv -g /pym/Data/paul/hg002_y/meth_calls/references/chm13v1.1_hg002XYv2.7.fasta > molnar_cpg_meth.tmp
+ 1793  ls -lrt
+ 1794  less molnar_cpg_meth.tmp 
+ 1795  python3 ~/software/nanopore-methylation-utilities/mtsv2bedGraph.py -q cpggpc -c 1.5 -i test.tsv -g /pym/Data/paul/hg002_y/meth_calls/references/chm13v1.1_hg002XYv2.7.fasta > molnar_cpg_meth.tmp
+ 1796  ls -lrt
+ 1797  less molnar_cpg_meth.tmp 
+ 1798  cat header_20kb_cpggpc_nanonome_CHM13v2.7_HG002_nanonome_methylation.tsv | awk -v FS='\t' -v OFS='\t '{print $1-12}'> filtered_header_20kb_cpggpc_nanonome_CHM13v2.7_HG002_nanonome_methylation.tsv
+ 1799  cat header_20kb_cpggpc_nanonome_CHM13v2.7_HG002_nanonome_methylation.tsv | awk -v FS='\t' -v OFS='\t' '{print $1-12}'> filtered_header_20kb_cpggpc_nanonome_CHM13v2.7_HG002_nanonome_methylation.tsv
+ 1800  cat header_20kb_cpggpc_nanonome_CHM13v2.7_HG002_nanonome_methylation.tsv | awk -v FS='\t' -v OFS='\t' '{print $1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12}'> filtered_header_20kb_cpggpc_nanonome_CHM13v2.7_HG002_nanonome_methylation.tsv
+ 1801  ls -lrt
+ 1802  head filtered_header_20kb_cpggpc_nanonome_CHM13v2.7_HG002_nanonome_methylation.tsv 
+ 1803  cat header_20kb_cpggpc_nanonome_CHM13v2.7_HG002_nanonome_methylation.tsv | awk -v FS='\t' -v OFS='\t' '$11=="CG" {print $1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12}'> cpg_filtered_header_20kb_cpggpc_nanonome_CHM13v2.7_HG002_nanonome_methylation.tsv
+ 1804  ls -lrt
+ 1805  head cpg_filtered_header_20kb_cpggpc_nanonome_CHM13v2.7_HG002_nanonome_methylation.tsv 
+ 1806  less ~/code/pwh_projects/hg002_y/browser/cpg_nanonome_CHM13v2.7_nanopolish_processing.sh 
+ 1807  ls
+ 1808  ls -lrt
+ 1809  cat cpg_nanonome_CHM13v2.7_header.txt | awk -v FS='\t' -v OFS='\t' {print $1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12}'> new_header.txt
+ 1810  cat cpg_nanonome_CHM13v2.7_header.txt | awk -v FS='\t' -v OFS='\t' '{print $1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12}'> new_header.txt
+ 1811  ls -lrt
+ 1812  less new_header.txt 
+ 1813  cat new_header.txt cpg_filtered_header_20kb_cpggpc_nanonome_CHM13v2.7_HG002_nanonome_methylation.tsv > new_header_cpg_filtered_header_20kb_cpggpc_nanonome_CHM13v2.7_HG002_nanonome_methylation.tsv
+ 1814  ls -lrt
+ 1815  less ~/code/pwh_projects/hg002_y/browser/cpggpc_nanonome_CHM13v2.7_nanopolish_call_meth.sh 
+ 1816  less ~/code/pwh_projects/hg002_y/browser/cpg_nanonome_CHM13v2.7_nanopolish_processing.sh 
+ 1817  ls -lrt
+ 1818  /home/phook2/software/nanopore-methylation-utilities/mtsv2bedGraph.py --help
+ 1819  /home/phook2/software/nanopore-methylation-utilities/mtsv2bedGraph.py -q cpg -c 1.5 --nome -i cpg_filtered_header_20kb_cpggpc_nanonome_CHM13v2.7_HG002_nanonome_methylation.tsv > cpg_filtered_meth.tmp
+ 1820  /home/phook2/software/nanopore-methylation-utilities/mtsv2bedGraph.py -q cpg -c 1.5 --nome -i cpg_filtered_header_20kb_cpggpc_nanonome_CHM13v2.7_HG002_nanonome_methylation.tsv -g /pym/Data/paul/hg002_y/meth_calls/references/chm13v1.1_hg002XYv2.7.fasta > cpg_filtered_meth.tmp
+ 1821  ls -lrt
+ 1822  head new_header_cpg_filtered_header_20kb_cpggpc_nanonome_CHM13v2.7_HG002_nanonome_methylation.tsv 
+ 1823  less header_20kb_cpggpc_nanonome_CHM13v2.7_HG002_nanonome_methylation.tsv 
+ 1824  ls -lrt
+ 1825  tail new_header_cpg_filtered_header_20kb_cpggpc_nanonome_CHM13v2.7_HG002_nanonome_methylation.tsv 
+ 1826  tail header_20kb_cpggpc_nanonome_CHM13v2.7_HG002_nanonome_methylation.tsv 
+ 1827  less ~/code/pwh_projects/hg002_y/browser/
+ 1828  cd ~/code/pwh_projects/hg002_y/browser/
+ 1829  ls
+ 1830  ls -lrt
+ 1831  less cpg_nanonome_CHM13v2.7_nanopolish_processing.sh 
+ 1832  python3 /home/phook2/software/nanopore-methylation-utilities/mtsv2bedGraph.py -q cpg -c 1.5 --nome -i cpg_filtered_header_20kb_cpggpc_nanonome_CHM13v2.7_HG002_nanonome_methylation.tsv > cpg_filtered_meth.tmp
+ 1833  python3 /home/phook2/software/nanopore-methylation-utilities/mtsv2bedGraph.py -q cpg -c 1.5 --nome -i cpg_filtered_header_20kb_cpggpc_nanonome_CHM13v2.7_HG002_nanonome_methylation.tsv -g /pym/Data/paul/hg002_y/meth_calls/references/chm13v1.1_hg002XYv2.7.fasta > cpg_filtered_meth.tmp
+ 1834  cd /pym/Data/paul/hg002_y/meth_calls/calls/nanonome/processed/
+ 1835  ls
+ 1836  ls -lrt
+ 1837  python3 /home/phook2/software/nanopore-methylation-utilities/mtsv2bedGraph.py -q cpg -c 1.5 --nome -i cpg_filtered_header_20kb_cpggpc_nanonome_CHM13v2.7_HG002_nanonome_methylation.tsv -g /pym/Data/paul/hg002_y/meth_calls/references/chm13v1.1_hg002XYv2.7.fasta > cpg_filtered_meth.tmp
+ 1838  less cpg_filtered_header_20kb_cpggpc_nanonome_CHM13v2.7_HG002_nanonome_methylation.tsv 
+ 1839  python3 /home/phook2/software/nanopore-methylation-utilities/mtsv2bedGraph.py -q cpg -c 1.5 --nome -i new_header_cpg_filtered_header_20kb_cpggpc_nanonome_CHM13v2.7_HG002_nanonome_methylation.tsv -g /pym/Data/paul/hg002_y/meth_calls/references/chm13v1.1_hg002XYv2.7.fasta > cpg_filtered_meth.tmp
+ 1840  ls -lrt
+ 1841  less ~/code/pwh_projects/hg002_y/browser/cpg_nanonome_CHM13v2.7_nanopolish_processing.sh 
+ 1842  ls -lrt
+ 1843  sort cpg_filtered_meth.tmp -k1,1 -k2,2n | bgzip > cpg_filtered_meth.bed.gz
+ 1844  tabix -p bed cpg_filtered_meth.bed.gz 
+ 1845  ~/software/nanopore-methylation-utilities/parseMethylbed.py --help
+ 1846  ~/software/nanopore-methylation-utilities/parseMethylbed.py frequency --help
+ 1847  ~/software/nanopore-methylation-utilities/parseMethylbed.py frequency -i cpg_filtered_meth.bed.gz > hg002_cpg_filtered_meth.freq
+ 1848  ~/software/nanopolish_nanonome/scripts/calculate_methylation_frequency.py -c 1.5 --split-groups new_header_cpg_filtered_header_20kb_cpggpc_nanonome_CHM13v2.7_HG002_nanonome_methylation.tsv > cpg_filtered_meth_split.tsv
+ 1849  ls -lrt
+ 1850  cat cpg_filtered_meth_split.tsv | tail -n +2 | awk 'BEGIN{FS="\t";OFS="\t"}{print $1,$2+1,$3+1,$7,$6,$5-$6}' | head
+ 1851  cat cpg_filtered_meth_split.tsv | tail -n +2 | awk 'BEGIN{FS="\t";OFS="\t"}{print $1,$2+1,$3+1,$7,$6,$5-$6}' > cpg_filtered_meth_split.cov
+ 1852  ls -lrt
+ 1853  head cpg_filtered_meth_split.cov 
+ 1854  wc -l cpg_filtered_meth_split.cov 
+ 1855  less /atium/Data/projects/hg002_wgbs/bismark/long_read/hg002_pacbio_primrose_80.bismark
+ 1856  ls -lrt
+ 1857  wc -l cpg_filtered_meth_split.cov 
+ 1858  less cpg_filtered_meth_split.cov 
+ 1859  wc -l hg002_cpg_filtered_meth.freq 
+ 1860  less hg002_cpg_filtered_meth.freq 
+ 1861  ls
+ 1862  ls -lrt
+ 1863  less cpg_filtered_meth_split.cov 
+ 1864  ~/software/nanopolish_nanonome/scripts/calculate_methylation_frequency.py --help
+ 1865  python3 /home/phook2/software/nanopore-methylation-utilities/mtsv2bedGraph.py --help
+ 1866  ls -lrt
+ 1867  wc -l cpg_filtered_meth_split.cov 
+ 1868  less cpg_filtered_meth_split.tsv 
+ 1869  ls -lrt
+ 1870  less hg002_cpg_filtered_meth.freq 
+ 1871  wc -l hg002_cpg_filtered_meth.freq 
+ 1872  less hg002_cpg_filtered_meth.freq 
+ 1873  ~/software/nanopolish_nanonome/scripts/calculate_methylation_frequency.py --help
+ 1874  ~/software/nanopore-methylation-utilities/parseMethylbed.py frequency --help
+ 1875  exit
+ 1876  ls
+ 1877  htop
+ 1878  ls
+ 1879  ls -lrt
+ 1880  cd /pym/Data/paul/hg002_y/meth_calls/calls/nanonome_2.0/
+ 1881  ls -lrt
+ 1882  ls
+ 1883  cd ..
+ 1884  ls
+ 1885  cd nanonome
+ 1886  ls
+ 1887  cd processed/
+ 1888  ls
+ 1889  ls -lrt
+ 1890  gunzip -c gpc_filtered_meth.bed.gz | head
+ 1891  ls -lrt
+ 1892  tmux a -t95
+ 1893  tmux a -t98
+ 1894  ls -lrt
+ 1895  tmux ls
+ 1896  tmux a -t98
+ 1897  ls -lrt
+ 1898  head hg002_gpc_filtered_meth.freq 
+ 1899  head -1000 hg002_gpc_filtered_meth.freq
+ 1900  ls -lrt
+ 1901  less hg002_gpc_filtered_meth.freq 
+ 1902  ls -lrt
+ 1903  tail hg002_gpc_filtered_meth.freq 
+ 1904  cd /pym/Data/paul/hg002_y/meth_calls/calls/nanonome_2.0/
+ 1905  ls
+ 1906  ls -lrt
+ 1907  cd ..
+ 1908  ls
+ 1909  cd nanonome
+ 1910  ls
+ 1911  cd processed/
+ 1912  ls
+ 1913  ls -lrt
+ 1914  tail hg002_gpc_filtered_meth.freq 
+ 1915  ls -lrt
+ 1916  tail hg002_gpc_filtered_meth.freq 
+ 1917  cd /atium/Data/projects/emseq_smk/bams/
+ 1918  ls
+ 1919  cd merged_bams/
+ 1920  ls
+ 1921  ls -lrt
+ 1922  mkdir example_loci
+ 1923  samtools view -@48 -bh sorted_merged_timp_lr_nanopore.deduplicated.bam "chr1:45326524-45342834" > example_loci/np_emseq_mutyh.bam
+ 1924  samtools view -@48 -bh sorted_merged_emseq_pe.deduplicated.bam "chr1:45326524-45342834" > example_loci/sr_emseq_mutyh.bam
+ 1925  samtools view -@48 -bh sorted_merged_methylseq_pe.deduplicated.bam "chr1:45326524-45342834" > example_loci/sr_wgbs_mutyh.bam
+ 1926  cd example_loci/
+ 1927  ls
+ 1928  ls -lrt
+ 1929  samtools index np_emseq_mutyh.bam 
+ 1930  samtools index sr_emseq_mutyh.bam 
+ 1931  samtools index sr_wgbs_mutyh.bam 
+ 1932  cd
+ 1933  cd /pym/Data/paul/hg002_y/meth_calls/calls/nanonome/processed/
+ 1934  ls
+ 1935  ls -lrt
+ 1936  tail hg002_gpc_filtered_meth.freq 
+ 1937  ls -lrt
+ 1938  tail hg002_gpc_filtered_meth.freq 
+ 1939  exit
+ 1940  ls -lrt
+ 1941  cd ~/code/pwh_projects/hg002_y/bw/
+ 1942  ls -lrt
+ 1943  cd
+ 1944  ls
+ 1945  ls -lrt
+ 1946  cd /pym/Data/paul/hg002_y/pacbio_meth_calls/
+ 1947  ls
+ 1948  ls -lrt
+ 1949  mDPH;868yUxCqfc9mW;w
+ 1950  ls -lrt
+ 1951  cd
+ 1952  grid
+ 1953  ls -lrt
+ 1954  htop
+ 1955  ls
+ 1956  ls -lrt
+ 1957  cd /pym/Data/paul/hg002_y/
+ 1958  ls
+ 1959  ls -lrt
+ 1960  cd meth_calls/
+ 1961  ls
+ 1962  cd bams/
+ 1963  ls -lrt
+ 1964  mkdir mosdepth
+ 1965  tmux
+ 1966  ls
+ 1967  ls -lrt
+ 1968  cd /atium/Data/projects/hg002_wgbs/bismark/emseq/merge/
+ 1969  ls
+ 1970  ls -lrt
+ 1971  mkidr mosdepth
+ 1972  mkdir mosdepth
+ 1973  tmux ls
+ 1974  tmux a -t106
+ 1975  ls
+ 1976  cd ../
+ 1977  ls
+ 1978  cd ..
+ 1979  ls
+ 1980  cd methylseq/
+ 1981  ls
+ 1982  cd merge/
+ 1983  ls
+ 1984  cd mosdepth/
+ 1985  ls
+ 1986  ls -lrt
+ 1987  htop
+ 1988  ls -lrt
+ 1989  less chrY_cpg_island_wgbs.mosdepth.global.dist.txt 
+ 1990  tmux a -t106
+ 1991  ls -lrt
+ 1992  less hg002_2.7_wgbs.mosdepth.global.dist.txt 
+ 1993  ls -lrt
+ 1994  tmux a -t106
+ 1995  cd /pym/Data/paul/hg002_y/pacbio_meth_calls
+ 1996  ls
+ 1997  ls -lrt
+ 1998  df -h
+ 1999  ls
+ 2000  ls -lrt
+ 2001  wget https://s3-us-west-2.amazonaws.com/human-pangenomics/NHGRI_UCSC_panel/HG002/nanopore/ultra-long/03_08_22_R941_HG002_2_Guppy_6.1.2_5mc_cg_prom_sup.tar
+ 2002  ls -lrt
+ 2003  for i in `ls -v`; do echo $i; done
+ 2004  for i in `ls -v`; do tar -xvf $i; done
+ 2005  man tar
+ 2006  for i in `ls -v`; do tar -xvf $i --wildcards --no-anchored '*.bam'; done
+ 2007  ls -lrt
+ 2008  cd 03_08_22_R941_HG002_1_Guppy_6.1.2_5mc_cg_prom_sup/
+ 2009  ls
+ 2010  rm *
+ 2011  rm -r *
+ 2012  cd ..
+ 2013  ls
+ 2014  rm -r 03_08_22_R941_HG002_1_Guppy_6.1.2_5mc_cg_prom_sup
+ 2015  ls -lrt
+ 2016  for i in `ls -v`; do tar -xvf $i --wildcards --no-anchored '*.bam'; done
+ 2017  ls
+ 2018  ls -lrt
+ 2019  cd 03_08_22_R941_HG002_1_Guppy_6.1.2_5mc_cg_prom_sup/
+ 2020  ls
+ 2021  cd pass/
+ 2022  ls
+ 2023  ls -lrt
+ 2024  samtools view -c bam_runid_faac3ceebe010005f96f1f5de033e0e5606ddf3f_0_0.bam 
+ 2025  samtools view -@48 -c bam_runid_faac3ceebe010005f96f1f5de033e0e5606ddf3f_0_0.bam 
+ 2026* 
+ 2027  ls
+ 2028  cd ..
+ 2029  ls
+ 2030  find
+ 2031  find */pass
+ 2032  samtools view -@48 -c bam_runid_faac3ceebe010005f96f1f5de033e0e5606ddf3f_0_0.bam -name '*bam'
+ 2033  find */pass -name '*bam'
+ 2034  find "$(pwd -P)/pass" -name '*bam'
+ 2035* 
+ 2036  find "$(pwd -P)" -name '*bam'
+ 2037* 
+ 2038  find "$(pwd -P)" -name '*bam' | grep "pass"
+ 2039  find "$(pwd -P)" -name '*bam' | grep "pass" > hg002_remora_nanopore_UL_CpG_calls.txt
+ 2040  ls -lrt
+ 2041  wc -l hg002_remora_nanopore_UL_CpG_calls.txt 
+ 2042  find "$(pwd -P)" -name '*bam' | grep "pass" > hg002_remora_pass_nanopore_UL_CpG_calls.txt
+ 2043  find "$(pwd -P)" -name '*bam' | grep "fail" > hg002_remora_pass_nanopore_UL_CpG_calls.txt
+ 2044  ls -lrt
+ 2045  find "$(pwd -P)" -name '*bam' | grep "fail" > hg002_remora_fail_nanopore_UL_CpG_calls.txt
+ 2046  find "$(pwd -P)" -name '*bam' | grep "pass" > hg002_remora_pass_nanopore_UL_CpG_calls.txt
+ 2047  ls -lrt
+ 2048  rm hg002_remora_nanopore_UL_CpG_calls.txt 
+ 2049  ls -lrt
+ 2050  wc -l *calls.txt
+ 2051  cd 03_08_22_R941_HG002_1_Guppy_6.1.2_5mc_cg_prom_sup/
+ 2052  ls
+ 2053  ls -lrt
+ 2054  cd fail/
+ 2055  ls
+ 2056  ls -lrt
+ 2057  samtools view -@48 -c bam_runid_faac3ceebe010005f96f1f5de033e0e5606ddf3f_9_0.bam 
+ 2058  cd ..
+ 2059  ls
+ 2060  cd ..
+ 2061  ls
+ 2062  ls -lrt
+ 2063  conda activate winnowmap
+ 2064  winnomap
+ 2065  winnomap --help
+ 2066* 
+ 2067  winnowmap --help > help.txt
+ 2068  less help.txt 
+ 2069  minimap2 --help
+ 2070  minimap2 --help > mm.help
+ 2071  less mm.help 
+ 2072  less help.txt 
+ 2073  ls
+ 2074  mkdir fastq
+ 2075  cd 03_08_22_R941_HG002_1_Guppy_6.1.2_5mc_cg_prom_sup/
+ 2076  ls
+ 2077  ls -lrt
+ 2078  cd pass/
+ 2079  ls
+ 2080  ls -lrt
+ 2081  samtools fastq -@48 -TMM,ML bam_runid_faac3ceebe010005f96f1f5de033e0e5606ddf3f_11_0.bam > ../../fastq/test.fastq
+ 2082  cd ../../fastq/
+ 2083  ls
+ 2084  ls -lrt
+ 2085  less test.fastq 
+ 2086  cd ../.
+ 2087  ls
+ 2088  cd 03_08_22_R941_HG002_1_Guppy_6.1.2_5mc_cg_prom_sup/pass/
+ 2089  ls -lrt
+ 2090  samtools view bam_runid_faac3ceebe010005f96f1f5de033e0e5606ddf3f_11_0.bam | head
+ 2091  samtools fastq -@48 -TMm,Ml bam_runid_faac3ceebe010005f96f1f5de033e0e5606ddf3f_11_0.bam > ../../fastq/test.fastq
+ 2092  samtools fastq -@48 -TMm,Ml bam_runid_faac3ceebe010005f96f1f5de033e0e5606ddf3f_11_0.bam | head
+ 2093  samtools fastq -@48 -TMm:Z,Ml:Z bam_runid_faac3ceebe010005f96f1f5de033e0e5606ddf3f_11_0.bam | head
+ 2094  samtools fastq -@48 -TMm,Ml bam_runid_faac3ceebe010005f96f1f5de033e0e5606ddf3f_11_0.bam | head
+ 2095  samtools bam2fq
+ 2096* samtools fastq
+ 2097  samtools fastq -@48 -T 'Mm,Ml' bam_runid_faac3ceebe010005f96f1f5de033e0e5606ddf3f_11_0.bam | head
+ 2098  samtools fastq -@48 -T "Mm,Ml" bam_runid_faac3ceebe010005f96f1f5de033e0e5606ddf3f_11_0.bam | head
+ 2099  samtools fastq -@48 -T "Mm" bam_runid_faac3ceebe010005f96f1f5de033e0e5606ddf3f_11_0.bam | head
+ 2100  samtools fastq -@48 -T "MM" bam_runid_faac3ceebe010005f96f1f5de033e0e5606ddf3f_11_0.bam | head > ../../fastq/mm.test.fastq
+ 2101  cd ../../fastq/
+ 2102  l
+ 2103  ls
+ 2104  ls -lrt
+ 2105  less mm.test.fastq 
+ 2106  samtools --version
+ 2107  conda install samtools==1.16
+ 2108  conda update samtools
+ 2109  samtools --version
+ 2110  samtools
+ 2111  samtools version
+ 2112  cd ../../
+ 2113  ls
+ 2114  cd guppy_meth_calls/
+ 2115  ls
+ 2116  cd 03_08_22_R941_HG002_1_Guppy_6.1.2_5mc_cg_prom_sup/
+ 2117  ls
+ 2118  cd pass/
+ 2119  ls
+ 2120  samtools fastq -@48 -TMm,Ml bam_runid_faac3ceebe010005f96f1f5de033e0e5606ddf3f_11_0.bam | head
+ 2121  samtools fastq -@48 -TMm,Ml bam_runid_faac3ceebe010005f96f1f5de033e0e5606ddf3f_11_0.bam | head -12
+ 2122  samtools fastq -@48 -TMm,Ml bam_runid_faac3ceebe010005f96f1f5de033e0e5606ddf3f_11_0.bam | head -13
+ 2123  samtools fastq -@48 -TMm,Ml bam_runid_faac3ceebe010005f96f1f5de033e0e5606ddf3f_11_0.bam > ../../fastq/test.fastq
+ 2124  cd ../../fastq/
+ 2125  ls
+ 2126  less test.fastq 
+ 2127  less ~/code/pwh_projects/hg002_y/browser/align_hg002.sh 
+ 2128  ls
+ 2129  ls -lrt
+ 2130  rm mm.test.fastq 
+ 2131  ls -lrt
+ 2132  winnowmap -t 48 -W /pym/Data/paul/hg002_y/meth_calls/CHM13_v2.0_repetitive_k15.txt -ax map-ont -y /pym/Data/paul/hg002_y/meth_calls/references/chm13v2.0.fa.gz test.fastq | samtools view -@48 -Sb | samtools sort -@48 -o /pym/Data/paul/hg002_y/guppy_meth_calls/aligned_bams/test.bam
+ 2133  mkdir ../aligned_bams
+ 2134  winnowmap -t 48 -W /pym/Data/paul/hg002_y/meth_calls/CHM13_v2.0_repetitive_k15.txt -ax map-ont -y /pym/Data/paul/hg002_y/meth_calls/references/chm13v2.0.fa.gz test.fastq | samtools view -@48 -Sb | samtools sort -@48 -o /pym/Data/paul/hg002_y/guppy_meth_calls/aligned_bams/test.bam
+ 2135  cd ../aligned_bams/
+ 2136  ls
+ 2137  ls -lrt
+ 2138  samtools view test.bam | head
+ 2139  samtools flagstat test.bam 
+ 2140  cd ../fastq/
+ 2141  ls
+ 2142  ls -lrt
+ 2143  less ~/code/pwh_projects/hg002_y/browser/filter_hg002.sh 
+ 2144  winnowmap -t 48 -W /pym/Data/paul/hg002_y/meth_calls/CHM13_v2.0_repetitive_k15.txt -ax map-ont -y /pym/Data/paul/hg002_y/meth_calls/references/chm13v2.0.fa.gz test.fastq | samtools view -@48 -Sb -F 256 -F 2048 | samtools sort -@48 -o /pym/Data/paul/hg002_y/guppy_meth_calls/aligned_bams/test.bam
+ 2145  ls
+ 2146  rm *
+ 2147  cd ..
+ 2148  ls
+ 2149  rm help.txt 
+ 2150  rm mm.help 
+ 2151  ls
+ 2152  cd aligned_bams/
+ 2153  ls
+ 2154  ls -lrt
+ 2155  samtools view test.bam | head
+ 2156  clear
+ 2157  ls
+ 2158  rm test.bam 
+ 2159  conda list
+ 2160  cd ~/code/pwh_projects/hg002_wgbs/
+ 2161  ls
+ 2162  ls -lrt
+ 2163  cd workflow/rules/
+ 2164  ls
+ 2165  ls -lrt
+ 2166  cd ../../
+ 2167  ls
+ 2168  cd ../
+ 2169  ls
+ 2170  mkdir remora_methylation_processing
+ 2171  ls
+ 2172  cd epicypher/
+ 2173  ls
+ 2174  cd ..
+ 2175  ls
+ 2176  cd hg002_wgbs/
+ 2177  ls
+ 2178  cp -r config/ ../remora_methylation_processing/
+ 2179  cd ../remora_methylation_processing/
+ 2180  ls
+ 2181  cd config/
+ 2182  ls
+ 2183  cd ..
+ 2184  ls
+ 2185  mkdir reports
+ 2186  mkdir resources
+ 2187  mkdir results
+ 2188  mkdir workflow
+ 2189  vi README.md
+ 2190  ls
+ 2191  cd ../hg002_wgbs/workflow/
+ 2192  ls
+ 2193  cd ../../remora_methylation_processing/
+ 2194  cd workflow/
+ 2195  mkdir envs
+ 2196  mkdir notebooks
+ 2197  mkdir reports
+ 2198  mkdir rules
+ 2199  mkdir scripts
+ 2200  cp ../../hg002_wgbs/workflow/Snakefile .
+ 2201  ls
+ 2202  vi Snakefile 
+ 2203  ls
+ 2204  cd envs/
+ 2205  ls
+ 2206  cp ../../../hg002_wgbs/workflow/envs/modbam2bed.yaml ../../../hg002_wgbs/workflow/envs/samtools.yaml .
+ 2207  ls
+ 2208  vi samtools.yaml 
+ 2209  mv samtools.yaml meth_alignment.yaml
+ 2210  vi modbam2bed.yaml 
+ 2211  cd ../../
+ 2212  ls
+ 2213  cd config/
+ 2214  vi config.yaml 
+ 2215  cd /pym/Data/paul/hg002_y/meth_calls/
+ 2216  ls
+ 2217  cd references/
+ 2218  ls -lrt
+ 2219  cd ~/code/pwh_projects/hg002_wgbs/
+ 2220  ls
+ 2221  cd ../remora_methylation_processing/
+ 2222  ls
+ 2223  cd config/
+ 2224  vi config.yaml 
+ 2225  ls
+ 2226  cd ../../
+ 2227  ls
+ 2228  cd chm13_rrbs/
+ 2229  ls
+ 2230  cd rrbs_t2t/
+ 2231  ls
+ 2232  cd rrbs_bismark/
+ 2233  ls
+ 2234  less snakemake_config.yml 
+ 2235  less rrbs_data_parse.smk 
+ 2236  vi rrbs_samples.txt 
+ 2237  cd ../../../remora_methylation_processing/
+ 2238  ls
+ 2239  cd workflow/
+ 2240  vi Snakefile 
+ 2241  ls
+ 2242  cd rules/
+ 2243  l
+ 2244  ls
+ 2245  cp ../../../hg002_wgbs/workflow/rules/methylseq_bismark_align.smk  .
+ 2246  ls
+ 2247  vi methylseq_bismark_align.smk 
+ 2248  cd ..
+ 2249  ls
+ 2250  vi Snakefile 
+ 2251  vi rules/
+ 2252  ls
+ 2253  cd rules/
+ 2254  ls
+ 2255  ls -lrt
+ 2256  vi methylseq_bismark_align.smk 
+ 2257  cd ..
+ 2258  ls
+ 2259  vi Snakefile 
+ 2260  vi ../config/config.yaml 
+ 2261  ls envs/
+ 2262  ls
+ 2263  cd rules/
+ 2264  ls
+ 2265  vi methylseq_bismark_align.smk 
+ 2266  cd ..
+ 2267  ls
+ 2268  conda deactivate
+ 2269  conda activate snakemake
+ 2270  snakemake --version
+ 2271  vi Snakefile 
+ 2272  conda update snakemake
+ 2273  conda deactivate
+ 2274  conda create -c conda-forge -c bioconda -n snakemake snakemake
+ 2275  conda activate snakemake
+ 2276  snakemake --version
+ 2277  ls
+ 2278  snakemake --use-conda --dryrun
+ 2279  vi Snakefile 
+ 2280  snakemake --use-conda --dryrun
+ 2281  vi Snakefile 
+ 2282  snakemake --use-conda --dryrun
+ 2283  cd /pym/Data/paul/hg002_y/guppy_meth_calls/
+ 2284  ls
+ 2285  cd aligned_bams/
+ 2286  ls
+ 2287  cd ..
+ 2288  ls
+ 2289  history
+ 2290  history > history.txt
+ 2291  less history.txt 
+ 2292  vi notes.txt
+ 2293  find "$(pwd -P)" -name '*bam' | grep "pass"
+ 2294  find . -iname '*.bam' -print0 | xargs -0 -n1 -- basename
+ 2295  find . -iname '*.bam' -print0 | xargs -0 -n1 -- basename | wc -l
+ 2296  find . -iname '*.bam' -print0 | xargs -0 -n1 -- basename | uniq | wc -l
+ 2297  find . -iname '*.bam' -print0 | xargs -0 -n1 -- basename | sort | uniq | wc -l
+ 2298  find . -iname '*.bam' -print0 | xargs -0 -n1 -- basename | sort | uniq > guppy_bam_basenames.txt
+ 2299  ls
+ 2300  cd ~/code/pwh_projects/remora_methylation_processing/
+ 2301  ls
+ 2302  ls -lrt
+ 2303  cd workflow/
+ 2304  vi Snakefile 
+ 2305  snakemake --dryrun
+ 2306  vi Snakefile 
+ 2307  snakemake --dryrun
+ 2308  vi Snakefile 
+ 2309  snakemake --dryrun
+ 2310  vi Snakefile 
+ 2311  snakemake --dryrun
+ 2312  cd rules/
+ 2313  ls
+ 2314  mv methylseq_bismark_align.smk align_remora_bams.smk
+ 2315  cd ..
+ 2316  snakemake --dryrun
+ 2317  vi rules/align_remora_bams.smk 
+ 2318  snakemake --dryrun
+ 2319  vi rules/align_remora_bams.smk 
+ 2320  snakemake --dryrun
+ 2321  vi rules/align_remora_bams.smk 
+ 2322  snakemake --dryrun
+ 2323  vi rules/align_remora_bams.smk 
+ 2324  snakemake --dryrun
+ 2325  vi rules/align_remora_bams.smk 
+ 2326  snakemake --dryrun
+ 2327  vi rules/align_remora_bams.smk 
+ 2328  snakemake --dryrun
+ 2329  vi Snakefile 
+ 2330  vi rules/align_remora_bams.smk 
+ 2331  snakemake --dryrun
+ 2332  vi rules/align_remora_bams.smk 
+ 2333  snakemake --dryrun
+ 2334  vi rules/align_remora_bams.smk 
+ 2335  vi ../config/config.yaml 
+ 2336  snakemake --dryrun
+ 2337  vi Snakefile 
+ 2338  vi rules/align_remora_bams.smk 
+ 2339  snakemake --dryrun
+ 2340  vi rules/align_remora_bams.smk 
+ 2341  snakemake --dryrun
+ 2342  vi Snakefile 
+ 2343  snakemake --dryrun
+ 2344  vi Snakefile 
+ 2345  snakemake --dryrun
+ 2346  vi rules/align_remora_bams.smk 
+ 2347  snakemake --dryrun
+ 2348  vi rules/align_remora_bams.smk 
+ 2349  vi Snakefile 
+ 2350  snakemake --dryrun
+ 2351  vi Snakefile 
+ 2352  snakemake --dryrun
+ 2353  vi Snakefile 
+ 2354  snakemake --dryrun
+ 2355  vi Snakefile 
+ 2356  snakemake --dryrun
+ 2357  vi Snakefile 
+ 2358  snakemake --dryrun
+ 2359  vi rules/align_remora_bams.smk 
+ 2360  vi Snakefile 
+ 2361  snakemake --dryrun
+ 2362  vi rules/align_remora_bams.smk 
+ 2363  snakemake --dryrun
+ 2364  vi Snakefile 
+ 2365  snakemake --dryrun
+ 2366  ls
+ 2367  vi Snakefile 
+ 2368  ls
+ 2369  clear
+ 2370  vi Snakefile 
+ 2371  snakemake --dryrun
+ 2372  vi Snakefile 
+ 2373  snakemake --dryrun
+ 2374  vi Snakefile 
+ 2375  snakemake --dryrun
+ 2376  vi Snakefile 
+ 2377  snakemake --dryrun
+ 2378  vi Snakefile 
+ 2379  vi rules/align_remora_bams.smk 
+ 2380  snakemake --dryrun
+ 2381  vi Snakefile 
+ 2382  snakemake --dryrun
+ 2383  snakemake --dryrun > test.txt
+ 2384  less test.txt 
+ 2385  vi Snakefile 
+ 2386  snakemake --dryrun > test.txt
+ 2387  less test.txt 
+ 2388  vi Snakefile 
+ 2389  snakemake --dryrun > test.txt
+ 2390  less test.txt 
+ 2391  vi Snakefile 
+ 2392  vi rules/align_remora_bams.smk 
+ 2393  snakemake --dryrun > test.txt
+ 2394  less test.txt 
+ 2395  vi rules/align_remora_bams.smk 
+ 2396  snakemake --dryrun > test.txt
+ 2397  less test.txt 
+ 2398  vi rules/align_remora_bams.smk 
+ 2399  snakemake --dryrun
+ 2400  vi Snakefile 
+ 2401  vi rules/align_remora_bams.smk 
+ 2402  snakemake --dryrun
+ 2403  snakemake --use-conda --cores 48 --dryrun
+ 2404  snakemake --use-conda --cores 48 --dryrun > test.txt
+ 2405  less test.txt 
+ 2406  cd pym/Data/paul/hg002_y/guppy_meth_calls/
+ 2407  cd /pym/Data/paul/hg002_y/guppy_meth_calls/
+ 2408  ls
+ 2409  cd aligned_bams/
+ 2410  ls
+ 2411  cd
+ 2412  cd ~/code/pwh_projects/remora_methylation_processing/
+ 2413  ls
+ 2414  cd workflow/
+ 2415  snakemake --use-conda --cores 48
+ 2416  vi rules/align_remora_bams.smk 
+ 2417  cd /pym/Data/paul/hg002_y/guppy_meth_calls/aligned_bams/
+ 2418  ls
+ 2419  rm -r *
+ 2420  ls
+ 2421  cd ~/code/pwh_projects/remora_methylation_processing/
+ 2422  ls
+ 2423  cd workflow/
+ 2424  ls
+ 2425  rm test.txt 
+ 2426  cd rules/
+ 2427  ls
+ 2428  less ../../../hg002_wgbs/workflow/rules/emseq_bismark_align.smk 
+ 2429  vi align_remora_bams.smk 
+ 2430  cd ..
+ 2431  snakemake --use-conda --cores 48 --dryrun
+ 2432  snakemake --use-conda --cores 8 --dryrun
+ 2433  snakemake --use-conda --cores 8
+ 2434  cd /pym/Data/paul/hg002_y/guppy_meth_calls/aligned_bams/
+ 2435  ls
+ 2436  cd chm13v2.0/
+ 2437  ls
+ 2438  ls -lrt
+ 2439  rm *tmp*
+ 2440  ls
+ 2441  cd ~/code/pwh_projects/remora_methylation_processing/
+ 2442  ls
+ 2443  cd workflow/
+ 2444  ls
+ 2445  cd rules/
+ 2446  ls
+ 2447  vi align_remora_bams.smk 
+ 2448  snakemake --use-conda --cores 16 --dryrun
+ 2449  cd ..
+ 2450  snakemake --use-conda --cores 16 --dryrun
+ 2451  snakemake --use-conda --cores 16
+ 2452  cd /pym/Data/paul/hg002_y/guppy_meth_calls/
+ 2453  ls
+ 2454  ls -lrt
+ 2455  rm history.txt 
+ 2456  cd aligned_bams/
+ 2457  ls
+ 2458  rm -r *
+ 2459  cd ..
+ 2460  ls
+ 2461  htop
+ 2462  nvidia-smi
+ 2463  ls
+ 2464  cd ~/code/pwh_projects/remora_methylation_processing/
+ 2465  ls
+ 2466  cd workflow/
+ 2467  ls
+ 2468  cd rules/
+ 2469  ls
+ 2470  cd ..
+ 2471  ls
+ 2472  vi Snakefile 
+ 2473  cd rules/
+ 2474  ls
+ 2475  vi align_process_remora_bams.smk 
+ 2476  cd ..
+ 2477  lf
+ 2478  ls
+ 2479  vi Snakefile 
+ 2480  cd rules/
+ 2481  ls
+ 2482  less align_remora_bams.smk 
+ 2483  vi align_process_remora_bams.smk 
+ 2484  cd ..
+ 2485  ls
+ 2486  snakemake --dryrun
+ 2487  vi Snakefile 
+ 2488  snakemake --dryrun
+ 2489  vi Snakefile 
+ 2490  snakemake --dryrun
+ 2491  vi Snakefile 
+ 2492  snakemake --dryrun
+ 2493  vi Snakefile 
+ 2494  vi rules/align_process_remora_bams.smk 
+ 2495  ls
+ 2496  vi rules/align_remora_bams.smk 
+ 2497  vi rules/align_process_remora_bams.smk 
+ 2498  snakemake --dryrun
+ 2499  vi rules/align_process_remora_bams.smk 
+ 2500  snakemake --dryrun
+ 2501  vi rules/align_process_remora_bams.smk 
+ 2502  snakemake --dryrun
+ 2503  vi rules/align_process_remora_bams.smk 
+ 2504  snakemake --dryrun
+ 2505  vi rules/align_process_remora_bams.smk 
+ 2506  snakemake --dryrun
+ 2507  vi rules/align_process_remora_bams.smk 
+ 2508  snakemake --dryrun
+ 2509  vi rules/align_process_remora_bams.smk 
+ 2510  snakemake --dryrun
+ 2511  snakemake --dryrun > dryrun.txt
+ 2512  less dryrun.txt 
+ 2513  snakemake --use-conda --cores 48 --dryrun
+ 2514  snakemake --use-conda --cores 48
+ 2515  vi rules/
+ 2516  vi rules/align_process_remora_bams.smk 
+ 2517  cd /pym/Data/paul/hg002_y/guppy_meth_calls/aligned_bams/chm13v2.0_HG002/
+ 2518  ls
+ 2519  ls -lrt
+ 2520  rm *
+ 2521  cd ..
+ 2522  ls
+ 2523  cd ~/code/pwh_projects/remora_methylation_processing/
+ 2524  ls
+ 2525  cd workflow/
+ 2526  snakemake --dryrun
+ 2527  htop
+ 2528  snakemake --use-conda --cores 24
+ 2529  ls
+ 2530  cd rules/
+ 2531  ls -lrt
+ 2532  vi align_process_remora_bams.smk 
+ 2533  htop
+ 2534  cd ..
+ 2535  ls
+ 2536  snakemake --use-conda --cores 48 --dryrun
+ 2537  snakemake --use-conda --cores 48
+ 2538  df -h
+ 2539  cd /scratch/
+ 2540  ls -lrt
+ 2541  cd phook/
+ 2542  ls
+ 2543  ls -lrt
+ 2544  du -sh
+ 2545  rm *
+ 2546  rm -r *
+ 2547  cd ..
+ 2548  ls
+ 2549  ls -lrt
+ 2550  cd lost+found/
+ 2551  ls
+ 2552  cd sherbear/
+ 2553  ls
+ 2554  cd ..
+ 2555  ls
+ 2556  cd ..
+ 2557  ls
+ 2558  cd
+ 2559  samtools sort --help
+ 2560  df -h
+ 2561  ls -lrt /tmp/
+ 2562  cd /tmp/hsperfdata_phook2/
+ 2563  ls
+ 2564  cd ..
+ 2565  ls
+ 2566  cd ..
+ 2567  ls
+ 2568  cd
+ 2569  cd ~/code/pwh_projects/hg002_y/
+ 2570  cd ../remora_methylation_processing/
+ 2571  ls
+ 2572  cd workflow/
+ 2573  ls
+ 2574  ls -lrt
+ 2575  rm samtools.56038.2118.tmp.07*
+ 2576  ls-lrt
+ 2577  ls -lrt
+ 2578  rm dryrun.txt 
+ 2579  cd rules/
+ 2580  ls
+ 2581  vi align_process_remora_bams.smk 
+ 2582  cd ..
+ 2583  snakemake --use-conda --cores 48 --dryrun
+ 2584  /pym/Data/paul/hg002_y/guppy_meth_calls/aligned_bams/chm13v2.0_HG002/
+ 2585  cd /pym/Data/paul/hg002_y/guppy_meth_calls/aligned_bams/chm13v2.0_HG002/
+ 2586  ls -lrt
+ 2587  rm sorted_filtered_aligned_chm13v2.0_HG002_UL.bam 
+ 2588  cd ~/code/pwh_projects/remora_methylation_processing/workflow/
+ 2589  ls
+ 2590  snakemake --use-conda --cores 48 --dryrun
+ 2591  vi rules/align_process_remora_bams.smk 
+ 2592  snakemake --use-conda --cores 48
+ 2593  vi ../config/config.yaml 
+ 2594  vi rules/modbam2bed.smk 
+ 2595  snakemake --use-conda --cores 48
+ 2596  cd rules/
+ 2597  ls
+ 2598  vi align_process_remora_bams.smk 
+ 2599  vi ..
+ 2600  vi ../Snakefile 
+ 2601  vi modbam2bed.smk 
+ 2602  cd ..
+ 2603  snakemake --use-conda --cores 48 --dryrun
+ 2604  vi rules/modbam2bed.smk 
+ 2605  snakemake --use-conda --cores 48 --dryrun
+ 2606  snakemake --use-conda --cores 48
+ 2607  vi envs/meth_alignment.yaml 
+ 2608  vi rules/modbam2bed.smk 
+ 2609* cd ..
+ 2610  snakemake --use-conda --cores 48 --dryrun
+ 2611  snakemake --use-conda --cores 48
+ 2612  snakemake --use-conda --cores 48 --dryrun
+ 2613  vi rules/modbam2bed.smk 
+ 2614  snakemake --use-conda --cores 48 --rerun-incomplete --dryrun
+ 2615  snakemake --use-conda --cores 48 --rerun-incomplete
+ 2616  history > history.txt

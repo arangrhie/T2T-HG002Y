@@ -1,0 +1,27 @@
+data:
+        # Download directory
+        dir: /mithril/Data/NGS/projects/hg002_wgbs/data
+
+reference:
+        # Reference output directory
+        dir: /atium/Data/projects/hg002_wgbs/reference
+        # URL for human genome reference used
+        url: https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/HG002/assemblies
+        # Base name for genome used
+        basename: chm13v1.1_hg002XYv2.7
+
+software:
+        # Software output directory
+        dir: /atium/Data/projects/hg002_wgbs/software
+        repo: /atium/Data/projects/hg002_wgbs/software/Bismark-master
+
+short_read:
+        # Input dir (the place where all the seq was downloaded)
+        input: /mithril/Data/NGS/projects/hg002_wgbs/data
+        trim_output: /atium/Data/projects/hg002_wgbs/trimmed
+        bismark_methylseq: /atium/Data/projects/hg002_wgbs/bismark/methylseq
+        bismark_emseq: /atium/Data/projects/hg002_wgbs/bismark/emseq
+
+modbam2bed_pacbio:
+        input: /pym/Data/paul/hg002_y/pacbio_meth_calls 
+        bed_output: /atium/Data/projects/hg002_wgbs/bismark/long_read

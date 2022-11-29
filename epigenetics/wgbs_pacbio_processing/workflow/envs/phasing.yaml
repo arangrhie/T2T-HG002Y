@@ -1,0 +1,9 @@
+channels:
+        - bioconda
+        - conda-forge
+        - defaults
+dependencies:
+        - whatshap==1.4
+        - pysam==0.19.1
+        - bamtools==2.5.2
+        - samtools==1.15
