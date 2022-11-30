@@ -52,8 +52,8 @@ guppy.20.bed <- as.data.frame(guppy.meth.20) %>%
   dplyr::select("chr"=seqnames,start,end,"methylation_percentage"=score) %>%
   dplyr::select(chr,start,end,methylation_percentage)
 
-export.bw(guppy.meth.20, paste0("/home/phook2/code/pwh_projects/hg002_y/bw/chm13v2.0_hg002_cpg_guppy_nanopore.bw"))
-write_tsv(guppy.20.bed,file="~/code/pwh_projects/hg002_y/bw/chm13v2.0_hg002_cpg_guppy_nanopore_freq.bed",col_names=FALSE)
+export.bw(guppy.meth.20, paste0("/home/phook2/code/pwh_projects/hg002_y/bw/chm13v2.0_hg002_CpG_ont_guppy6.1.2.bw"))
+write_tsv(guppy.20.bed,file="~/code/pwh_projects/hg002_y/bw/chm13v2.0_hg002_CpG_ont_guppy6.1.2.bed",col_names=FALSE)
 
 # Nanopolish nanonome calls
 nanopolish.20="/pym/Data/paul/hg002_y/meth_calls/calls/nanonome_2.0/processed/cpg_hg002_chm13v2.0_meth.freq"
@@ -78,8 +78,8 @@ nanopolish.20.bed <- as.data.frame(nanopolish.meth.20) %>%
   dplyr::select("chr"=seqnames,start,end,"methylation_percentage"=score) %>%
   dplyr::select(chr,start,end,methylation_percentage)
 
-export.bw(nanopolish.meth.20, paste0("/home/phook2/code/pwh_projects/hg002_y/bw/chm13v2.0_hg002_cpg_nanopolish_nanopore.bw"))
-write_tsv(nanopolish.20.bed,file="~/code/pwh_projects/hg002_y/bw/chm13v2.0_hg002_cpg_nanopolish_nanopore_freq.bed",col_names=FALSE)
+export.bw(nanopolish.meth.20, paste0("/home/phook2/code/pwh_projects/hg002_y/bw/chm13v2.0_hg002_CpG_ont_guppy5.0.7_nanopolish0.13.2.bw"))
+write_tsv(nanopolish.20.bed,file="~/code/pwh_projects/hg002_y/bw/chm13v2.0_hg002_CpG_ont_guppy5.0.7_nanopolish0.13.2.bed",col_names=FALSE)
 
 # PacBio not aligned to CHM13v2.0 currently
 ```
@@ -109,8 +109,8 @@ gpc.20.bed <- as.data.frame(gpc.meth.20) %>%
   dplyr::select("chr"=seqnames,start,end,"methylation_percentage"=score) %>%
   dplyr::select(chr,start,end,methylation_percentage)
 
-export.bw(gpc.meth.20, paste0("/home/phook2/code/pwh_projects/hg002_y/bw/chm13v2.0_hg002_gpc_nanopolish_nanopore.bw"))
-write_tsv(gpc.20.bed,file="~/code/pwh_projects/hg002_y/bw/chm13v2.0_hg002_gpc_nanopolish_nanopore_freq.bed",col_names=FALSE)
+export.bw(gpc.meth.20, paste0("/home/phook2/code/pwh_projects/hg002_y/bw/chm13v2.0_hg002_GpC_ont_guppy5.0.7_nanopolish0.13.2.bw"))
+write_tsv(gpc.20.bed,file="~/code/pwh_projects/hg002_y/bw/chm13v2.0_hg002_GpC_ont_guppy5.0.7_nanopolish0.13.2.bed",col_names=FALSE)
 
 ### zscore bw and bed
 z.gpc.meth.20 <- data.frame(chr= seqnames(gpc.loci.20),
@@ -133,8 +133,8 @@ z.gpc.20.bed <- as.data.frame(z.gpc.meth.20) %>%
   dplyr::select("chr"=seqnames,start,end,"methylation_percentage"=score) %>%
   dplyr::select(chr,start,end,methylation_percentage)
 
-export.bw(z.gpc.meth.20, paste0("/home/phook2/code/pwh_projects/hg002_y/bw/chm13v2.0_hg002_zscore_gpc_nanopolish_nanopore.bw"))
-write_tsv(z.gpc.20.bed,file="~/code/pwh_projects/hg002_y/bw/chm13v2.0_hg002_zscore_gpc_nanopolish_nanopore_freq.bed",col_names=FALSE)
+export.bw(z.gpc.meth.20, paste0("/home/phook2/code/pwh_projects/hg002_y/bw/chm13v2.0_hg002_GpC_zscore_ont_guppy5.0.7_nanopolish0.13.2.bw"))
+write_tsv(z.gpc.20.bed,file="~/code/pwh_projects/hg002_y/bw/chm13v2.0_hg002_GpC_zscore_ont_guppy5.0.7_nanopolish0.13.2.bed",col_names=FALSE)
 
 ```
 
@@ -177,8 +177,8 @@ guppy.27.bed <- as.data.frame(guppy.meth.27) %>%
   dplyr::select("chr"=seqnames,start,end,"methylation_percentage"=score) %>%
   dplyr::select(chr,start,end,methylation_percentage)
 
-export.bw(guppy.meth.27, paste0("/home/phook2/code/pwh_projects/hg002_y/bw/chm13v2.7XY_hg002_cpg_guppy_nanopore.bw"))
-write_tsv(guppy.27.bed,file="~/code/pwh_projects/hg002_y/bw/chm13v2.7XY_hg002_cpg_guppy_nanopore_freq.bed",col_names=FALSE)
+export.bw(guppy.meth.27, paste0("/home/phook2/code/pwh_projects/hg002_y/bw/chm13v1.1_hg002XYv2.7_hg002_CpG_ont_guppy6.1.2.bw"))
+write_tsv(guppy.27.bed,file="~/code/pwh_projects/hg002_y/bw/chm13v1.1_hg002XYv2.7_hg002_CpG_ont_guppy6.1.2.bed",col_names=FALSE)
 
 # Nanopolish nanonome calls
 nanopolish.27="/pym/Data/paul/hg002_y/meth_calls/calls/nanonome_2.7/processed/hg002_cpg_filtered_meth.freq"
@@ -203,8 +203,8 @@ nanopolish.27.bed <- as.data.frame(nanopolish.meth.27) %>%
   dplyr::select("chr"=seqnames,start,end,"methylation_percentage"=score) %>%
   dplyr::select(chr,start,end,methylation_percentage)
 
-export.bw(nanopolish.meth.27, paste0("/home/phook2/code/pwh_projects/hg002_y/bw/chm13v2.7XY_hg002_cpg_nanopolish_nanopore.bw"))
-write_tsv(nanopolish.27.bed,file="~/code/pwh_projects/hg002_y/bw/chm13v2.7XY_hg002_cpg_nanopolish_nanopore_freq.bed",col_names=FALSE)
+export.bw(nanopolish.meth.27, paste0("/home/phook2/code/pwh_projects/hg002_y/bw/chm13v1.1_hg002XYv2.7_hg002_CpG_ont_guppy5.0.7_nanopolish0.13.2.bw"))
+write_tsv(nanopolish.27.bed,file="~/code/pwh_projects/hg002_y/bw/chm13v1.1_hg002XYv2.7_hg002_CpG_ont_guppy5.0.7_nanopolish0.13.2.bed",col_names=FALSE)
 
 # PacBio Methylation calls
 pacbio.27="/atium/Data/projects/hg002_wgbs/bismark/long_read/hg002_pacbio_primrose_80.bismark"
@@ -229,8 +229,8 @@ pacbio.27.bed <- as.data.frame(pacbio.meth.27) %>%
   dplyr::select("chr"=seqnames,start,end,"methylation_percentage"=score) %>%
   dplyr::select(chr,start,end,methylation_percentage)
 
-export.bw(pacbio.meth.27, paste0("/home/phook2/code/pwh_projects/hg002_y/bw/chm13v2.7XY_hg002_cpg_pacbio.bw"))
-write_tsv(pacbio.27.bed,file="~/code/pwh_projects/hg002_y/bw/chm13v2.7XY_hg002_cpg_pacbio_freq.bed",col_names=FALSE)
+export.bw(pacbio.meth.27, paste0("/home/phook2/code/pwh_projects/hg002_y/bw/chm13v1.1_hg002XYv2.7_hg002_CpG_pacbio_primrose1.3.0_native.bw"))
+write_tsv(pacbio.27.bed,file="~/code/pwh_projects/hg002_y/bw/chm13v1.1_hg002XYv2.7_hg002_CpG_pacbio_primrose1.3.0_native.bed",col_names=FALSE)
 ```
 
 ### GpCs
@@ -258,8 +258,8 @@ gpc.27.bed <- as.data.frame(gpc.meth.27) %>%
   dplyr::select("chr"=seqnames,start,end,"methylation_percentage"=score) %>%
   dplyr::select(chr,start,end,methylation_percentage)
 
-export.bw(gpc.meth.27, paste0("/home/phook2/code/pwh_projects/hg002_y/bw/chm13v2.7XY_hg002_gpc_nanopolish_nanopore.bw"))
-write_tsv(gpc.27.bed,file="~/code/pwh_projects/hg002_y/bw/chm13v2.7XY_hg002_gpc_nanopolish_nanopore_freq.bed",col_names=FALSE)
+export.bw(gpc.meth.27, paste0("/home/phook2/code/pwh_projects/hg002_y/bw/chm13v1.1_hg002XYv2.7_hg002_GpC_ont_guppy5.0.7_nanopolish0.13.2.bw"))
+write_tsv(gpc.27.bed,file="~/code/pwh_projects/hg002_y/bw/chm13v1.1_hg002XYv2.7_hg002_GpC_ont_guppy5.0.7_nanopolish0.13.2.bed",col_names=FALSE)
 
 ### zscore bw and bed
 z.gpc.meth.27 <- data.frame(chr= seqnames(gpc.loci.27),
@@ -282,6 +282,6 @@ z.gpc.27.bed <- as.data.frame(z.gpc.meth.27) %>%
   dplyr::select("chr"=seqnames,start,end,"methylation_percentage"=score) %>%
   dplyr::select(chr,start,end,methylation_percentage)
 
-export.bw(z.gpc.meth.27, paste0("/home/phook2/code/pwh_projects/hg002_y/bw/chm13v2.7XY_hg002_zscore_gpc_nanopolish_nanopore.bw"))
-write_tsv(z.gpc.27.bed,file="~/code/pwh_projects/hg002_y/bw/chm13v2.7XY_hg002_zscore_gpc_nanopolish_nanopore_freq.bed",col_names=FALSE)
+export.bw(z.gpc.meth.27, paste0("/home/phook2/code/pwh_projects/hg002_y/bw/chm13v1.1_hg002XYv2.7_hg002_GpC_zscore_ont_guppy5.0.7_nanopolish0.13.2.bw"))
+write_tsv(z.gpc.27.bed,file="~/code/pwh_projects/hg002_y/bw/chm13v1.1_hg002XYv2.7_hg002_GpC_zscore_ont_guppy5.0.7_nanopolish0.13.2.bed",col_names=FALSE)
 ```
