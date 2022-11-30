@@ -95,7 +95,7 @@ gpc.meth.20 <- data.frame(chr= seqnames(gpc.loci.20),
                       getMeth(gpc.bis.20, type="raw", what="perBase")) %>%
   mutate(score=(.[,3])) %>%
   dplyr::select(chr,start,score) %>%
-  mutate(end=start+1) %>%
+  mutate(end=start,start=start-1) %>%
   mutate(sites=1) %>%
   na.omit() %>%
   GRanges()
@@ -119,7 +119,7 @@ z.gpc.meth.20 <- data.frame(chr= seqnames(gpc.loci.20),
   mutate(meth=(.[,3])) %>%
   mutate(score=(meth - mean(meth))/sd(meth)) %>%
   dplyr::select(chr,start,score) %>%
-  mutate(end=start+1) %>%
+  mutate(end=start,start=start-1) %>%
   mutate(sites=1) %>%
   na.omit() %>%
   GRanges()
@@ -244,7 +244,7 @@ gpc.meth.27 <- data.frame(chr= seqnames(gpc.loci.27),
                       getMeth(gpc.bis.27, type="raw", what="perBase")) %>%
   mutate(score=(.[,3])) %>%
   dplyr::select(chr,start,score) %>%
-  mutate(end=start+1) %>%
+  mutate(end=start,start=start-1) %>%
   mutate(sites=1) %>%
   na.omit() %>%
   GRanges()
@@ -268,7 +268,7 @@ z.gpc.meth.27 <- data.frame(chr= seqnames(gpc.loci.27),
   mutate(meth=(.[,3])) %>%
   mutate(score=(meth - mean(meth))/sd(meth)) %>%
   dplyr::select(chr,start,score) %>%
-  mutate(end=start+1) %>%
+  mutate(end=start,start=start-1) %>%
   mutate(sites=1) %>%
   na.omit() %>%
   GRanges()
