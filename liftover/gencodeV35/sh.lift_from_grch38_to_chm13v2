@@ -1,0 +1,57 @@
+#!/bin/bash
+#
+#SBATCH --mem=8g
+#
+# USAGE: sh.liftover_bedfile <BED file path>
+
+# As written, the script will convert the bed file to a Picard interval list file, using
+# the fourth bed file as an identifier, or creating one if it doesn't exist. Any fields
+# beyond the fourth field in the input bed file will be ignored in the picard run
+#
+# NFH February, 2021
+# Adapted to lift in the other direction, March, 2021
+
+
+module load ucsc
+module load picard
+
+export BED=$1
+
+export CHAINFILE=/data/Phillippy/t2t-share/team-liftover/v1_nflo/grch38-chm13v2.chain
+
+export BED4=`echo $BED | sed 's:.*/::' |  sed 's/.bed/.bed4/'`
+export UCSCOUTPUT=`echo $BED |  sed 's:.*/::' | sed 's/.bed/.chm13v2.ucsc.bed/'`
+export UCSCUNMAPPED=`echo $BED |  sed 's:.*/::' | sed 's/.bed/.chm13v2.ucsc.unmapped.bed/'`
+export UCSCSORTED=`echo $BED |  sed 's:.*/::' | sed 's/.bed/.chm13v2.ucsc.sort.bed/'`
+
+export PICARDINTERVAL=`echo $BED |  sed 's:.*/::' | sed 's/.bed/.picard.interval_list/'`
+export PICARDOUTPUT=`echo $BED |  sed 's:.*/::' | sed 's/.bed/.chm13v2.picard.interval_list/'`
+export PICARDOUTPUTBED=`echo $PICARDOUTPUT | sed 's/.interval_list/.bed/'`
+export PICARDSORTED=`echo $PICARDOUTPUT | sed 's/.interval_list/.sort.bed/'`
+export PICARDUNMAPPED=`echo $BED |  sed 's:.*/::' | sed 's/.bed/.chm13v2.picard.unmapped.interval_list/'`
+
+export OLDREFDICT=/data/Phillippy/t2t-share/team-variants/grch38_t2t_liftover/ref_files/hg38.chrom.dict
+export NEWREFDICT=/data/Phillippy/t2t-share/team-liftover/liftover_genes/chm13v2.0.dict
+
+# create an "interval_list" file for Picard:
+cat $OLDREFDICT > $PICARDINTERVAL
+awk '(NF<4 || $4=="") {OFS="\t"; print $1, $2+1, $3, "+", "INTERVAL_"NR} $4!="" {OFS="\t"; print $1, $2+1, $3, "+", $4}' $BED >> $PICARDINTERVAL
+
+## create a bed4 file (with identifiers for regions) for liftOver:
+awk '(NF<4 || $4=="") {OFS="\t"; print $1, $2, $3, "INTERVAL_"NR} $4!="" {OFS="\t"; print $1, $2, $3, $4}' $BED > $BED4
+
+## run UCSC liftOver:
+liftOver $BED4 $CHAINFILE $UCSCOUTPUT $UCSCUNMAPPED -multiple
+sort -k1,1 -k2,2n -k3,3n $UCSCOUTPUT > $UCSCSORTED
+#
+# run picard LiftOverIntervalList:
+java -Xmx6g -jar $PICARDJARPATH/picard.jar LiftOverIntervalList \
+-I $PICARDINTERVAL \
+-O $PICARDOUTPUT \
+--CHAIN $CHAINFILE \
+--REJECT $PICARDUNMAPPED \
+-SD $NEWREFDICT > $PICARDOUTPUT.log 2>&1
+
+grep -v '^@' $PICARDOUTPUT | awk '{OFS="\t"; print $1, $2-1, $3, $5}' > $PICARDOUTPUTBED
+sort -k1,1 -k2,2n -k3,3n $PICARDOUTPUTBED > $PICARDSORTED
+

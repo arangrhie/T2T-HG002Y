@@ -1,0 +1,41 @@
+Analysis of percentage of gene intervals preserved when lifting from GRCh38
+to CHM13v2.0 and back again
+
+We compared gencodeV35 intervals from the GRCh38 primary assembly chromosomes,
+lifted from GRCh38 to chm13v2 using two different candidate chain files, with
+Liftoff intervals generated directly on the chm13 reference. The chain
+files were generated either with minimap2 and v1_nflo ("v1_nflo"), or with the
+wfmash-based pipeline ("v1_wfmash").
+
+The gencodeV35 intervals on GRCh38 are available here:
+http://t2t.gi.ucsc.edu/chm13/hub/t2t-chm13-v2.0/download/gencodeV35.bed.gz
+
+We first filtered out intervals that are not on primary chromosomes:
+gunzip -c gencodeV35.bed.gz | grep -v 'alt' | grep -v 'fix' | grep -v 'Un' | grep -v 'random' > gencodeV35.primary.bed
+then kept only unique intervals (using the script filter_duplicate_intervals.pl)
+so as not to overcount:
+filter_duplicate_intervals.pl gencodeV35.primary.bed > gencodeV35.primary.unique.bed
+
+The liftoff intervals were generated directly on chm13, and unique transcript
+coordinates were obtained with the command:
+grep -v '##gff-version' CHM13.liftoff.all.v2.gff3 | awk -F"\t" '$3=="transcript" && $5>$4 {print $1, $4-1, $5}' | sort -k1,1 -k2,2n -k3,3n | uniq > CHM13.liftoff.all.v2.transcript.unique.bed
+
+We ran liftover using the syntax in the two scripts included here:
+sh.lift_from_grch38_to_chm13v2
+sh.lift_from_chm13v2_to_grch38
+
+and compared lifted to original intervals with the commands in the four
+"commands" file in this directory, one for each combination of the two
+chain files and the two directions of lifting.
+
+For example, for the use of v1_nflo and wfmash chain files to lift
+GRCh38 gencodeV35 intervals to chm13v2, the counts were as follows:
+
+Total intervals in gencodeV35 set: 224386
+Number of intervals that UCSC liftOver reports as unmappable to chm13v2 (v1_nflo, then v1_wfmash):
+ 964 1181 #Deleted in new
+ 725  811 #Partially deleted in new
+   0    1 #Split in new
+Number of gencodeV35 intervals successfully created in chm13v2 (including multiples): v1_nflo 223259, v1_wfmash 222725
+Number of lifted intervals which exactly match (chm13) liftoff intervals: v1_nflo 218420, v1_wfmash 218290
+

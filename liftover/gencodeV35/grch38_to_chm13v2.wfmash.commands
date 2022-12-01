@@ -1,0 +1,25 @@
+# lift gencodeV35 locations to CHM13v2 and convert transcript ids to transcript names:
+$ ../sh.lift_from_grch38_to_chm13v2 ../genes_and_metadata/gencodeV35.primary.bed > gencodeV35.chm13v2.log 2>&1
+$ add_gene_names.pl > gencodeV35.primary.unique.chm13v2.withgenes.ucsc.sort.bed
+
+# intersect gencode lifted chm13v2 locations with CAT/liftoff predicted locations:
+$ bedtools intersect -f 1.0 -F 1.0 -b ../genes_and_metadata/CHM13.combined.v4.unique.bed -a gencodeV35.primary.unique.chm13v2.withgenes.ucsc.sort.bed -u > gencodeV35.primary.unique.chm13v2.withgenes.ucsc.inCHM13.combined.v4.sort.bed
+$ bedtools intersect -f 1.0 -F 1.0 -a ../genes_and_metadata/CHM13.combined.v4.bed -b gencodeV35.primary.unique.chm13v2.withgenes.ucsc.sort.bed -u > CHM13.combined.v4.unique.ingencodeV35.primary.bed
+
+# count number of gencodeV35 intervals exactly match CHM13.combined.v4 CAT/liftoff annotations when lifted to chm13v2:
+#
+# Original count of gencodeV35 intervals (in grch38)
+$ wc -l ../../genes_and_metadata/gencodeV35.primary.unique.bed
+224386 ../../genes_and_metadata/gencodeV35.primary.unique.bed
+# Count of intervals that were unmappable
+$ grep '#' gencodeV35.primary.unique.chm13v2.ucsc.unmapped.bed | sort | uniq -c
+   1181 #Deleted in new
+    811 #Partially deleted in new
+      1 #Split in new
+# Count of intervals that were successfully lifted
+$ wc -l gencodeV35.primary.unique.chm13v2.withgenes.ucsc.sort.bed
+222725 gencodeV35.primary.unique.chm13v2.withgenes.ucsc.sort.bed
+# Count of intervals that lifted to intervals that match the (chm13) CHM13.combined.v4 intervals
+$ wc -l gencodeV35.primary.unique.chm13v2.withgenes.ucsc.inCHM13.combined.v4.sort.bed
+218290 gencodeV35.primary.unique.chm13v2.withgenes.ucsc.inCHM13.combined.v4.sort.bed
+
