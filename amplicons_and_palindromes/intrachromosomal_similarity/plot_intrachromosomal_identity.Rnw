@@ -1,0 +1,51 @@
+\documentclass{article}
+
+\begin{document}
+\SweaveOpts{concordance=TRUE}
+
+
+<<>>=
+require(tidyr)
+require(dplyr)
+
+#load the alignment file
+masked<-as.data.frame(read.table("chrY.2.7.hardmasked.windows.sorted.bam.f1-6.txt",skip=0))
+colnames(masked)<-c("name","flagstat","target","mstart","mapq","cigar")
+
+#add the calculated identities for each window
+identities<-as.data.frame(read.table("hardmasked.identities.txt"))
+stopifnot(nrow(masked)==nrow(identities))
+masked$identity<-as.numeric(identities$V1)
+
+masked<-separate(data = masked, col = name, into = c("chr", "coordinates"), sep = "\\:")
+masked<-separate(data = masked, col = coordinates, into = c("start", "end"), sep = "\\-")
+masked$start<-as.numeric(as.character(masked$start))
+masked$end<-as.numeric(as.character(masked$end))
+masked<-masked[order(masked$start),]
+
+#calculate the strand
+masked$strand<-ifelse(masked$flagstat==0 | masked$flagstat==256 | masked$flagstat==2048,'-','+')
+#calculate the distance between the analyzed window and the window it maps to
+masked$distance<-abs(ifelse(masked$strand=='+',masked$mstart-masked$start,masked$mstart-masked$end))
+masked<-masked[masked$distance>=5000,] #exclude self-alignments #when sufficient distance is required, the diagonal self-mapping disapears
+
+#extract matches from the CIGAR string
+matches<-regmatches(masked$cigar, gregexpr("[[:digit:]]+M", masked$cigar))
+matches<-lapply(matches,function(x) {sum(readr::parse_number(x))})
+masked$matches<-as.numeric(as.character(matches))
+masked<-masked[masked$matches>=1000,] #sufficient length of an alignment is available
+
+masked<-masked[masked$identity>=50,] #following Skaletsky et al. 2003
+
+#only keep the highest identity for each window
+masked<-masked %>%group_by(start) %>% 
+  mutate(max_identity = max(identity)) %>% 
+  ungroup() %>% 
+  filter(identity==max_identity)
+
+plot(masked$start,masked$identity-50,pch=3,col=adjustcolor("cyan1",alpha=0.5))
+
+write.table(masked, file="window_identity.txt", quote=FALSE, sep="\t", row.names=FALSE)
+@
+
+\end{document}
