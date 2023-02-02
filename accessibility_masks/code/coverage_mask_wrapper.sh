@@ -11,7 +11,7 @@
 #====================#
 
 source ~/.bashrc
-source activate acc_mask
+source activate pysam
 
 
 #===============#
@@ -47,7 +47,7 @@ then
   python code/coverage_mask.py ${chrom}_nonPAR  $projectDir > $outDir/coverage_mask_${chrom}_unsorted.txt
   python code/coverage_mask.py ${chrom}_PAR $projectDir >> $outDir/coverage_mask_${chrom}_unsorted.txt
   bedtools sort -i $outDir/coverage_mask_${chrom}_unsorted.txt > $outDir/coverage_mask_${chrom}.txt
-  rm $outDir/coverage_mask_${chrom}_nonPAR.txt $outDir/coverage_mask_${chrom}_PAR.txt
+  rm $outDir/coverage_mask_${chrom}_unsorted.txt
 elif [[ $chrom == "chrY" ]]
 then
   python code/coverage_mask.py ${chrom}_nonPAR $projectDir > $outDir/coverage_mask_${chrom}.txt
