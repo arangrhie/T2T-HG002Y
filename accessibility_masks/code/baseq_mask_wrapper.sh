@@ -4,16 +4,14 @@
 #SBATCH -N 1
 #SBATCH --cpus-per-task 48
 #SBATCH --time=48:00:00
-#SBATCH --mail-type=end
-#SBATCH --mail-user=dtaylo95@jhu.edu
-#SBATCH --array=1-24%24
+#SBATCH --array=1-24
 
 #====================#
 # Set up environment #
 #====================#
 
 source ~/.bashrc
-source activate pysam
+source activate acc_mask
 
 
 #===============#
