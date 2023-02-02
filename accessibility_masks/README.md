@@ -24,6 +24,8 @@ projectDir/
 ┣━ code/
 ┗━ data/
    ┣━ references/
+   ┃  ┣━ chm13v2.0.fasta
+   ┃  ┣━ chm13v2.0.fasta.fai
    ┃  ┣━ chm13v2.0.XX.fasta
    ┃  ┣━ chm13v2.0.XX.fasta.fai
    ┃  ┣━ chm13v2.0.XY.fasta
