@@ -1,3 +1,5 @@
+# Generating the short-read SNV accessibility mask
+
 The approach below generates three genome masks, according to the three criteria described in the following article: https://www.illumina.com/science/genomics-research/articles/identifying-genomic-regions-with-high-quality-single-nucleotide-.html
 
 These masks define regions of the genome where short-read SNV discovery and genotyping is relatively reliable. The three masks are then intersected to create one combined mask. Note that the results uploaded here are for the `T2T-CHM13v2.0` assembly, though the code could be generalized to any assembly version.
