@@ -1,0 +1,10 @@
+name: acc_mask
+channels:
+  - bioconda
+  - defaults
+dependencies:
+  - bedtools=2.30.0=h7d7f7ad_2
+  - mosdepth=0.3.2=h01d7912_0
+  - pysam=0.11.2.2=py36_1
+  - python=3.6.13=h12debd9_1
+  - samtools=1.12=h9aed4be_1
