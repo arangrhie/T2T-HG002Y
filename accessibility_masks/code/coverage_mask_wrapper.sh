@@ -11,7 +11,7 @@
 #====================#
 
 source ~/.bashrc
-source activate pysam
+source activate acc_mask
 
 
 #===============#
