@@ -7,4 +7,4 @@ The workflows (as WDLs) used for short-read and alignment for 3202 samples from 
 
 1. Basic alignment and variant calling statistics in 1KGP samples between T2T-CHM13v2.0-Y and GRCh38-Y (Fig. 3a-g) - Code is available from the same repository described above, in [this directory](https://github.com/schatzlab/t2t-chm13-chry/tree/main/1KGP_alignment_variant_calling_analysis)
 2. Basic alignment and variant calling statistics in SGDP samples between T2T-CHM13v2.0-Y and GRCh38-Y (Supplementary Fig. 14-18) - Code is available from the same repository described above, in [this directory](https://github.com/schatzlab/t2t-chm13-chry/tree/main/SGDP_alignment_variant_calling_analysis)
-3. Variant calling in putative collapsed duplications in GRCh38-Y (Fig. 3h-j) - Code is availble in this repo, in the [Fig3]() directory
+3. Variant calling in putative collapsed duplications in GRCh38-Y (Fig. 3h-j) - Code is availble in this repo, in the [Fig3](https://github.com/arangrhie/T2T-HG002Y/tree/main/variants/Fig3) directory
