@@ -1,7 +1,7 @@
 # Analysis of short-read alignment and variant calling on a complete human Y chromosome
 
 ## Short-read alignment and variant calling pipeline
-The workflows (as WDLs) used for short-read and alignment for 3202 samples from the 1000 Genomes Project (1KGP) and 279 open-access samples from the Simons Genome Diversity Project (SGDP) are available from [this repository](https://github.com/schatzlab/t2t-chm13-chry](https://github.com/schatzlab/t2t-chm13-chry/tree/main/alignment_variant_calling_pipeline).
+The workflows (as WDLs) used for short-read and alignment for 3202 samples from the 1000 Genomes Project (1KGP) and 279 open-access samples from the Simons Genome Diversity Project (SGDP) are available from [an external repository](https://github.com/schatzlab/t2t-chm13-chry).
 
 ## Downstream analysis of alignment and variant calling
 
