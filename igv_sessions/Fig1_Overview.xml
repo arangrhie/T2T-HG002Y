@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Session genome="chm13v2.0" locus="chrY:0-62460029" nextAutoscaleGroup="2" version="8">
+    <Resources>
+        <Resource path="https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/annotation/chm13v2.0Y_RefSeq_Liftoff_v5.1.gff3.gz" type="gff3"/>
+        <Resource path="https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/annotation/chm13v2.0Y_amplicons_v2.bed" type="bed"/>
+        <Resource path="https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/annotation/chm13v2.0_chrXY_sequence_class_v1.bed" type="bed"/>
+        <Resource path="https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/annotation/chm13v2.0Y_AZF_v1.bed" type="bed"/>
+        <Resource path="https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/publications/Rhie_2022/tracks/chm13v2.0Y_DAZ.bed" type="bed"/>
+        <Resource path="https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/annotation/chm13v2.0_censat_v2.0.bed" type="bed"/>
+        <Resource path="https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/publications/Rhie_2022/tracks/chm13v2.0Y_TSPY.bed" type="bed"/>
+        <Resource path="https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/annotation/chm13v2.0Y_DYZ_v1.bed" type="bed"/>
+        <Resource path="https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/annotation/chm13v2.0Y_inverted_repeats_v2.bed" type="bed"/>
+        <Resource path="https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/publications/Rhie_2022/tracks/chm13v2.0Y_RBMY.bed" type="bed"/>
+    </Resources>
+    <Panel height="491" name="FeaturePanel" width="1133">
+        <Track attributeKey="Reference sequence" clazz="org.broad.igv.track.SequenceTrack" fontSize="12" id="Reference sequence" name="Reference sequence" sequenceTranslationStrandValue="POSITIVE" shouldShowTranslation="false" visible="true"/>
+        <Track attributeKey="chm13v2.0_chrXY_sequence_class_v1.bed" clazz="org.broad.igv.track.FeatureTrack" fontSize="12" groupByStrand="false" id="https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/annotation/chm13v2.0_chrXY_sequence_class_v1.bed" name="Sequence Class" visible="true"/>
+        <Track attributeKey="chm13v2.0Y_amplicons_v2.bed" clazz="org.broad.igv.track.FeatureTrack" fontSize="12" groupByStrand="false" id="https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/annotation/chm13v2.0Y_amplicons_v2.bed" name="Palindromes" visible="true"/>
+        <Track attributeKey="chm13v2.0Y_inverted_repeats_v2.bed" clazz="org.broad.igv.track.FeatureTrack" fontSize="12" groupByStrand="false" id="https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/annotation/chm13v2.0Y_inverted_repeats_v2.bed" name="Inverted Repeats" visible="true"/>
+        <Track attributeKey="chm13v2.0Y_AZF_v1.bed" clazz="org.broad.igv.track.FeatureTrack" displayMode="SQUISHED" fontSize="12" groupByStrand="false" id="https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/annotation/chm13v2.0Y_AZF_v1.bed" name="AZF" visible="true"/>
+        <Track attributeKey="chm13v2.0Y_TSPY.bed" clazz="org.broad.igv.track.FeatureTrack" color="51,51,51" fontSize="12" groupByStrand="false" id="https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/publications/Rhie_2022/tracks/chm13v2.0Y_TSPY.bed" name="TSPY" visible="true"/>
+        <Track attributeKey="chm13v2.0Y_DAZ.bed" clazz="org.broad.igv.track.FeatureTrack" color="51,51,51" fontSize="12" groupByStrand="false" id="https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/publications/Rhie_2022/tracks/chm13v2.0Y_DAZ.bed" name="DAZ" visible="true"/>
+        <Track attributeKey="chm13v2.0Y_RBMY.bed" clazz="org.broad.igv.track.FeatureTrack" color="51,51,51" fontSize="12" groupByStrand="false" id="https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/publications/Rhie_2022/tracks/chm13v2.0Y_RBMY.bed" name="RBMY" visible="true"/>
+        <Track attributeKey="chm13v2.0Y_DYZ_v1.bed" clazz="org.broad.igv.track.FeatureTrack" displayMode="SQUISHED" fontSize="12" groupByStrand="false" id="https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/annotation/chm13v2.0Y_DYZ_v1.bed" name="DYZ" visible="true"/>
+        <Track attributeKey="chm13v2.0_censat_v2.0.bed" clazz="org.broad.igv.track.FeatureTrack" fontSize="12" groupByStrand="false" id="https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/annotation/chm13v2.0_censat_v2.0.bed" name="Cen/Sat" visible="true"/>
+        <Track attributeKey="chm13v2.0Y_RefSeq_Liftoff_v5.1.gff3.gz" clazz="org.broad.igv.track.FeatureTrack" fontSize="12" groupByStrand="false" id="https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/annotation/chm13v2.0Y_RefSeq_Liftoff_v5.1.gff3.gz" name="chm13v2.0Y_RefSeq_Liftoff_v5.1.gff3.gz" visible="true"/>
+    </Panel>
+    <PanelLayout dividerFractions="0.01195219123505976"/>
+    <HiddenAttributes>
+        <Attribute name="DATA FILE"/>
+        <Attribute name="DATA TYPE"/>
+        <Attribute name="NAME"/>
+    </HiddenAttributes>
+</Session>

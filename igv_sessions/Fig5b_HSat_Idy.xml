@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Session genome="chm13v2.0" locus="chrY:26890257-62460029" nextAutoscaleGroup="2" version="8">
+    <Resources>
+        <Resource path="https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/publications/Rhie_2022/tracks/chm13v2.0Y_Yqh_HSat3_IDY.wig" type="wig"/>
+        <Resource path="https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/annotation/chm13v2.0_censat_v2.0.bed" type="bed"/>
+        <Resource path="https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/publications/Rhie_2022/tracks/chm13v2.0Y_Yqh_HSat1B_IDY.wig" type="wig"/>
+    </Resources>
+    <Panel height="416" name="DataPanel" width="1133">
+        <Track attributeKey="HSat1B" autoScale="false" clazz="org.broad.igv.track.DataSourceTrack" color="255,193,7" fontSize="12" id="https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/publications/Rhie_2022/tracks/chm13v2.0Y_Yqh_HSat1B_IDY.wig" name="HSat1B" renderer="BAR_CHART" visible="true" windowFunction="mean">
+            <DataRange baseline="95.0" drawBaseline="true" flipAxis="false" maximum="100.0" minimum="95.0" type="LINEAR"/>
+        </Track>
+        <Track attributeKey="HSat3" autoScale="false" clazz="org.broad.igv.track.DataSourceTrack" color="30,136,229" fontSize="12" id="https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/publications/Rhie_2022/tracks/chm13v2.0Y_Yqh_HSat3_IDY.wig" name="HSat3" renderer="BAR_CHART" visible="true" windowFunction="mean">
+            <DataRange baseline="95.0" drawBaseline="true" flipAxis="false" maximum="100.0" minimum="95.0" type="LINEAR"/>
+        </Track>
+        <Track attributeKey="chm13v2.0_censat_v2.0.bed" clazz="org.broad.igv.track.FeatureTrack" fontSize="14" groupByStrand="false" id="https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/annotation/chm13v2.0_censat_v2.0.bed" name="cenSat" visible="true"/>
+    </Panel>
+    <Panel height="79" name="FeaturePanel" width="1133">
+        <Track attributeKey="Reference sequence" clazz="org.broad.igv.track.SequenceTrack" fontSize="14" id="Reference sequence" name="Reference sequence" sequenceTranslationStrandValue="POSITIVE" shouldShowTranslation="false" visible="true"/>
+    </Panel>
+    <PanelLayout dividerFractions="0.8326693227091634"/>
+    <HiddenAttributes>
+        <Attribute name="DATA FILE"/>
+        <Attribute name="DATA TYPE"/>
+        <Attribute name="NAME"/>
+    </HiddenAttributes>
+</Session>

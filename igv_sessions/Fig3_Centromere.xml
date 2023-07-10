@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Session genome="hchm13v2.0" locus="chrY:10349997-10950000" nextAutoscaleGroup="3" version="8">
+    <Resources>
+        <Resource path="https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/publications/Rhie_2022/tracks/chm13v2.0Y_APhasedRepeats_15bp_spacer.wig" type="wig"/>
+        <Resource path="https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/alignments/cutnrun/chm13v2.0.hg002_CA_cutnrun_losalt_trimmed_q20_2.F3852.bw" type="bw"/>
+        <Resource path="https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/alignments/cutnrun/chm13v2.0.hg002_CA_cutnrun_losalt_trimmed_q20_2.F3852_51mer.bw" type="bw"/>
+        <Resource path="https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/annotation/regulation/chm13v1.1_hg002XYv2.7_hg002_CpG_pacbio_primrose1.3.0_native.bw" type="bw"/>
+        <Resource path="https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/publications/Rhie_2022/tracks/chm13v2.0Y_InvertedRepeats_15bp_spacer.wig" type="wig"/>
+        <Resource path="https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/annotation/regulation/chm13v1.1_hg002XYv2.7_hg002_CpG_ont_guppy6.1.2.bw" type="bw"/>
+        <Resource path="https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/publications/Rhie_2022/tracks/chm13v2.0Y_CenSat_ASat_HOR_Hap.bb" type="bb"/>
+        <Resource path="https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/annotation/chm13v2.0Y_RefSeq_Liftoff_v5.1.gff3.gz" type="gff3"/>
+        <Resource path="https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/publications/Rhie_2022/tracks/chm13v2.0Y_MirrorRepeats_15bp_spacer.wig" type="wig"/>
+        <Resource path="https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/annotation/regulation/chm13v1.1_hg002XYv2.7_hg002_CpG_ont_nanoNOME.bw" type="bw"/>
+        <Resource path="https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/publications/Rhie_2022/tracks/chm13v2.0Y_CenSat_ASat_StV.bb" type="bb"/>
+        <Resource path="https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/annotation/regulation/chm13v1.1_hg002XYv2.7_hg002_CpG_pacbio_primrose1.3.0_pb-CpG-tools.bw" type="bw"/>
+        <Resource path="https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/annotation/regulation/chm13v1.1_hg002XYv2.7_hg002_CpG_ont_guppy5.0.7_nanopolish0.13.2.bw" type="bw"/>
+        <Resource path="https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/publications/Rhie_2022/tracks/chm13v2.0Y_CenSat_TE.bed" type="bed"/>
+        <Resource path="https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/annotation/chm13v2.0_censat_v2.0.bed" type="bed"/>
+        <Resource path="https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/publications/Rhie_2022/tracks/chm13v2.0Y_CenSat_ASat_Strand.bb" type="bb"/>
+    </Resources>
+    <Panel height="553" name="DataPanel" width="1191">
+        <Track attributeKey="chm13v2.0Y_CenSat_ASat_Strand.bb" clazz="org.broad.igv.track.FeatureTrack" featureVisibilityWindow="1344000" fontSize="12" groupByStrand="false" id="https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/publications/Rhie_2022/tracks/chm13v2.0Y_CenSat_ASat_Strand.bb" name="aSat Strand" visible="true"/>
+        <Track attributeKey="chm13v2.0_censat_v2.0.bed" clazz="org.broad.igv.track.FeatureTrack" fontSize="12" groupByStrand="false" id="https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/annotation/chm13v2.0_censat_v2.0.bed" name="Cen/Sat" visible="true"/>
+        <Track attributeKey="chm13v2.0Y_CenSat_TE.bed" clazz="org.broad.igv.track.FeatureTrack" fontSize="12" groupByStrand="false" id="https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/publications/Rhie_2022/tracks/chm13v2.0Y_CenSat_TE.bed" name="Transposable Elements" visible="true"/>
+        <Track attributeKey="chm13v2.0Y_RefSeq_Liftoff_v5.1.gff3.gz" clazz="org.broad.igv.track.FeatureTrack" color="102,102,102" fontSize="12" groupByStrand="false" id="https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/annotation/chm13v2.0Y_RefSeq_Liftoff_v5.1.gff3.gz" name="Curated RefSeq/Liftoff v5.1" visible="true"/>
+        <Track attributeKey="Inverted Repeats" autoScale="false" clazz="org.broad.igv.track.DataSourceTrack" color="51,51,51" fontSize="12" height="20" id="https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/publications/Rhie_2022/tracks/chm13v2.0Y_InvertedRepeats_15bp_spacer.wig" name="Inverted Repeats" renderer="BAR_CHART" visible="true" windowFunction="mean">
+            <DataRange baseline="0.0" drawBaseline="true" flipAxis="false" maximum="1.0" minimum="0.0" type="LINEAR"/>
+        </Track>
+        <Track attributeKey="A-Phased Repeats" autoScale="false" clazz="org.broad.igv.track.DataSourceTrack" color="51,51,51" fontSize="12" height="20" id="https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/publications/Rhie_2022/tracks/chm13v2.0Y_APhasedRepeats_15bp_spacer.wig" name="A-Phased Repeats" renderer="BAR_CHART" visible="true" windowFunction="mean">
+            <DataRange baseline="0.0" drawBaseline="true" flipAxis="false" maximum="1.0" minimum="0.0" type="LINEAR"/>
+        </Track>
+        <Track attributeKey="Mirror Repeats" autoScale="false" clazz="org.broad.igv.track.DataSourceTrack" color="51,51,51" fontSize="12" height="20" id="https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/publications/Rhie_2022/tracks/chm13v2.0Y_MirrorRepeats_15bp_spacer.wig" name="Mirror Repeats" renderer="BAR_CHART" visible="true" windowFunction="mean">
+            <DataRange baseline="0.0" drawBaseline="true" flipAxis="false" maximum="1.0" minimum="0.0" type="LINEAR"/>
+        </Track>
+        <Track attributeKey="chm13v2.0Y_CenSat_ASat_HOR_Hap.bb" clazz="org.broad.igv.track.FeatureTrack" featureVisibilityWindow="17104000" fontSize="12" groupByStrand="false" id="https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/publications/Rhie_2022/tracks/chm13v2.0Y_CenSat_ASat_HOR_Hap.bb" name="aSat HOR Haplotype" visible="true"/>
+        <Track attributeKey="chm13v2.0Y_CenSat_ASat_StV.bb" clazz="org.broad.igv.track.FeatureTrack" featureVisibilityWindow="11424000" fontSize="12" groupByStrand="false" id="https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/publications/Rhie_2022/tracks/chm13v2.0Y_CenSat_ASat_StV.bb" name="aSat HOR SV" visible="true"/>
+        <Track attributeKey="chm13v1.1_hg002XYv2.7_hg002_CpG_ont_nanoNOME.bw" autoScale="false" clazz="org.broad.igv.track.DataSourceTrack" color="0,0,0" fontSize="12" id="https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/annotation/regulation/chm13v1.1_hg002XYv2.7_hg002_CpG_ont_nanoNOME.bw" name="mCpG (ONT)" renderer="BAR_CHART" showDataRange="false" visible="true" windowFunction="max">
+            <DataRange baseline="0.0" drawBaseline="true" flipAxis="false" maximum="1.0" minimum="0.0" type="LINEAR"/>
+        </Track>
+        <Track attributeKey="chm13v1.1_hg002XYv2.7_hg002_CpG_pacbio_primrose1.3.0_pb-CpG-tools.bw" autoScale="false" clazz="org.broad.igv.track.DataSourceTrack" color="0,0,0" fontSize="12" id="https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/annotation/regulation/chm13v1.1_hg002XYv2.7_hg002_CpG_pacbio_primrose1.3.0_pb-CpG-tools.bw" name="mCpG (HiFi)" renderer="BAR_CHART" showDataRange="false" visible="true" windowFunction="max">
+            <DataRange baseline="0.0" drawBaseline="true" flipAxis="false" maximum="100.0" minimum="0.0" type="LINEAR"/>
+        </Track>
+        <Track attributeKey="chm13v2.0.hg002_CA_cutnrun_losalt_trimmed_q20_2.F3852.bw" autoScale="false" clazz="org.broad.igv.track.DataSourceTrack" color="187,187,187" fontSize="12" id="https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/alignments/cutnrun/chm13v2.0.hg002_CA_cutnrun_losalt_trimmed_q20_2.F3852.bw" name="CENP-A CUT&amp;RUN (Unfilt)" renderer="BAR_CHART" showDataRange="false" visible="true" windowFunction="max">
+            <DataRange baseline="0.0" drawBaseline="true" flipAxis="false" maximum="50.0" minimum="0.0" type="LINEAR"/>
+        </Track>
+        <Track attributeKey="chm13v2.0.hg002_CA_cutnrun_losalt_trimmed_q20_2.F3852_51mer.bw" autoScale="false" clazz="org.broad.igv.track.DataSourceTrack" color="0,0,0" fontSize="12" id="https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/alignments/cutnrun/chm13v2.0.hg002_CA_cutnrun_losalt_trimmed_q20_2.F3852_51mer.bw" name="CENP-A CUT&amp;RUN (Filt)" renderer="BAR_CHART" showDataRange="false" visible="true" windowFunction="max">
+            <DataRange baseline="0.0" drawBaseline="true" flipAxis="false" maximum="50.0" minimum="0.0" type="LINEAR"/>
+        </Track>
+    </Panel>
+    <Panel height="239" name="FeaturePanel" width="1191">
+        <Track attributeKey="Reference sequence" clazz="org.broad.igv.track.SequenceTrack" fontSize="14" id="Reference sequence" name="Reference sequence" sequenceTranslationStrandValue="POSITIVE" shouldShowTranslation="false" showDataRange="false" visible="true"/>
+        <Track attributeKey="chm13v1.1_hg002XYv2.7_hg002_CpG_ont_guppy6.1.2.bw" autoScale="false" clazz="org.broad.igv.track.DataSourceTrack" color="0,0,0" fontSize="12" id="https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/annotation/regulation/chm13v1.1_hg002XYv2.7_hg002_CpG_ont_guppy6.1.2.bw" name="ONT Guppy 6.1.2" renderer="BAR_CHART" visible="true" windowFunction="max">
+            <DataRange baseline="0.0" drawBaseline="true" flipAxis="false" maximum="1.0" minimum="0.0" type="LINEAR"/>
+        </Track>
+        <Track attributeKey="chm13v1.1_hg002XYv2.7_hg002_CpG_ont_guppy5.0.7_nanopolish0.13.2.bw" autoScale="false" clazz="org.broad.igv.track.DataSourceTrack" color="0,0,0" fontSize="12" id="https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/annotation/regulation/chm13v1.1_hg002XYv2.7_hg002_CpG_ont_guppy5.0.7_nanopolish0.13.2.bw" name="ONT Guppy 5.0.7 Nanopolish" renderer="BAR_CHART" visible="true" windowFunction="max">
+            <DataRange baseline="0.0" drawBaseline="true" flipAxis="false" maximum="1.0" minimum="0.0" type="LINEAR"/>
+        </Track>
+        <Track attributeKey="chm13v1.1_hg002XYv2.7_hg002_CpG_pacbio_primrose1.3.0_native.bw" autoScale="false" clazz="org.broad.igv.track.DataSourceTrack" color="0,0,0" fontSize="12" id="https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/annotation/regulation/chm13v1.1_hg002XYv2.7_hg002_CpG_pacbio_primrose1.3.0_native.bw" name="HiFi PrimRose 1.3.0 Native" renderer="BAR_CHART" visible="true" windowFunction="max">
+            <DataRange baseline="0.0" drawBaseline="true" flipAxis="false" maximum="1.0" minimum="0.0" type="LINEAR"/>
+        </Track>
+    </Panel>
+    <PanelLayout dividerFractions="0.6946182728410513"/>
+    <HiddenAttributes>
+        <Attribute name="DATA FILE"/>
+        <Attribute name="DATA TYPE"/>
+        <Attribute name="NAME"/>
+    </HiddenAttributes>
+</Session>

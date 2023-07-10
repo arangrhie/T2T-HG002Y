@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Session genome="chm13v2.0" locus="chrY:20789177-21427024" nextAutoscaleGroup="9" version="8">
+    <Resources>
+        <Resource path="https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/annotation/chm13v2.0Y_RefSeq_Liftoff_v5.1.gff3.gz" type="gff3"/>
+        <Resource index="https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/publications/Rhie_2022/tracks/variants/v2_HG002Y/HG00116.Y.bam.bai" path="https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/publications/Rhie_2022/tracks/variants/v2_HG002Y/HG00116.Y.bam" type="bam"/>
+        <Resource index="https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/publications/Rhie_2022/tracks/variants/v2_HG002Y/HG01130.Y.bam.bai" path="https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/publications/Rhie_2022/tracks/variants/v2_HG002Y/HG01130.Y.bam" type="bam"/>
+        <Resource path="https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/annotation/chm13v2.0_chrXY_sequence_class_v1.bed" type="bed"/>
+        <Resource path="https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/publications/Rhie_2022/tracks/variants/v2_HG002Y/v2_HG002Y_HG00116.vcf" type="vcf"/>
+        <Resource index="https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/publications/Rhie_2022/tracks/variants/v2_HG002Y/HG01885.Y.bam.bai" path="https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/publications/Rhie_2022/tracks/variants/v2_HG002Y/HG01885.Y.bam" type="bam"/>
+        <Resource path="https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/publications/Rhie_2022/tracks/variants/v2_HG002Y/chm13v2-syntenic-hg38.bed" type="bed"/>
+        <Resource path="https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/publications/Rhie_2022/tracks/variants/v2_HG002Y/v2_HG002Y_HG01130.vcf" type="vcf"/>
+        <Resource path="https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/publications/Rhie_2022/tracks/variants/v2_HG002Y/CHM13v2Y_Yfinder.bed" type="bed"/>
+        <Resource path="https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/publications/Rhie_2022/tracks/variants/v2_HG002Y/v2_HG002Y_HG01885.vcf" type="vcf"/>
+    </Resources>
+    <Panel height="467" name="Panel1668832994907" width="1133">
+        <Track attributeKey="HG01130.Y.bam Coverage" autoScale="false" clazz="org.broad.igv.sam.CoverageTrack" fontSize="12" height="100" id="https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/publications/Rhie_2022/tracks/variants/v2_HG002Y/HG01130.Y.bam_coverage" name="HG01130 (J1)" snpThreshold="0.6" visible="true">
+            <DataRange baseline="0.0" drawBaseline="true" flipAxis="false" maximum="120.0" minimum="0.0" type="LINEAR"/>
+        </Track>
+        <Track attributeKey="v2_HG002Y_HG01130.vcf" clazz="org.broad.igv.variant.VariantTrack" colorScale="ContinuousColorScale;0.0;0.0;255,255,255;0,0,178" displayMode="SQUISHED" fontSize="12" groupByStrand="false" id="https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/publications/Rhie_2022/tracks/variants/v2_HG002Y/v2_HG002Y_HG01130.vcf" name="v2_HG002Y_HG01130.vcf" siteColorMode="ALLELE_FREQUENCY" squishedHeight="20" visible="true"/>
+        <Track attributeKey="HG00116.Y.bam Coverage" autoScale="false" clazz="org.broad.igv.sam.CoverageTrack" fontSize="12" height="100" id="https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/publications/Rhie_2022/tracks/variants/v2_HG002Y/HG00116.Y.bam_coverage" name="HG00116 (R1b)" snpThreshold="0.6" visible="true">
+            <DataRange baseline="0.0" drawBaseline="true" flipAxis="false" maximum="120.0" minimum="0.0" type="LINEAR"/>
+        </Track>
+        <Track attributeKey="v2_HG002Y_HG00116.vcf" clazz="org.broad.igv.variant.VariantTrack" colorScale="ContinuousColorScale;0.0;0.0;255,255,255;0,0,178" displayMode="SQUISHED" fontSize="12" groupByStrand="false" id="https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/publications/Rhie_2022/tracks/variants/v2_HG002Y/v2_HG002Y_HG00116.vcf" name="v2_HG002Y_HG00116.vcf" siteColorMode="ALLELE_FREQUENCY" squishedHeight="20" visible="true"/>
+        <Track attributeKey="HG01885.Y.bam Coverage" autoScale="false" clazz="org.broad.igv.sam.CoverageTrack" fontSize="12" height="100" id="https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/publications/Rhie_2022/tracks/variants/v2_HG002Y/HG01885.Y.bam_coverage" name="HG01885 (E1b)" snpThreshold="0.6" visible="true">
+            <DataRange baseline="0.0" drawBaseline="true" flipAxis="false" maximum="120.0" minimum="0.0" type="LINEAR"/>
+        </Track>
+        <Track attributeKey="v2_HG002Y_HG01885.vcf" clazz="org.broad.igv.variant.VariantTrack" colorScale="ContinuousColorScale;0.0;0.0;255,255,255;0,0,178" displayMode="SQUISHED" fontSize="12" groupByStrand="false" id="https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/publications/Rhie_2022/tracks/variants/v2_HG002Y/v2_HG002Y_HG01885.vcf" name="v2_HG002Y_HG01885.vcf" siteColorMode="ALLELE_FREQUENCY" squishedHeight="20" visible="true"/>
+        <Track attributeKey="chm13v2-syntenic-hg38.bed" clazz="org.broad.igv.track.FeatureTrack" color="0,0,0" colorScale="ContinuousColorScale;0.0;0.0;255,255,255;0,0,0" fontSize="12" groupByStrand="false" id="https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/publications/Rhie_2022/tracks/variants/v2_HG002Y/chm13v2-syntenic-hg38.bed" name="Syntenic to GRCh38-Y" visible="true"/>
+    </Panel>
+    <Panel height="201" name="FeaturePanel" width="1133">
+        <Track attributeKey="Reference sequence" clazz="org.broad.igv.track.SequenceTrack" fontSize="12" id="Reference sequence" name="Reference sequence" sequenceTranslationStrandValue="POSITIVE" shouldShowTranslation="false" visible="true"/>
+        <Track attributeKey="CHM13v2Y_Yfinder.bed" clazz="org.broad.igv.track.FeatureTrack" color="51,51,51" colorScale="ContinuousColorScale;0.0;0.0;255,255,255;51,51,51" fontSize="12" groupByStrand="false" id="https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/publications/Rhie_2022/tracks/variants/v2_HG002Y/CHM13v2Y_Yfinder.bed" name="Y Finder SNVs" visible="true"/>
+        <Track attributeKey="chm13v2.0Y_RefSeq_Liftoff_v5.1.gff3.gz" clazz="org.broad.igv.track.FeatureTrack" color="0,0,0" colorScale="ContinuousColorScale;0.0;0.0;255,255,255;0,0,0" fontSize="12" groupByStrand="false" id="https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/annotation/chm13v2.0Y_RefSeq_Liftoff_v5.1.gff3.gz" name="Gene" visible="true"/>
+        <Track attributeKey="region.bed" clazz="org.broad.igv.track.FeatureTrack" colorScale="ContinuousColorScale;0.0;0.0;255,255,255;0,0,178" fontSize="12" groupByStrand="false" id="https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/annotation/chm13v2.0_chrXY_sequence_class_v1.bed" name="Region" visible="true"/>
+    </Panel>
+    <PanelLayout dividerFractions="0.010218978102189781,0.6992700729927007"/>
+    <HiddenAttributes>
+        <Attribute name="DATA FILE"/>
+        <Attribute name="DATA TYPE"/>
+        <Attribute name="NAME"/>
+    </HiddenAttributes>
+</Session>

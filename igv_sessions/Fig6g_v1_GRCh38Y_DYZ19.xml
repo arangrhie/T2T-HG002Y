@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Session genome="hg38_1kg" locus="chrY:19934630-20541584" nextAutoscaleGroup="2" version="8">
+    <Resources>
+        <Resource path="https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/publications/Rhie_2022/tracks/variants/v1_GRCh38Y/v1_GRCh38Y_HG01885.vcf" type="vcf"/>
+        <Resource path="https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/publications/Rhie_2022/tracks/variants/v1_GRCh38Y/v1_GRCh38Y_HG00116.vcf" type="vcf"/>
+        <Resource path="https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/publications/Rhie_2022/tracks/variants/v1_GRCh38Y/GRCh38Y_Yfinder.unlifted.bed" type="bed"/>
+        <Resource path="https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/publications/Rhie_2022/tracks/variants/v1_GRCh38Y/GRCh38_palindromes.bed" type="bed"/>
+        <Resource path="https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/publications/Rhie_2022/tracks/variants/v1_GRCh38Y/GRCh38_gaps.bed" type="bed"/>
+        <Resource index="https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/publications/Rhie_2022/tracks/variants/v1_GRCh38Y/HG01130.Y.bam.bai" path="https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/publications/Rhie_2022/tracks/variants/v1_GRCh38Y/HG01130.Y.bam" type="bam"/>
+        <Resource index="https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/publications/Rhie_2022/tracks/variants/v1_GRCh38Y/HG00116.Y.bam.bai" path="https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/publications/Rhie_2022/tracks/variants/v1_GRCh38Y/HG00116.Y.bam" type="bam"/>
+        <Resource path="https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/publications/Rhie_2022/tracks/variants/v1_GRCh38Y/GRCh38Y_RefSeq_110.gff" type="gff"/>
+        <Resource path="https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/publications/Rhie_2022/tracks/variants/v1_GRCh38Y/GRCh38Y_syntenic_to_HG002Y.bed" type="bed"/>
+        <Resource index="https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/publications/Rhie_2022/tracks/variants/v1_GRCh38Y/HG01885.Y.bam.bai" path="https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/publications/Rhie_2022/tracks/variants/v1_GRCh38Y/HG01885.Y.bam" type="bam"/>
+        <Resource path="https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/publications/Rhie_2022/tracks/variants/v1_GRCh38Y/v1_GRCh38Y_HG01130.vcf" type="vcf"/>
+        <Resource path="https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/publications/Rhie_2022/tracks/variants/v1_GRCh38Y/GRCh38Y_Yfinder.bed" type="bed"/>
+    </Resources>
+    <Panel height="531" name="Panel1688959788440" width="1133">
+        <Track attributeKey="HG01130.Y.bam Coverage" autoScale="false" clazz="org.broad.igv.sam.CoverageTrack" fontSize="12" height="100" id="https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/publications/Rhie_2022/tracks/variants/v1_GRCh38Y/HG01130.Y.bam_coverage" name="HG01130 (J1)" snpThreshold="0.6" visible="true">
+            <DataRange baseline="0.0" drawBaseline="true" flipAxis="false" maximum="120.0" minimum="0.0" type="LINEAR"/>
+        </Track>
+        <Track attributeKey="HG01130.Y.bam Junctions" autoScale="false" clazz="org.broad.igv.sam.SpliceJunctionTrack" fontSize="12" groupByStrand="false" height="60" id="https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/publications/Rhie_2022/tracks/variants/v1_GRCh38Y/HG01130.Y.bam_junctions" maxdepth="50" name="HG01130.Y.bam Junctions" visible="false"/>
+        <Track attributeKey="v1_GRCh38Y_HG01130.vcf" clazz="org.broad.igv.variant.VariantTrack" displayMode="SQUISHED" fontSize="12" groupByStrand="false" id="https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/publications/Rhie_2022/tracks/variants/v1_GRCh38Y/v1_GRCh38Y_HG01130.vcf" name="v1_GRCh38Y_HG01130.vcf" siteColorMode="ALLELE_FREQUENCY" squishedHeight="20" visible="true"/>
+        <Track attributeKey="HG00116.Y.bam Coverage" autoScale="false" clazz="org.broad.igv.sam.CoverageTrack" fontSize="12" height="100" id="https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/publications/Rhie_2022/tracks/variants/v1_GRCh38Y/HG00116.Y.bam_coverage" name="HG00116 (R1b)" snpThreshold="0.6" visible="true">
+            <DataRange baseline="0.0" drawBaseline="true" flipAxis="false" maximum="120.0" minimum="0.0" type="LINEAR"/>
+        </Track>
+        <Track attributeKey="v1_GRCh38Y_HG00116.vcf" clazz="org.broad.igv.variant.VariantTrack" displayMode="SQUISHED" fontSize="12" groupByStrand="false" id="https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/publications/Rhie_2022/tracks/variants/v1_GRCh38Y/v1_GRCh38Y_HG00116.vcf" name="v1_GRCh38Y_HG00116.vcf" siteColorMode="ALLELE_FREQUENCY" squishedHeight="20" visible="true"/>
+        <Track attributeKey="HG01885.Y.bam Coverage" autoScale="false" clazz="org.broad.igv.sam.CoverageTrack" fontSize="12" height="100" id="https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/publications/Rhie_2022/tracks/variants/v1_GRCh38Y/HG01885.Y.bam_coverage" name="HG01885 (E1b)" snpThreshold="0.6" visible="true">
+            <DataRange baseline="0.0" drawBaseline="true" flipAxis="false" maximum="120.0" minimum="0.0" type="LINEAR"/>
+        </Track>
+        <Track attributeKey="v1_GRCh38Y_HG01885.vcf" clazz="org.broad.igv.variant.VariantTrack" displayMode="SQUISHED" fontSize="12" groupByStrand="false" id="https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/publications/Rhie_2022/tracks/variants/v1_GRCh38Y/v1_GRCh38Y_HG01885.vcf" name="v1_GRCh38Y_HG01885.vcf" siteColorMode="ALLELE_FREQUENCY" squishedHeight="20" visible="true"/>
+    </Panel>
+    <Panel height="268" name="FeaturePanel" width="1133">
+        <Track attributeKey="Reference sequence" clazz="org.broad.igv.track.SequenceTrack" fontSize="12" id="Reference sequence" name="Reference sequence" sequenceTranslationStrandValue="POSITIVE" shouldShowTranslation="false" visible="true"/>
+        <Track attributeKey="GRCh38Y_syntenic_to_HG002Y.bed" clazz="org.broad.igv.track.FeatureTrack" color="0,0,0" fontSize="12" groupByStrand="false" id="https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/publications/Rhie_2022/tracks/variants/v1_GRCh38Y/GRCh38Y_syntenic_to_HG002Y.bed" name="Syntenic to T2T-HG002Y" visible="true"/>
+        <Track attributeKey="GRCh38_gaps.bed" clazz="org.broad.igv.track.FeatureTrack" color="0,0,0" fontSize="12" groupByStrand="false" id="https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/publications/Rhie_2022/tracks/variants/v1_GRCh38Y/GRCh38_gaps.bed" name="Gaps" visible="true"/>
+        <Track attributeKey="GRCh38Y_Yfinder.bed" clazz="org.broad.igv.track.FeatureTrack" color="0,0,0" fontSize="12" groupByStrand="false" id="https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/publications/Rhie_2022/tracks/variants/v1_GRCh38Y/GRCh38Y_Yfinder.bed" name="Y-Finder SNVs" visible="true"/>
+        <Track attributeKey="GRCh38Y_Yfinder.unlifted.bed" clazz="org.broad.igv.track.FeatureTrack" color="204,0,0" fontSize="12" groupByStrand="false" id="https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/publications/Rhie_2022/tracks/variants/v1_GRCh38Y/GRCh38Y_Yfinder.unlifted.bed" name="Y-Finder SNVs (Non-liftable)" visible="true"/>
+        <Track attributeKey="GRCh38Y_RefSeq_110.gff" clazz="org.broad.igv.track.FeatureTrack" color="0,0,0" fontSize="12" groupByStrand="false" id="https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/publications/Rhie_2022/tracks/variants/v1_GRCh38Y/GRCh38Y_RefSeq_110.gff" name="GRCh38Y RefSeq v110" visible="true"/>
+        <Track attributeKey="GRCh38_palindromes.bed" clazz="org.broad.igv.track.FeatureTrack" fontSize="12" groupByStrand="false" id="https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/publications/Rhie_2022/tracks/variants/v1_GRCh38Y/GRCh38_palindromes.bed" name="Region" visible="true"/>
+    </Panel>
+    <PanelLayout dividerFractions="0.007361963190184049,0.6650306748466258"/>
+    <HiddenAttributes>
+        <Attribute name="DATA FILE"/>
+        <Attribute name="DATA TYPE"/>
+        <Attribute name="NAME"/>
+    </HiddenAttributes>
+</Session>
