@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<Session genome="hchm13v2.0" locus="chrY:10349997-10950000" nextAutoscaleGroup="3" version="8">
+<Session genome="chm13v2.0" locus="chrY:10349997-10950000" nextAutoscaleGroup="3" version="8">
     <Resources>
         <Resource path="https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/publications/Rhie_2022/tracks/chm13v2.0Y_APhasedRepeats_15bp_spacer.wig" type="wig"/>
         <Resource path="https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/alignments/cutnrun/chm13v2.0.hg002_CA_cutnrun_losalt_trimmed_q20_2.F3852.bw" type="bw"/>
